@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 
 import { MotionProvider } from "@/components/MotionProvider";
 
+import { gluten, montserrat, montserratAlternates } from "./fonts";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -11,7 +12,10 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="pt-BR" className="antialiased">
+    <html
+      lang="pt-BR"
+      className={`${montserrat.variable} ${montserratAlternates.variable} ${gluten.variable} antialiased`}
+    >
       <body>
         <MotionProvider>{children}</MotionProvider>
       </body>
