@@ -11,3 +11,9 @@
   --color-vermelho: #b10604;
   --color-azul: #1d467d;
 }
+
+@theme inline {
+  --font-sans: var(--font-montserrat);
+  --font-alternates: var(--font-montserrat-alternates);
+  --font-gluten: var(--font-gluten);
+}
