@@ -4,14 +4,14 @@ import { motion } from "motion/react";
 
 type RevealProps = {
   children: React.ReactNode;
-  /** Atraso em segundos antes de começar. Útil para entrar um item depois do outro. */
+  /** Delay in seconds before it starts. Useful to bring items in one after another. */
   delay?: number;
   className?: string;
 };
 
 /**
- * Entrada padrão ao rolar a página: o conteúdo aparece subindo de leve,
- * uma vez só, quando entra na tela.
+ * Default scroll entrance: the content slides up slightly and fades in,
+ * only once, when it enters the screen.
  *
  * <Reveal delay={0.1}>
  *   <h2>Prêmio Expresso</h2>

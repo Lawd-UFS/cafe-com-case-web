@@ -1,4 +1,4 @@
-# Mesmo final de linha (LF) para todo mundo, em qualquer sistema.
+# Same line endings (LF) for everyone, on any system.
 * text=auto eol=lf
 *.ico binary
 *.png binary

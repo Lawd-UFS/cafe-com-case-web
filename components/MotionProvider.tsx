@@ -3,9 +3,9 @@
 import { MotionConfig } from "motion/react";
 
 /**
- * Configuração global das animações.
- * reducedMotion="user": quem desativou animações no sistema não vê
- * movimentos (só mudanças de opacidade), sem ninguém precisar tratar isso.
+ * Global animation settings.
+ * reducedMotion="user": people who turned off animations in their system
+ * see no movement (only opacity changes), with no extra work per component.
  */
 export function MotionProvider({ children }: { children: React.ReactNode }) {
   return <MotionConfig reducedMotion="user">{children}</MotionConfig>;
