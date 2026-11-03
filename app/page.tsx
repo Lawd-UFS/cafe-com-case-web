@@ -1,19 +1,19 @@
-import { Apoiadores } from "@/components/sections/apoiadores/Apoiadores";
-import { Edicao } from "@/components/sections/edicao/Edicao";
-import { Premio } from "@/components/sections/premio/Premio";
-import { Rodape } from "@/components/sections/rodape/Rodape";
-import { Topo } from "@/components/sections/topo/Topo";
+import { Award } from "@/components/sections/award/Award";
+import { Edition } from "@/components/sections/edition/Edition";
+import { Footer } from "@/components/sections/footer/Footer";
+import { Hero } from "@/components/sections/hero/Hero";
+import { Supporters } from "@/components/sections/supporters/Supporters";
 
 export default function Home() {
   return (
     <>
       <main>
-        <Topo />
-        <Edicao />
-        <Premio />
-        <Apoiadores />
+        <Hero />
+        <Edition />
+        <Award />
+        <Supporters />
       </main>
-      <Rodape />
+      <Footer />
     </>
   );
 }

@@ -1,4 +1,4 @@
-// Textos da seção FAQ. Mudou um texto? É só mexer aqui.
+// FAQ copy. Text shown on the site stays in Portuguese.
 export const faq = {
-  titulo: "FAQ",
+  title: "FAQ",
 };

@@ -4,7 +4,7 @@ import { faq } from "@/content/faq";
 export function Faq() {
   return (
     <section id="faq">
-      <p>{faq.titulo}</p>
+      <p>{faq.title}</p>
     </section>
   );
 }
