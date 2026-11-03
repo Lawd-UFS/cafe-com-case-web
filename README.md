@@ -35,9 +35,9 @@ app/
   globals.css         cores e fontes do Figma (@theme)
 components/
   ui/                 peças usadas por todo mundo (botões, Reveal...)
-  sections/<secao>/   uma pasta por seção: topo, edicao, premio, apoiadores, rodape, faq
+  sections/<secao>/   uma pasta por seção: hero, edition, award, supporters, footer, faq
 content/
-  <secao>.ts          os textos de cada seção
+  <secao>.ts          os textos de cada seção (em português, como aparecem no site)
 public/               imagens
 ```
 
@@ -60,8 +60,10 @@ Para animações próprias, use a biblioteca [motion](https://motion.dev) (`impo
 
 ## Como trabalhar
 
+Branches, commits e código são em inglês. O README e a descrição dos PRs podem ser em português.
+
 1. Pegue uma issue no [board](https://github.com/orgs/Lawd-UFS/projects/18) e mova para **Em andamento**.
-2. Crie a branch a partir da `main`: `tipo/numero-descricao`, por exemplo `feat/5-topo-desktop`.
-3. Commits no formato `feat: ...`, `fix: ...` ou `chore: ...`, com uma frase curta em português.
+2. Crie a branch a partir da `main`: `tipo/numero-descricao`, por exemplo `feat/5-hero-desktop`.
+3. Commits no formato `feat: ...`, `fix: ...` ou `chore: ...`, com uma frase curta em inglês.
 4. Abra o PR com `Closes #numero` na descrição e um print da tela.
 5. Depois de aprovado, o PR entra na `main` e o card vai sozinho para **Concluído**.
