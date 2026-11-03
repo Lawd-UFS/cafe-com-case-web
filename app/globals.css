@@ -1,0 +1,8 @@
+@import "tailwindcss";
+
+/*
+ * Cores e fontes do Figma entram aqui na issue #2, dentro do @theme.
+ * Exemplo: --color-pepino: #...; vira a classe bg-pepino / text-pepino.
+ */
+@theme {
+}
