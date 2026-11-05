@@ -5,13 +5,11 @@ import { TopPanels } from "./TopPanels";
 
 export function Hero() {
   return (
-    <section className="relative w-screen">
-      <div className="relative flex min-h-screen w-full items-center overflow-hidden bg-laranja">
-        <SunflowerTexture />
-        <TopPanels />
-        <BottomPanels />
-        <ContentBand />
-      </div>
+    <section className="relative flex h-screen w-screen items-center overflow-hidden">
+      <SunflowerTexture />
+      <TopPanels />
+      <BottomPanels />
+      <ContentBand />
     </section>
   );
 }

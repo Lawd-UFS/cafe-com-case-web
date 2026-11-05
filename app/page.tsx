@@ -6,14 +6,14 @@ import { Hero } from "@/components/sections/hero/Hero";
 
 export default function Home() {
   return (
-    <>
-      <main>
+    <main>
+      <div className="min-h-screen bg-laranja">
         <Hero />
         <Edition />
         {/* <Award /> */}
         {/* <Supporters /> */}
-      </main>
+      </div>
       {/* <Footer /> */}
-    </>
+    </main>
   );
 }
