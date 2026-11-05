@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export function BottomPanels() {
   return (
-    <div className="absolute bottom-0 flex h-1/3 w-full items-end">
+    <div className="absolute bottom-0 z-10 flex h-1/3 w-full items-end">
       <div className="relative h-full w-1/4 bg-azul [clip-path:polygon(0_2.5rem,100%_0,100%_100%,0_100%)]">
         <Image
           src="/images/illustrations/fish.png"

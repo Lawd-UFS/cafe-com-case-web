@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export function ContentBand() {
   return (
-    <div className="absolute right-0 flex h-6/13 w-6/7 bg-cenoura">
+    <div className="absolute right-0 z-20 flex h-6/13 w-6/7 bg-cenoura">
       <div className="flex w-[30%] items-center justify-center">
         <Image
           src="/images/logo.png"
