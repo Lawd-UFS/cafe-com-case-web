@@ -2,6 +2,8 @@ import Image from "next/image";
 
 import { supporters } from "@/content/supporters";
 
+import { InviteSign } from "./InviteSign";
+
 export function Supporters() {
   return (
     <section
@@ -40,6 +42,8 @@ export function Supporters() {
             ))}
           </div>
         </div>
+
+        <InviteSign className="mt-12 md:mt-[116px] md:-ml-[13px]" />
       </div>
 
       <div
