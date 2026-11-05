@@ -1,10 +1,9 @@
-import { edition } from "@/content/edition";
-
-// 13th Edition: issues #6 (desktop), #13 (mobile)
 export function Edition() {
   return (
     <section id="edition">
-      <p>{edition.title}</p>
+      <div className="flex w-full px-18 pt-24">
+        <div className="h-[120vh] w-full bg-areia"></div>
+      </div>
     </section>
   );
 }

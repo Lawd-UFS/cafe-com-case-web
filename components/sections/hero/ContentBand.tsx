@@ -12,17 +12,17 @@ export function ContentBand() {
           className="h-full w-auto object-contain"
         />
       </div>
-      <div className="flex w-[28%] flex-col justify-between px-10 py-16 text-pepino">
+      <article className="flex w-[28%] flex-col justify-between px-10 py-16 text-pepino">
         <p className="text-xl leading-snug font-medium">
           O Café com Case é o <strong>maior evento gratuito</strong> de
           Publicidade e Propaganda de Sergipe.
         </p>
-        <p className="text-2xl font-semibold italic">
+        <p className="font-alternates text-2xl font-semibold italic">
           <span className="block text-left">Ideias alimentam</span>
           <span className="block text-right">a transformação.</span>
         </p>
-      </div>
-      <div className="flex w-[24%] flex-col justify-between px-10 py-16 text-pepino">
+      </article>
+      <article className="flex w-[24%] flex-col justify-between px-10 py-16 text-pepino">
         <div className="space-y-4">
           <p className="font-bold">
             Com edições anuais, funcionamos como um ambiente coletivo para
@@ -36,11 +36,11 @@ export function ContentBand() {
         </div>
         <a
           href="#faq"
-          className="relative z-60 w-full bg-pepino px-6 py-4 text-center text-2xl text-cenoura hover:opacity-90"
+          className="font-alternates relative z-60 w-full bg-pepino px-6 py-4 text-center text-2xl text-cenoura hover:opacity-90"
         >
           Conheça mais
         </a>
-      </div>
+      </article>
       <div className="relative flex w-[18%] items-start justify-center overflow-hidden px-4 py-16">
         <Image
           src="/images/illustrations/kettle.png"
