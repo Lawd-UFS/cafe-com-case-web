@@ -5,7 +5,7 @@ import { TopPanels } from "./TopPanels";
 
 export function Hero() {
   return (
-    <section className="relative flex h-screen w-full items-center overflow-hidden">
+    <section className="relative flex h-[120vh] w-full items-center overflow-hidden">
       <SunflowerTexture />
       <TopPanels />
       <BottomPanels />

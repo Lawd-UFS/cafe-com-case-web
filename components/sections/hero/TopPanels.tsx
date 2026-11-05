@@ -8,13 +8,13 @@ export function TopPanels() {
       <div className="relative h-full w-1/6 bg-pepino">
         <CashewCluster />
       </div>
-      <div className="relative h-full w-2/7 bg-cafe">
+      <div className="relative h-full w-1/3 bg-cafe">
         <Image
           src="/images/illustrations/cup.png"
           alt=""
           width={400}
           height={400}
-          className="absolute -top-4 right-6 h-1/3 w-1/2 object-contain"
+          className="absolute -top-4 right-6 h-[25.2%] w-[37.8%] -scale-x-100 object-contain"
         />
       </div>
     </div>
