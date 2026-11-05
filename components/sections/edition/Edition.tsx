@@ -11,7 +11,7 @@ export function Edition() {
               Edição
             </p>
           </div>
-          <div className="absolute right-0 h-9/10 w-5/7 -z-5 bg-pepino top-[85%] [clip-path:polygon(0_0,100%_0,100%_100%,6rem_100%)]"></div>
+          <div className="absolute top-[85%] right-0 z-10 h-full w-5/7 bg-pepino [clip-path:polygon(0_0,100%_0,100%_100%,6rem_100%)]"></div>
         </div>
       </div>
     </section>
