@@ -7,7 +7,7 @@ import { Hero } from "@/components/sections/hero/Hero";
 export default function Home() {
   return (
     <main>
-      <div className="min-h-screen bg-laranja">
+      <div className="min-h-screen overflow-x-hidden bg-laranja">
         <Hero />
         <Edition />
         {/* <Award /> */}
