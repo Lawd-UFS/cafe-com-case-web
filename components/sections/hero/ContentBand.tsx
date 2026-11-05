@@ -36,7 +36,7 @@ export function ContentBand() {
         </div>
         <a
           href="#faq"
-          className="font-alternates relative z-60 w-full bg-pepino px-6 py-4 text-center text-2xl text-cenoura hover:opacity-90"
+          className="relative z-60 w-full bg-pepino px-6 py-4 text-center font-alternates text-2xl text-cenoura hover:opacity-90"
         >
           Conheça mais
         </a>
