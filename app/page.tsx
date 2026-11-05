@@ -1,17 +1,17 @@
-import { Award } from "@/components/sections/award/Award";
+// import { Award } from "@/components/sections/award/Award";
 import { Edition } from "@/components/sections/edition/Edition";
-import { Footer } from "@/components/sections/footer/Footer";
+// import { Footer } from "@/components/sections/footer/Footer";
 import { Hero } from "@/components/sections/hero/Hero";
-import { Supporters } from "@/components/sections/supporters/Supporters";
+// import { Supporters } from "@/components/sections/supporters/Supporters";
 
 export default function Home() {
   return (
     <>
       <main>
         <Hero />
-        {/* <Edition />
-        <Award />
-        <Supporters /> */}
+        <Edition />
+        {/* <Award /> */}
+        {/* <Supporters /> */}
       </main>
       {/* <Footer /> */}
     </>
