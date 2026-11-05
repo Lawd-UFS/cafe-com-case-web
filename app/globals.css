@@ -27,7 +27,7 @@
     position: fixed;
     inset: 0;
     z-index: 50;
-    background: url("/images/textures/fava-beans.png") center / 20% auto repeat;
+    background: url("/images/textures/fava-beans.png") center / 23% auto repeat;
     opacity: 0.06;
     pointer-events: none;
   }
