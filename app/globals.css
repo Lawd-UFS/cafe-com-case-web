@@ -32,3 +32,7 @@
     pointer-events: none;
   }
 }
+
+@utility overflow-b-clip {
+  clip-path: inset(-100% -100% -20% -100%);
+}
