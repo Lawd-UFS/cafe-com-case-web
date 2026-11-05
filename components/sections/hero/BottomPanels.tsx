@@ -18,7 +18,7 @@ export function BottomPanels() {
           alt=""
           width={600}
           height={400}
-          className="absolute top-1/3 right-10 h-[69.2%] w-auto -translate-x-[15%] -translate-y-[15%] rotate-8 object-contain"
+          className="absolute top-1/3 right-10 h-[69.2%] w-auto translate-x-[-15%] translate-y-[-15%] rotate-8 object-contain"
         />
       </div>
     </div>
