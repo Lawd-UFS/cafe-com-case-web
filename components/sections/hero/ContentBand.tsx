@@ -1,8 +1,11 @@
 import Image from "next/image";
 
+import { WideButton } from "@/components/ui/WideButton";
+
 export function ContentBand() {
   return (
-    <div className="absolute right-0 z-30 flex h-6/13 w-6/7 bg-cenoura">
+    <div className="absolute right-0 z-60 flex h-6/13 w-6/7 bg-cenoura">
+      <div className="pointer-events-none absolute inset-0 -z-10 bg-[url('/images/textures/fava-beans.png')] bg-[length:25%_auto] bg-center bg-repeat opacity-[0.06]"></div>
       <div className="flex w-[30%] items-center justify-center">
         <Image
           src="/images/logo.png"
@@ -34,12 +37,7 @@ export function ContentBand() {
             comunidade em um <strong> espaço de diálogo acessível</strong>.
           </p>
         </div>
-        <a
-          href="#faq"
-          className="relative z-60 w-full bg-pepino px-6 py-4 text-center font-alternates text-2xl text-cenoura hover:opacity-90"
-        >
-          Conheça mais
-        </a>
+        <WideButton>Conheça mais</WideButton>
       </article>
       <div className="relative flex w-[18%] items-start justify-center overflow-hidden px-4 py-16">
         <Image
