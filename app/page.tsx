@@ -9,11 +9,11 @@ export default function Home() {
     <>
       <main>
         <Hero />
-        <Edition />
+        {/* <Edition />
         <Award />
-        <Supporters />
+        <Supporters /> */}
       </main>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }
