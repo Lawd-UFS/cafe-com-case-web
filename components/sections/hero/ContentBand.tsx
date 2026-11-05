@@ -2,14 +2,14 @@ import Image from "next/image";
 
 export function ContentBand() {
   return (
-    <div className="absolute right-0 flex h-6/13 w-6/7 bg-cenoura">
+    <div className="absolute right-0 z-30 flex h-6/13 w-6/7 bg-cenoura">
       <div className="flex w-[30%] items-center justify-center">
         <Image
           src="/images/logo.png"
           alt="Café com Case à Mesa"
           width={800}
           height={800}
-          className="h-full w-auto object-contain"
+          className="h-full w-auto scale-110 object-contain"
         />
       </div>
       <article className="flex w-[28%] flex-col justify-between px-10 py-16 text-pepino">
