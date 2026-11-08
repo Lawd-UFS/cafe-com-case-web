@@ -2,8 +2,8 @@ import Image from "next/image";
 
 export function BeanPanel() {
   return (
-    <div className="absolute top-0 left-0">
-      <article className="absolute top-1/2 left-1/4 z-10 flex w-2/5 flex-col gap-10 text-damasco">
+    <div className="absolute top-[46vh] left-0 h-[118vh] w-[60vw]">
+      <article className="absolute top-[18%] left-1/4 z-10 flex w-2/5 flex-col gap-10 text-damasco">
         <p className="font-nunito text-5xl font-black">
           mas a conversa vai muito além do que chega ao prato.
         </p>
@@ -19,7 +19,7 @@ export function BeanPanel() {
         alt=""
         width={1189}
         height={1174}
-        className="h-full w-auto max-w-none -translate-x-1/5 translate-y-1/3 -rotate-8 zoom-[1.1]"
+        className="h-full w-full max-w-none object-cover -translate-x-1/5 -rotate-8 zoom-[1.1]"
       />
     </div>
   );

@@ -4,7 +4,11 @@ import { WideButton } from "@/components/ui/WideButton";
 
 export function ContentBand() {
   return (
-    <div className="absolute right-0 z-60 flex h-6/13 w-6/7 -translate-y-[calc(2.5rem+5%)] bg-cenoura">
+    <div className="absolute right-0 z-60 flex h-6/13 w-6/7 -translate-y-[calc(2.5rem+5%)]">
+      <div
+        aria-hidden
+        className="absolute inset-0 -z-10 bg-cenoura [filter:url(#hero-panels-texture)]"
+      />
       <div className="pointer-events-none absolute inset-0 -z-10 bg-[url('/images/textures/fava-beans.png')] bg-size-[28.75%_auto] bg-center bg-repeat opacity-[0.06]"></div>
       <div className="flex w-[30%] items-center justify-center">
         <Image

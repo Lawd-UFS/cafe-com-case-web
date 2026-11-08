@@ -5,10 +5,18 @@ import { CashewCluster } from "./CashewCluster";
 export function TopPanels() {
   return (
     <div className="absolute top-0 left-0 flex h-full w-full">
-      <div className="relative h-full w-1/6 bg-pepino">
+      <div className="relative h-full w-1/6">
+        <div
+          aria-hidden
+          className="absolute inset-0 bg-pepino [filter:url(#hero-panels-texture)]"
+        />
         <CashewCluster />
       </div>
-      <div className="relative h-full w-1/3 bg-cafe">
+      <div className="relative h-full w-1/3">
+        <div
+          aria-hidden
+          className="absolute inset-0 bg-cafe [filter:url(#hero-panels-texture)]"
+        />
         <Image
           src="/images/illustrations/cup.png"
           alt=""

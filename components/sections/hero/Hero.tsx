@@ -1,5 +1,6 @@
 import { BigButton } from "@/components/ui/BigButton";
 import { FaqLettering } from "@/components/ui/FaqLettering";
+import { TextureFilter } from "@/components/ui/TextureFilter";
 import { BottomPanels } from "./BottomPanels";
 import { ContentBand } from "./ContentBand";
 import { SunflowerTexture } from "./SunflowerTexture";
@@ -19,6 +20,11 @@ export function Hero() {
         </BigButton>
       </div>
       <ContentBand />
+      <svg aria-hidden className="absolute size-0">
+        <defs>
+          <TextureFilter id="hero-panels-texture" radius={10} size={16} />
+        </defs>
+      </svg>
     </section>
   );
 }
