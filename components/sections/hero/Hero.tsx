@@ -1,3 +1,5 @@
+import { BigButton } from "@/components/ui/BigButton";
+import { FaqLettering } from "@/components/ui/FaqLettering";
 import { BottomPanels } from "./BottomPanels";
 import { ContentBand } from "./ContentBand";
 import { SunflowerTexture } from "./SunflowerTexture";
@@ -9,6 +11,13 @@ export function Hero() {
       <SunflowerTexture />
       <TopPanels />
       <BottomPanels />
+      <div className="absolute top-10 right-0 z-30">
+        <BigButton href="/faq" aria-label="FAQ">
+          <span className="block size-full text-pepino group-hover:text-areia group-focus-visible:text-areia">
+            <FaqLettering />
+          </span>
+        </BigButton>
+      </div>
       <ContentBand />
     </section>
   );

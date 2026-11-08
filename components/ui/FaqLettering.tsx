@@ -4,7 +4,7 @@ export function FaqLettering() {
       <span className="sr-only">FAQ</span>
       <span
         aria-hidden
-        className="block size-full bg-current [mask-image:url(/images/faq-lettering.svg)] [mask-size:100%_100%] [mask-repeat:no-repeat]"
+        className="block size-full bg-current [mask-image:url(/images/faq-lettering.svg)] mask-size-[100%_100%] mask-no-repeat"
       />
     </>
   );
