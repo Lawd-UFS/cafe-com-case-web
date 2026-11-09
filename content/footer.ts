@@ -17,4 +17,5 @@ export const footer = {
       href: "mailto:cafecomcaseamesa@gmail.com",
     },
   },
+  backToTop: "Ir para o topo",
 };
