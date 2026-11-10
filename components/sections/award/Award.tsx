@@ -16,7 +16,7 @@ export function Award() {
         className="pointer-events-none absolute inset-0 z-20 bg-[url(/images/textures/sunflower-seeds.png)] bg-size-[1198px_auto] bg-position-[0_-756px] opacity-[0.13] mix-blend-soft-light"
       />
 
-      <div className="relative z-10 mx-auto max-w-[1920px] px-6 md:pl-20 md:pr-10 lg:pl-32 lg:pr-16">
+      <div className="relative z-10 mx-auto max-w-[1920px] px-6 md:pr-10 md:pl-20 lg:pr-16 lg:pl-32">
         <div className="relative -mt-16 md:-mt-24 lg:-mt-32">
           <div className="relative z-30 mb-[-45px] pl-28 sm:pl-36 md:mb-[-65px] md:pl-48 lg:pl-64">
             <Reveal>
@@ -120,7 +120,7 @@ export function Award() {
 
         <Reveal delay={0.25}>
           <div className="mt-16 max-w-4xl md:mt-24">
-            <p className="font-alternates text-base leading-snug font-semibold italic text-cenoura md:text-xl lg:text-2xl">
+            <p className="font-alternates text-base leading-snug font-semibold text-cenoura italic md:text-xl lg:text-2xl">
               {award.closingPhrase}
             </p>
           </div>
