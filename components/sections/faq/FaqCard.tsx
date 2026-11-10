@@ -101,7 +101,7 @@ export function FaqCard({ item, defaultOpen = false }: FaqCardProps) {
                   maskPosition: "center",
                   WebkitMaskPosition: "center",
                 }}
-                className="block size-full scale-[1.35] shrink-0 bg-cafe-escuro opacity-[0.08]"
+                className="block size-full shrink-0 scale-[1.35] bg-cafe-escuro opacity-[0.08]"
               />
             </div>
           )}
