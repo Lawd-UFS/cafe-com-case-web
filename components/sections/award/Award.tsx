@@ -1,8 +1,8 @@
-import Image from "next/image";
-import { award } from "@/content/award";
 import { MainButton } from "@/components/ui/MainButton";
 import { Reveal } from "@/components/ui/Reveal";
 import { TextureFilter } from "@/components/ui/TextureFilter";
+import { award } from "@/content/award";
+import Image from "next/image";
 
 export function Award() {
   return (
@@ -18,13 +18,13 @@ export function Award() {
 
       <div className="relative z-10 mx-auto max-w-[1920px] px-6 md:pr-10 md:pl-20 lg:pr-16 lg:pl-32">
         <div className="relative -mt-16 md:-mt-24 lg:-mt-32">
-          <div className="relative z-30 mb-[-45px] pl-28 sm:pl-36 md:mb-[-65px] md:pl-48 lg:pl-64">
+          <div className="relative z-30 mb-[-55px] pl-24 sm:pl-32 md:mb-[-80px] md:pl-44 lg:pl-56">
             <Reveal>
               <h2
                 id="award-title"
-                className="font-alternates text-[36px] leading-[1.05] font-black tracking-tight text-areia [filter:url(#award-title-texture)] sm:text-[44px] md:text-[clamp(44px,3.8vw,64px)]"
+                className="font-alternates text-[36px] leading-[1.05] font-black tracking-tight text-areia [filter:url(#award-title-texture)] sm:text-[48px] md:text-[80px]"
               >
-                <span className="block">{award.title.first}</span>
+                <span className="block">{award.title.first} </span>
                 <span className="block">{award.title.second}</span>
               </h2>
             </Reveal>
@@ -62,10 +62,10 @@ export function Award() {
 
             <div className="relative flex-1">
               <Reveal delay={0.15}>
-                <div className="relative px-8 pt-36 pb-14 text-cafe md:px-14 md:pt-44 md:pb-16 lg:px-16 lg:pt-48 lg:pb-20">
+                <div className="relative px-8 pt-40 pb-14 text-cafe md:px-14 md:pt-48 md:pb-16 lg:px-16 lg:pt-56 lg:pb-20">
                   <svg
                     aria-hidden
-                    viewBox="0 0 1200 460"
+                    viewBox="0 0 1200 480"
                     preserveAspectRatio="none"
                     className="pointer-events-none absolute inset-0 size-full overflow-visible drop-shadow-xl"
                   >
@@ -77,7 +77,7 @@ export function Award() {
                       />
                     </defs>
                     <path
-                      d="M 0,70 L 220,135 L 420,0 L 1200,0 L 1200,460 L 0,460 Z"
+                      d="M 0,90 L 320,185 L 580,0 L 1200,0 L 1200,480 L 0,480 Z"
                       filter="url(#award-card-texture)"
                       className="fill-amarelo"
                     />
@@ -92,11 +92,11 @@ export function Award() {
                   />
 
                   <div className="relative z-10 flex flex-col items-start justify-between gap-6 md:gap-7 lg:flex-row lg:items-start lg:gap-8 xl:gap-8">
-                    <p className="w-full flex-1 font-alternates text-[15px] leading-[1.45] font-semibold text-cafe md:text-[16px] lg:max-w-[410px] lg:text-[16.5px]">
+                    <p className="w-full flex-1 font-sans text-base leading-[1.35] font-semibold text-cafe md:text-[20px] lg:max-w-[410px]">
                       {award.firstParagraph}
                     </p>
 
-                    <p className="w-full flex-[1.35] font-alternates text-[15px] leading-[1.45] font-semibold text-cafe md:text-[16px] lg:max-w-[570px] lg:text-[16.5px]">
+                    <p className="w-full flex-[1.35] font-sans text-base leading-[1.35] font-semibold text-cafe md:text-[20px] lg:max-w-[570px]">
                       {award.secondParagraph}
                     </p>
 
@@ -106,7 +106,6 @@ export function Award() {
                         href={award.button.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="md:!h-12 md:!w-[210px] md:[&_span]:!text-lg"
                       >
                         {award.button.text}
                       </MainButton>
@@ -120,7 +119,7 @@ export function Award() {
 
         <Reveal delay={0.25}>
           <div className="mt-16 max-w-4xl md:mt-24">
-            <p className="font-alternates text-base leading-snug font-semibold text-cenoura italic md:text-xl lg:text-2xl">
+            <p className="font-alternates text-xl leading-snug font-medium text-cenoura italic md:text-[32px]">
               {award.closingPhrase}
             </p>
           </div>
