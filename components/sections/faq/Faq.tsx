@@ -26,7 +26,11 @@ export function Faq() {
             className="pointer-events-none absolute inset-0 size-full overflow-visible drop-shadow-md"
           >
             <defs>
-              <TextureFilter id="faq-header-brown-texture" radius={3} size={8} />
+              <TextureFilter
+                id="faq-header-brown-texture"
+                radius={3}
+                size={8}
+              />
             </defs>
             <polygon
               points="0,0 170,0 200,100 0,100"
@@ -43,7 +47,7 @@ export function Faq() {
           />
         </div>
 
-        <div className="relative z-10 -ml-7 flex items-center justify-center pl-10 pr-8 py-4 sm:-ml-8 sm:pl-12 sm:pr-12 sm:py-5">
+        <div className="relative z-10 -ml-7 flex items-center justify-center py-4 pr-8 pl-10 sm:-ml-8 sm:py-5 sm:pr-12 sm:pl-12">
           <svg
             aria-hidden
             viewBox="0 0 240 100"
@@ -51,7 +55,11 @@ export function Faq() {
             className="pointer-events-none absolute inset-0 size-full overflow-visible"
           >
             <defs>
-              <TextureFilter id="faq-header-yellow-texture" radius={3.5} size={8.5} />
+              <TextureFilter
+                id="faq-header-yellow-texture"
+                radius={3.5}
+                size={8.5}
+              />
             </defs>
             <rect
               width="100%"
@@ -112,7 +120,7 @@ export function Faq() {
                   />
                 </svg>
 
-                <h3 className="relative z-10 font-alternates text-base leading-snug font-bold italic text-areia sm:text-lg md:text-xl">
+                <h3 className="relative z-10 font-alternates text-base leading-snug font-bold text-areia italic sm:text-lg md:text-xl">
                   {faq.items[0].question}
                 </h3>
 
@@ -148,7 +156,7 @@ export function Faq() {
                   />
                 </svg>
 
-                <h3 className="relative z-10 font-alternates text-base leading-snug font-bold italic text-areia sm:text-lg md:text-xl">
+                <h3 className="relative z-10 font-alternates text-base leading-snug font-bold text-areia italic sm:text-lg md:text-xl">
                   {faq.items[2].question}
                 </h3>
 
@@ -186,7 +194,7 @@ export function Faq() {
                   />
                 </svg>
 
-                <h3 className="relative z-10 font-alternates text-base leading-snug font-bold italic text-areia sm:text-lg md:text-xl">
+                <h3 className="relative z-10 font-alternates text-base leading-snug font-bold text-areia italic sm:text-lg md:text-xl">
                   {faq.items[1].question}
                 </h3>
 
@@ -222,7 +230,7 @@ export function Faq() {
                   />
                 </svg>
 
-                <h3 className="relative z-10 font-alternates text-base leading-snug font-bold italic text-areia sm:text-lg md:text-xl">
+                <h3 className="relative z-10 font-alternates text-base leading-snug font-bold text-areia italic sm:text-lg md:text-xl">
                   {faq.items[3].question}
                 </h3>
 
@@ -243,7 +251,7 @@ export function Faq() {
 
       <aside
         aria-labelledby="faq-contacts-title"
-        className="absolute top-16 right-0 bottom-20 z-20 flex w-[400px] -rotate-[1.4deg] flex-col justify-between overflow-visible px-8 pt-10 pb-12 text-pepino origin-top-right md:w-[460px] md:px-12 md:pt-12 md:pb-14 lg:w-[500px] lg:px-14 xl:w-[540px]"
+        className="absolute top-16 right-0 bottom-20 z-20 flex w-[400px] origin-top-right -rotate-[1.4deg] flex-col justify-between overflow-visible px-8 pt-10 pb-12 text-pepino md:w-[460px] md:px-12 md:pt-12 md:pb-14 lg:w-[500px] lg:px-14 xl:w-[540px]"
       >
         <svg
           aria-hidden
@@ -252,7 +260,11 @@ export function Faq() {
           className="pointer-events-none absolute inset-0 size-full overflow-visible drop-shadow-2xl"
         >
           <defs>
-            <TextureFilter id="faq-contacts-board-texture" radius={4.5} size={8.5} />
+            <TextureFilter
+              id="faq-contacts-board-texture"
+              radius={4.5}
+              size={8.5}
+            />
           </defs>
           <rect
             width="100%"
@@ -271,11 +283,11 @@ export function Faq() {
             <span className="block">{faq.contacts.title.second}</span>
           </h2>
 
-          <p className="mt-6 font-alternates text-base font-bold italic leading-snug text-pepino md:text-lg">
+          <p className="mt-6 font-alternates text-base leading-snug font-bold text-pepino italic md:text-lg">
             {faq.contacts.subtitle}
           </p>
 
-          <p className="mt-3 max-w-xs font-alternates text-xs font-semibold leading-relaxed text-pepino md:text-sm">
+          <p className="mt-3 max-w-xs font-alternates text-xs leading-relaxed font-semibold text-pepino md:text-sm">
             {faq.contacts.description}
           </p>
 
@@ -297,7 +309,14 @@ export function Faq() {
                         strokeLinecap="round"
                         strokeLinejoin="round"
                       >
-                        <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                        <rect
+                          width="20"
+                          height="20"
+                          x="2"
+                          y="2"
+                          rx="5"
+                          ry="5"
+                        />
                         <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
                         <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
                       </svg>
@@ -324,7 +343,7 @@ export function Faq() {
                       </svg>
                     )}
                   </span>
-                  <span className="font-alternates text-sm font-normal italic text-pepino md:text-base">
+                  <span className="font-alternates text-sm font-normal text-pepino italic md:text-base">
                     {contact.handle}
                   </span>
                 </a>
