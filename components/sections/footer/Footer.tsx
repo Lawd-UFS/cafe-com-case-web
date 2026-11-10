@@ -1,10 +1,12 @@
 import { Contacts } from "./Contacts";
+import { IllustrationStrip } from "./IllustrationStrip";
 
 export function Footer() {
   return (
     <footer id="footer" className="relative overflow-x-clip bg-pepino">
       <div className="relative mx-auto max-w-[1920px]">
         <Contacts className="px-6 pt-16 text-2xl lg:absolute lg:bottom-full lg:left-[calc(100%*1019/1920)] lg:mb-[calc(106em/32)] lg:p-0 lg:text-[clamp(22px,1.667vw,32px)]" />
+        <IllustrationStrip className="mt-12 lg:mt-0" />
       </div>
 
       <div
