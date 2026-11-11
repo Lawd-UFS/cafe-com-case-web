@@ -16,26 +16,26 @@ export function Supporters() {
         alt=""
         width={1350}
         height={1350}
-        sizes="(min-width: 768px) 50vw, 400px"
-        className="pointer-events-none absolute top-[-53px] right-[-200px] z-10 w-[400px] max-w-none md:top-[max(-326px,-16.98vw)] md:right-[max(-279px,-14.53vw)] md:w-[min(960px,50vw)]"
+        sizes="(min-width: 768px) 50vw, 327px"
+        className="pointer-events-none absolute top-[-80px] right-[-163px] z-10 w-[327px] max-w-none rotate-15 md:top-[max(-326px,-16.98vw)] md:right-[max(-279px,-14.53vw)] md:w-[min(960px,50vw)] md:rotate-0"
       />
 
-      <div className="relative mx-auto max-w-[1920px] px-6 pt-20 pb-16 md:px-[min(206px,10.73vw)] md:pt-[154px] md:pb-[70px]">
+      <div className="relative mx-auto max-w-[360px] px-[26px] pt-6 pb-11 sm:max-w-[400px] md:max-w-[1920px] md:px-[min(206px,10.73vw)] md:pt-[154px] md:pb-[70px]">
         <div className="md:w-[min(992px,58vw)]">
           <h2
             id="supporters-title"
-            className="font-alternates text-[32px] leading-[1.194] font-black [filter:url(#supporters-title-texture)] md:text-[clamp(36px,2.5vw,48px)]"
+            className="max-w-[160px] font-alternates text-2xl leading-[1.194] font-black [filter:url(#supporters-title-texture-mobile)] md:max-w-none md:text-[clamp(36px,2.5vw,48px)] md:[filter:url(#supporters-title-texture)]"
           >
             {supporters.title}
           </h2>
-          <p className="mt-4 font-alternates text-xl leading-[1.194] font-medium italic md:text-[clamp(24px,1.667vw,32px)]">
+          <p className="mt-6 max-w-[207px] font-alternates text-base leading-[1.194] font-medium italic md:mt-4 md:max-w-none md:text-[clamp(24px,1.667vw,32px)]">
             {supporters.subtitle}
           </p>
-          <div className="mt-8 grid gap-4 md:mt-[63px] lg:grid-cols-2 lg:gap-x-[39px]">
+          <div className="mt-5 grid max-w-[248px] gap-4 md:mt-[63px] md:max-w-none lg:grid-cols-2 lg:gap-x-[39px]">
             {supporters.paragraphs.map((paragraph) => (
               <p
                 key={paragraph}
-                className="text-sm leading-[1.35] font-semibold md:text-[clamp(16px,1.042vw,20px)] lg:max-w-[430px]"
+                className="text-xs leading-[1.35] font-semibold md:text-[clamp(16px,1.042vw,20px)] lg:max-w-[430px]"
               >
                 {paragraph}
               </p>
@@ -43,7 +43,7 @@ export function Supporters() {
           </div>
         </div>
 
-        <InviteSign className="mt-12 md:mt-[116px] md:-ml-[13px]" />
+        <InviteSign className="mt-[38px] -ml-2 md:mt-[116px] md:-ml-[13px]" />
       </div>
 
       <div
@@ -52,39 +52,63 @@ export function Supporters() {
       />
 
       <svg aria-hidden className="absolute size-0">
-        <filter id="supporters-title-texture" colorInterpolationFilters="sRGB">
-          <feTurbulence
-            type="fractalNoise"
-            baseFrequency={1 / 29.4}
-            numOctaves={3}
-            seed={562}
-          />
-          <feDisplacementMap
-            in="SourceGraphic"
-            scale={6.6}
-            xChannelSelector="R"
-            yChannelSelector="G"
-            result="shape"
-          />
-          <feTurbulence
-            type="fractalNoise"
-            baseFrequency="0.3 0.45"
-            numOctaves={2}
-            seed={7}
-          />
-          <feColorMatrix
-            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 30 0 0 0 -21.9"
-            result="spots"
-          />
-          <feFlood className="[flood-color:var(--color-pepino)]" />
-          <feComposite in2="spots" operator="in" />
-          <feComposite in2="shape" operator="in" result="speckles" />
-          <feMerge>
-            <feMergeNode in="shape" />
-            <feMergeNode in="speckles" />
-          </feMerge>
-        </filter>
+        <TitleTexture
+          id="supporters-title-texture-mobile"
+          size={16.7}
+          scale={3.75}
+          speckles="0.53 0.79"
+        />
+        <TitleTexture
+          id="supporters-title-texture"
+          size={29.4}
+          scale={6.6}
+          speckles="0.3 0.45"
+        />
       </svg>
     </section>
+  );
+}
+
+type TitleTextureProps = {
+  id: string;
+  size: number;
+  scale: number;
+  speckles: string;
+};
+
+function TitleTexture({ id, size, scale, speckles }: TitleTextureProps) {
+  return (
+    <filter id={id} colorInterpolationFilters="sRGB">
+      <feTurbulence
+        type="fractalNoise"
+        baseFrequency={1 / size}
+        numOctaves={3}
+        seed={562}
+      />
+      <feDisplacementMap
+        in="SourceGraphic"
+        scale={scale}
+        xChannelSelector="R"
+        yChannelSelector="G"
+        result="shape"
+      />
+      <feTurbulence
+        type="fractalNoise"
+        baseFrequency={speckles}
+        numOctaves={2}
+        seed={7}
+      />
+      <feColorMatrix
+        values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 30 0 0 0 -21.9"
+        result="spots"
+      />
+      <feFlood className="[flood-color:var(--color-pepino)]" />
+      <feComposite in2="spots" operator="in" />
+      <feComposite in2="shape" operator="in" result="speckles" />
+      <feMerge>
+        <feMergeNode in="shape" />
+        <feMergeNode in="speckles" />
+      </feMerge>
+    </filter>
   );
 }
