@@ -24,7 +24,7 @@ export function Supporters() {
         <div className="md:w-[min(992px,58vw)]">
           <h2
             id="supporters-title"
-            className="max-w-[160px] font-alternates text-2xl leading-[1.194] font-black [filter:url(#supporters-title-texture)] md:max-w-none md:text-[clamp(36px,2.5vw,48px)]"
+            className="max-w-[160px] font-alternates text-2xl leading-[1.194] font-black [filter:url(#supporters-title-texture-mobile)] md:max-w-none md:text-[clamp(36px,2.5vw,48px)] md:[filter:url(#supporters-title-texture)]"
           >
             {supporters.title}
           </h2>
@@ -52,39 +52,63 @@ export function Supporters() {
       />
 
       <svg aria-hidden className="absolute size-0">
-        <filter id="supporters-title-texture" colorInterpolationFilters="sRGB">
-          <feTurbulence
-            type="fractalNoise"
-            baseFrequency={1 / 29.4}
-            numOctaves={3}
-            seed={562}
-          />
-          <feDisplacementMap
-            in="SourceGraphic"
-            scale={6.6}
-            xChannelSelector="R"
-            yChannelSelector="G"
-            result="shape"
-          />
-          <feTurbulence
-            type="fractalNoise"
-            baseFrequency="0.3 0.45"
-            numOctaves={2}
-            seed={7}
-          />
-          <feColorMatrix
-            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 30 0 0 0 -21.9"
-            result="spots"
-          />
-          <feFlood className="[flood-color:var(--color-pepino)]" />
-          <feComposite in2="spots" operator="in" />
-          <feComposite in2="shape" operator="in" result="speckles" />
-          <feMerge>
-            <feMergeNode in="shape" />
-            <feMergeNode in="speckles" />
-          </feMerge>
-        </filter>
+        <TitleTexture
+          id="supporters-title-texture-mobile"
+          size={16.7}
+          scale={3.75}
+          speckles="0.53 0.79"
+        />
+        <TitleTexture
+          id="supporters-title-texture"
+          size={29.4}
+          scale={6.6}
+          speckles="0.3 0.45"
+        />
       </svg>
     </section>
+  );
+}
+
+type TitleTextureProps = {
+  id: string;
+  size: number;
+  scale: number;
+  speckles: string;
+};
+
+function TitleTexture({ id, size, scale, speckles }: TitleTextureProps) {
+  return (
+    <filter id={id} colorInterpolationFilters="sRGB">
+      <feTurbulence
+        type="fractalNoise"
+        baseFrequency={1 / size}
+        numOctaves={3}
+        seed={562}
+      />
+      <feDisplacementMap
+        in="SourceGraphic"
+        scale={scale}
+        xChannelSelector="R"
+        yChannelSelector="G"
+        result="shape"
+      />
+      <feTurbulence
+        type="fractalNoise"
+        baseFrequency={speckles}
+        numOctaves={2}
+        seed={7}
+      />
+      <feColorMatrix
+        values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 30 0 0 0 -21.9"
+        result="spots"
+      />
+      <feFlood className="[flood-color:var(--color-pepino)]" />
+      <feComposite in2="spots" operator="in" />
+      <feComposite in2="shape" operator="in" result="speckles" />
+      <feMerge>
+        <feMergeNode in="shape" />
+        <feMergeNode in="speckles" />
+      </feMerge>
+    </filter>
   );
 }
