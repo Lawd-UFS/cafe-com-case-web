@@ -1,20 +1,22 @@
-import { WideButton } from "@/components/ui/WideButton";
+import { MainButton } from "@/components/ui/MainButton";
+import { edition } from "@/content/edition";
 
 export function CtaArticle() {
   return (
-    <article className="relative mt-10 ml-auto flex w-1/5 flex-col gap-8 self-end text-pepino">
-      <p className="font-nunito text-[2.5rem] leading-tight font-medium italic">
+    <article className="relative z-10 flex w-full flex-col gap-8 text-pepino lg:mt-10 lg:ml-auto lg:w-1/5 lg:self-end">
+      <p className="font-alternates text-3xl leading-tight font-medium italic lg:text-[2.5rem]">
         Aqui, quando falamos de
-        <span className="font-extrabold">
-          {" "}
-          alimentação, o direito e a cultura{" "}
-        </span>
+        <span className="font-extrabold"> {edition.ctaHighlight} </span>
         também entram na conversa.
       </p>
-      <p className="max-w-5/6 text-xl font-medium">
-        E não acaba por aqui! Descubra o que mais acontece no Café com Case.
-      </p>
-      <WideButton>Conheça mais</WideButton>
+      <p className="max-w-5/6 text-xl font-medium">{edition.ctaText}</p>
+      <MainButton
+        href={edition.instagramUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        {edition.cta}
+      </MainButton>
     </article>
   );
 }

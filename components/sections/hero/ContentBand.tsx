@@ -1,10 +1,11 @@
 import Image from "next/image";
 
-import { WideButton } from "@/components/ui/WideButton";
+import { MainButton } from "@/components/ui/MainButton";
+import { hero } from "@/content/hero";
 
 export function ContentBand() {
   return (
-    <div className="absolute right-0 z-60 flex h-6/13 w-6/7 -translate-y-[calc(2.5rem+5%)]">
+    <div className="absolute right-0 z-60 flex min-h-[32rem] w-6/7 -translate-y-[calc(2.5rem+5%)]">
       <div
         aria-hidden
         className="absolute inset-0 -z-10 bg-cenoura [filter:url(#hero-panels-texture)]"
@@ -19,29 +20,32 @@ export function ContentBand() {
           className="h-full w-auto scale-110 object-contain"
         />
       </div>
-      <article className="flex w-[28%] flex-col justify-between px-10 py-16 text-pepino">
-        <p className="text-3xl leading-snug font-medium">
-          O Café com Case é o <strong>maior evento gratuito</strong> de
-          Publicidade e Propaganda de Sergipe.
-        </p>
+      <article className="flex w-[28%] flex-col justify-between gap-8 px-10 py-16 text-pepino">
+        <h1 className="text-3xl leading-snug font-medium">
+          {hero.lead.before}
+          <strong>{hero.lead.strong}</strong>
+          {hero.lead.after}
+        </h1>
         <p className="font-alternates text-2xl font-semibold italic">
-          <span className="block text-left">Ideias alimentam</span>
-          <span className="block text-right">a transformação.</span>
+          <span className="block text-left">{hero.tagline[0]}</span>
+          <span className="block text-right">{hero.tagline[1]}</span>
         </p>
       </article>
-      <article className="flex w-[24%] flex-col justify-between px-10 py-16 text-pepino">
+      <article className="flex w-[24%] flex-col justify-between gap-8 px-10 py-16 text-pepino">
         <div className="space-y-4">
-          <p className="font-bold">
-            Com edições anuais, funcionamos como um ambiente coletivo para
-            debater temas atuais da sociedade.
-          </p>
-          <p className="font-bold">
-            O projeto busca estimular o aprendizado e fortalecer o{" "}
-            <em>pensamento crítico</em>, unindo estudantes, profissionais e
-            comunidade em um <strong> espaço de diálogo acessível</strong>.
-          </p>
+          {hero.description.map((paragraph) => (
+            <p key={paragraph.slice(0, 24)} className="font-bold">
+              {paragraph}
+            </p>
+          ))}
         </div>
-        <WideButton>Conheça mais</WideButton>
+        <MainButton
+          href={hero.instagramUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {hero.cta}
+        </MainButton>
       </article>
       <div className="relative flex w-[18%] items-start justify-center overflow-hidden px-4 py-16">
         <Image

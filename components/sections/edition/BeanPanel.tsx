@@ -1,17 +1,16 @@
 import Image from "next/image";
 
+import { edition } from "@/content/edition";
+
 export function BeanPanel() {
   return (
-    <div className="absolute top-[46vh] left-0 h-[118vh] w-[60vw]">
-      <article className="absolute top-[18%] left-1/4 z-10 flex w-2/5 flex-col gap-10 text-damasco">
-        <p className="font-nunito text-5xl font-black">
-          mas a conversa vai muito além do que chega ao prato.
+    <div className="relative w-full overflow-hidden lg:absolute lg:top-[30%] lg:left-0 lg:h-[70%] lg:w-[60%]">
+      <article className="relative z-10 flex flex-col gap-6 p-6 text-damasco lg:absolute lg:top-[18%] lg:left-1/4 lg:w-2/5 lg:gap-10 lg:p-0">
+        <p className="font-alternates text-3xl font-black lg:text-5xl">
+          {edition.beanHighlight}
         </p>
-        <p className="w-3/4 self-end text-left text-lg font-semibold">
-          O conceito da edição convida a pensar: o que existe por trás de cada
-          refeição? A partir desse questionamento, buscamos levar o público a
-          entender o que acontece por trás de cada refeição, cada escolha e cada
-          realidade.
+        <p className="text-lg font-semibold lg:w-3/4 lg:self-end lg:text-left">
+          {edition.beanText}
         </p>
       </article>
       <Image
@@ -19,7 +18,7 @@ export function BeanPanel() {
         alt=""
         width={1189}
         height={1174}
-        className="h-full w-full max-w-none object-cover -translate-x-1/5 -rotate-8 zoom-[1.1]"
+        className="h-72 w-full object-cover object-center lg:h-full lg:max-w-none lg:-translate-x-1/5 lg:-rotate-8 lg:zoom-[1.1]"
       />
     </div>
   );

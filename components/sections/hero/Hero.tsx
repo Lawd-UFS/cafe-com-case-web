@@ -8,7 +8,7 @@ import { TopPanels } from "./TopPanels";
 
 export function Hero() {
   return (
-    <section className="relative flex h-[120vh] w-full items-center overflow-hidden">
+    <section className="relative flex min-h-[max(120vh,64rem)] w-full items-center overflow-hidden">
       <SunflowerTexture />
       <TopPanels />
       <BottomPanels />
