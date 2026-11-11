@@ -232,7 +232,7 @@ export function FaqCard({ item, defaultOpen = false }: FaqCardProps) {
                   </button>
                 </header>
 
-                <div className="flex max-w-[370px] flex-col gap-4 md:gap-5">
+                <div className="mx-auto flex w-full max-w-[370px] flex-col gap-4 md:gap-5">
                   {item.paragraphs.map((paragraph) => (
                     <p
                       key={paragraph}
