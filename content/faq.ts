@@ -1,11 +1,11 @@
-export type FaqCardColor = "tomate" | "areia" | "cafe" | "azul";
+export type FaqCardColor = "tomate" | "cafe" | "cenoura" | "azul";
 
 export type FaqItem = {
   id: string;
   number: string;
   question: string;
   paragraphs: string[];
-  icon: string;
+  icon?: string;
   color: FaqCardColor;
   action: {
     label: string;
@@ -28,27 +28,12 @@ export const faq = {
       color: "tomate",
       action: {
         label: "Saiba mais aqui!",
-        url: "#",
+        url: "/",
       },
     },
     {
       id: "faq-02",
       number: "02",
-      question: "Qual o tema da 13ª edição do Café com Case?",
-      paragraphs: [
-        "A 13ª edição traz como tema central o Direito Humano à Alimentação Adequada, convidando a universidade e o mercado a colocarem reflexões, vivências e saberes à mesa.",
-        "Através de palestras, oficinas e mostras criativas, buscamos conectar a comunicação social aos desafios contemporâneos da sociedade.",
-      ],
-      icon: "/images/illustrations/cutlery.png",
-      color: "areia",
-      action: {
-        label: "Saiba mais aqui!",
-        url: "#",
-      },
-    },
-    {
-      id: "faq-03",
-      number: "03",
       question: "O que é o Prêmio Expresso e quem pode se inscrever?",
       paragraphs: [
         "O Prêmio Expresso é uma premiação vinculada ao Café com Case, criada para incentivar, reconhecer e dar visibilidade às criações autorais dos estudantes regularmente matriculados em universidades e faculdades, públicas ou privadas, do estado de Sergipe.",
@@ -58,7 +43,22 @@ export const faq = {
       color: "cafe",
       action: {
         label: "Conheça a premiação!",
-        url: "https://docs.google.com/forms/d/e/1FAIpQLSfHsG0u9f7iGYkOnXqRTtYcFxF9WR9o3F6tcpWEmnZlFvLJDg/viewform",
+        url: "/#award",
+      },
+    },
+    {
+      id: "faq-03",
+      number: "03",
+      question: "Qual o tema da 13ª edição do Café com Case?",
+      paragraphs: [
+        "Nomeada de “À Mesa”, a 13ª edição do Café com Case tem como tema o Direito Humano à Alimentação Adequada.",
+        "A proposta é refletir sobre como a comunicação constrói narrativas e sentidos sobre a alimentação, considerando aspectos como memória, afeto, cultura e pertencimento. O evento acontece nos dias 1º, 2 e 3 de dezembro de 2026, na Universidade Federal de Sergipe (UFS), ocupando diferentes espaços da Didática VII.",
+      ],
+      icon: "/images/illustrations/cutlery.png",
+      color: "cenoura",
+      action: {
+        label: "Programação completa",
+        url: "https://instagram.com/cafecomcase",
       },
     },
     {
@@ -66,14 +66,14 @@ export const faq = {
       number: "04",
       question: "O que é a Revista VIA?",
       paragraphs: [
-        "A Revista VIA é uma publicação editorial independente produzida pelos estudantes, reunindo ensaios, entrevistas, artigos e coberturas das discussões promovidas no evento.",
-        "Ela atua como um registro crítico e criativo das produções acadêmicas e profissionais que atravessam cada edição do Café com Case.",
+        "A Revista VIA é um projeto interdisciplinar desenvolvido por estudantes do segundo período do curso de Publicidade e Propaganda da Universidade Federal de Sergipe (UFS).",
+        "O periódico reúne artigos científicos produzidos pelos alunos da turma e tem seu lançamento realizado durante o Café com Case. O lançamento da Revista VIA acontece no segundo dia do Café com Case, faz parte da programação do evento e é aberto a todos os participantes.",
       ],
-      icon: "/images/illustrations/pot.png",
+      icon: "/images/illustrations/castanha.png",
       color: "azul",
       action: {
-        label: "Saiba mais aqui!",
-        url: "#",
+        label: "Conheça a Revista VIA",
+        url: "https://instagram.com/revistavia",
       },
     },
   ] satisfies FaqItem[],
