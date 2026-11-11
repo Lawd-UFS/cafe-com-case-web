@@ -1,5 +1,4 @@
 import { useId } from "react";
-
 import { ButtonOrLink, type ButtonOrLinkProps } from "./ButtonOrLink";
 
 type MainButtonProps = ButtonOrLinkProps & {
@@ -17,12 +16,12 @@ export function MainButton({
   children,
   ...props
 }: MainButtonProps) {
-  const filterId = `main-button-${useId()}`;
+  const filterId = `main-button-${useId().replace(/:/g, "")}`;
 
   return (
     <ButtonOrLink
       {...props}
-      className={`group relative inline-flex h-9 w-[177px] shrink-0 items-center justify-center transition-colors duration-200 hover:text-tomate focus-visible:text-tomate md:h-[58px] md:w-[288px] ${colors[color]} ${className}`}
+      className={`group relative inline-flex h-9 min-w-[177px] shrink-0 items-center justify-center px-4 transition-colors duration-200 hover:text-tomate focus-visible:text-tomate md:h-[58px] md:min-w-[288px] md:px-8 ${colors[color]} ${className}`}
     >
       <svg
         aria-hidden
