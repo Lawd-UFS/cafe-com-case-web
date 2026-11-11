@@ -4,6 +4,7 @@ import { MainButton } from "@/components/ui/MainButton";
 import { TextureFilter } from "@/components/ui/TextureFilter";
 import type { FaqItem } from "@/content/faq";
 import { motion } from "motion/react";
+import Image from "next/image";
 import { useEffect, useId, useRef, useState } from "react";
 
 type FaqCardProps = {
@@ -21,15 +22,6 @@ const colorConfig = {
     buttonClass: "!text-amarelo hover:!text-amarelo [&_span]:!text-tomate",
     rotateDeg: -1.5,
   },
-  cafe: {
-    svgFillOpen: "fill-cafe",
-    svgFillHover: "fill-transparent group-hover:fill-cafe",
-    textDefault: "text-areia",
-    textHover: "group-hover:text-cenoura",
-    textOpen: "text-cenoura",
-    buttonClass: "!text-cenoura hover:!text-cenoura [&_span]:!text-cafe",
-    rotateDeg: 1.8,
-  },
   cenoura: {
     svgFillOpen: "fill-cenoura",
     svgFillHover: "fill-transparent group-hover:fill-cenoura",
@@ -38,6 +30,15 @@ const colorConfig = {
     textOpen: "text-azul",
     buttonClass: "!text-azul hover:!text-azul [&_span]:!text-cenoura",
     rotateDeg: -1.7,
+  },
+  cafe: {
+    svgFillOpen: "fill-cafe",
+    svgFillHover: "fill-transparent group-hover:fill-cafe",
+    textDefault: "text-areia",
+    textHover: "group-hover:text-cenoura",
+    textOpen: "text-cenoura",
+    buttonClass: "!text-cenoura hover:!text-cenoura [&_span]:!text-cafe",
+    rotateDeg: 1.8,
   },
   azul: {
     svgFillOpen: "fill-azul",
@@ -85,7 +86,7 @@ export function FaqCard({ item, defaultOpen = false }: FaqCardProps) {
             onClick={openDialog}
             aria-expanded={isOpen}
             aria-controls={`faq-dialog-${item.id}`}
-            className={`relative flex min-h-[170px] w-full flex-col justify-between overflow-visible p-6 text-left transition-colors duration-200 ${config.textDefault} ${config.textHover}`}
+            className={`relative flex min-h-[190px] w-full flex-col justify-between overflow-visible p-6 text-left transition-colors duration-200 md:min-h-[220px] md:p-8 ${config.textDefault} ${config.textHover}`}
           >
             <svg
               aria-hidden
@@ -106,7 +107,7 @@ export function FaqCard({ item, defaultOpen = false }: FaqCardProps) {
               />
             </svg>
 
-            <span className="relative z-10 font-alternates text-lg leading-snug font-bold italic md:text-xl">
+            <span className="relative z-10 font-alternates text-2xl leading-tight font-bold italic md:text-[32px]">
               {item.question}
             </span>
 
@@ -177,26 +178,18 @@ export function FaqCard({ item, defaultOpen = false }: FaqCardProps) {
                 />
               </svg>
 
-              {item.icon && (
-                <div
-                  aria-hidden
-                  className="pointer-events-none absolute inset-0 z-0 flex items-center justify-center overflow-hidden"
-                >
-                  <span
-                    style={{
-                      maskImage: `url(${item.icon})`,
-                      WebkitMaskImage: `url(${item.icon})`,
-                      maskSize: "contain",
-                      WebkitMaskSize: "contain",
-                      maskRepeat: "no-repeat",
-                      WebkitMaskRepeat: "no-repeat",
-                      maskPosition: "center",
-                      WebkitMaskPosition: "center",
-                    }}
-                    className="block size-full shrink-0 scale-[1.45] bg-cafe-escuro opacity-[0.08]"
-                  />
-                </div>
-              )}
+              <div
+                aria-hidden
+                className="pointer-events-none absolute inset-0 z-0 flex items-center justify-center overflow-hidden"
+              >
+                <Image
+                  src="/images/illustrations/brown-shape.png"
+                  alt=""
+                  width={600}
+                  height={600}
+                  className="size-[140%] max-w-none shrink-0 object-contain opacity-20"
+                />
+              </div>
 
               <div className="relative z-10 flex flex-col gap-6 md:gap-8">
                 <header className="flex items-start justify-between gap-4">
@@ -246,7 +239,7 @@ export function FaqCard({ item, defaultOpen = false }: FaqCardProps) {
                         ? "noopener noreferrer"
                         : undefined
                     }
-                    className={`!h-12 !w-auto !min-w-max !px-8 md:!h-14 md:!px-12 [&_span]:!text-base [&_span]:whitespace-nowrap md:[&_span]:!text-lg ${config.buttonClass}`}
+                    className={`whitespace-nowrap ${config.buttonClass}`}
                   >
                     {item.action.label}
                   </MainButton>
