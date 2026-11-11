@@ -4,7 +4,6 @@ import { MainButton } from "@/components/ui/MainButton";
 import { TextureFilter } from "@/components/ui/TextureFilter";
 import type { FaqItem } from "@/content/faq";
 import { motion } from "motion/react";
-import Image from "next/image";
 import { useEffect, useId, useRef, useState } from "react";
 
 type FaqCardProps = {
@@ -21,6 +20,7 @@ const colorConfig = {
     textOpen: "text-amarelo",
     buttonClass: "!text-amarelo hover:!text-amarelo [&_span]:!text-tomate",
     rotateDeg: -1.5,
+    watermarkClass: "bg-black/20",
   },
   cenoura: {
     svgFillOpen: "fill-cenoura",
@@ -30,6 +30,7 @@ const colorConfig = {
     textOpen: "text-azul",
     buttonClass: "!text-azul hover:!text-azul [&_span]:!text-cenoura",
     rotateDeg: -1.7,
+    watermarkClass: "bg-black/20",
   },
   cafe: {
     svgFillOpen: "fill-cafe",
@@ -39,6 +40,7 @@ const colorConfig = {
     textOpen: "text-cenoura",
     buttonClass: "!text-cenoura hover:!text-cenoura [&_span]:!text-cafe",
     rotateDeg: 1.8,
+    watermarkClass: "bg-black/25",
   },
   azul: {
     svgFillOpen: "fill-azul",
@@ -48,6 +50,7 @@ const colorConfig = {
     textOpen: "text-cenoura",
     buttonClass: "!text-cenoura hover:!text-cenoura [&_span]:!text-azul",
     rotateDeg: 1.4,
+    watermarkClass: "bg-black/25",
   },
 };
 
@@ -56,6 +59,7 @@ export function FaqCard({ item, defaultOpen = false }: FaqCardProps) {
   const dialogRef = useRef<HTMLDialogElement>(null);
 
   const uniqueId = useId().replace(/:/g, "");
+  const headingId = `faq-title-${item.id}-${uniqueId}`;
   const filterIdOpen = `faq-open-${item.id}-${uniqueId}`;
   const filterIdClosed = `faq-closed-${item.id}-${uniqueId}`;
   const config = colorConfig[item.color];
@@ -136,13 +140,14 @@ export function FaqCard({ item, defaultOpen = false }: FaqCardProps) {
       <dialog
         id={`faq-dialog-${item.id}`}
         ref={dialogRef}
+        aria-labelledby={headingId}
         onClose={() => setIsOpen(false)}
         onClick={(e) => {
           if (e.target === dialogRef.current) {
             closeDialog();
           }
         }}
-        className="fixed inset-0 z-50 m-auto max-h-[94dvh] max-w-[min(620px,calc(100vw-2rem))] overflow-visible bg-transparent p-0 outline-none backdrop:bg-pepino/80 backdrop:backdrop-blur-sm"
+        className="fixed inset-0 z-50 m-auto max-h-[94dvh] w-full max-w-[min(520px,calc(100vw-2rem))] overflow-visible bg-transparent p-0 outline-none backdrop:bg-[#1C1F1C]/85 backdrop:backdrop-blur-xs"
       >
         {isOpen && (
           <motion.div
@@ -157,11 +162,11 @@ export function FaqCard({ item, defaultOpen = false }: FaqCardProps) {
             className="relative w-full"
           >
             <div
-              className={`relative px-8 pt-8 pb-10 md:px-12 md:pt-10 md:pb-12 ${config.textOpen}`}
+              className={`relative px-8 pt-8 pb-10 md:px-10 md:pt-10 md:pb-12 ${config.textOpen}`}
             >
               <svg
                 aria-hidden
-                viewBox="0 0 620 680"
+                viewBox="0 0 520 680"
                 preserveAspectRatio="none"
                 className="pointer-events-none absolute inset-0 size-full overflow-visible drop-shadow-2xl"
               >
@@ -171,7 +176,7 @@ export function FaqCard({ item, defaultOpen = false }: FaqCardProps) {
                 <rect
                   x="4"
                   y="4"
-                  width="612"
+                  width="512"
                   height="672"
                   filter={`url(#${filterIdOpen})`}
                   className={`stroke-areia stroke-[2.5] ${config.svgFillOpen}`}
@@ -182,18 +187,28 @@ export function FaqCard({ item, defaultOpen = false }: FaqCardProps) {
                 aria-hidden
                 className="pointer-events-none absolute inset-0 z-0 flex items-center justify-center overflow-hidden"
               >
-                <Image
-                  src="/images/illustrations/brown-shape.png"
-                  alt=""
-                  width={600}
-                  height={600}
-                  className="size-[140%] max-w-none shrink-0 object-contain opacity-20"
+                <span
+                  style={{
+                    maskImage: "url(/images/illustrations/brown-shape.png)",
+                    WebkitMaskImage:
+                      "url(/images/illustrations/brown-shape.png)",
+                    maskSize: "contain",
+                    WebkitMaskSize: "contain",
+                    maskRepeat: "no-repeat",
+                    WebkitMaskRepeat: "no-repeat",
+                    maskPosition: "center",
+                    WebkitMaskPosition: "center",
+                  }}
+                  className={`block size-full shrink-0 scale-[1.5] ${config.watermarkClass}`}
                 />
               </div>
 
               <div className="relative z-10 flex flex-col gap-6 md:gap-8">
                 <header className="flex items-start justify-between gap-4">
-                  <h3 className="font-alternates text-2xl leading-tight font-bold italic md:text-[32px]">
+                  <h3
+                    id={headingId}
+                    className="font-alternates text-2xl leading-tight font-bold italic md:text-[32px]"
+                  >
                     {item.question}
                   </h3>
 
@@ -217,11 +232,11 @@ export function FaqCard({ item, defaultOpen = false }: FaqCardProps) {
                   </button>
                 </header>
 
-                <div className="flex flex-col gap-4 md:gap-5">
+                <div className="flex max-w-[370px] flex-col gap-4 md:gap-5">
                   {item.paragraphs.map((paragraph) => (
                     <p
                       key={paragraph}
-                      className="font-sans text-base leading-[1.4] font-normal opacity-95 md:text-[18px]"
+                      className="font-sans text-base leading-[1.4] font-semibold opacity-95 md:text-[18px]"
                     >
                       {paragraph}
                     </p>

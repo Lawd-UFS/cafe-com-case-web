@@ -69,7 +69,7 @@ export const faq = {
         "A Revista VIA é um projeto interdisciplinar desenvolvido por estudantes do segundo período do curso de Publicidade e Propaganda da Universidade Federal de Sergipe (UFS).",
         "O periódico reúne artigos científicos produzidos pelos alunos da turma e tem seu lançamento realizado durante o Café com Case. O lançamento da Revista VIA acontece no segundo dia do Café com Case, faz parte da programação do evento e é aberto a todos os participantes.",
       ],
-      icon: "/images/illustrations/brown-shape.png",
+      icon: "/images/illustrations/cashew.png",
       color: "azul",
       action: {
         label: "Conheça a Revista VIA",
