@@ -20,7 +20,7 @@ export function Supporters() {
         className="pointer-events-none absolute top-[-53px] right-[-200px] z-10 w-[400px] max-w-none md:top-[max(-326px,-16.98vw)] md:right-[max(-279px,-14.53vw)] md:w-[min(960px,50vw)]"
       />
 
-      <div className="relative mx-auto max-w-[1920px] px-6 pt-20 pb-16 md:px-[min(206px,10.73vw)] md:pt-[154px] md:pb-[70px]">
+      <div className="relative mx-auto max-w-[360px] px-[26px] pt-6 pb-11 sm:max-w-[400px] md:max-w-[1920px] md:px-[min(206px,10.73vw)] md:pt-[154px] md:pb-[70px]">
         <div className="md:w-[min(992px,58vw)]">
           <h2
             id="supporters-title"
