@@ -16,7 +16,7 @@ export function Award() {
         className="pointer-events-none absolute inset-0 z-20 bg-[url(/images/textures/sunflower-seeds.png)] bg-size-[1198px_auto] bg-position-[0_-756px] opacity-[0.13] mix-blend-soft-light"
       />
 
-      <div className="block md:hidden">
+      <div className="block lg:hidden">
         <div className="relative mx-auto w-[calc(100%-2rem)] max-w-[360px] pt-0 pb-8 sm:max-w-[400px]">
           <svg
             aria-hidden
@@ -37,7 +37,7 @@ export function Award() {
               width="336"
               height="100%"
               filter="url(#award-card-mobile-texture)"
-              className="fill-cenoura"
+              className="fill-areia"
             />
           </svg>
 
@@ -86,7 +86,7 @@ export function Award() {
                     maskPosition: "center",
                     WebkitMaskPosition: "center",
                   }}
-                  className="block h-9 w-12 -rotate-6 bg-cenoura"
+                  className="block h-9 w-12 -scale-x-100 -rotate-6 bg-areia"
                 />
                 <span
                   style={{
@@ -99,7 +99,7 @@ export function Award() {
                     maskPosition: "center",
                     WebkitMaskPosition: "center",
                   }}
-                  className="block h-9 w-12 rotate-12 bg-cenoura"
+                  className="block h-9 w-12 -scale-x-100 rotate-12 bg-areia"
                 />
                 <span
                   style={{
@@ -119,7 +119,7 @@ export function Award() {
           </header>
 
           <div className="relative z-10 px-7 pt-10 pb-8 text-cafe">
-            <div className="mb-4 flex items-center gap-2.5">
+            <div className="mb-6 flex items-start gap-2.5">
               <span
                 aria-hidden
                 style={{
@@ -132,20 +132,20 @@ export function Award() {
                   maskPosition: "center",
                   WebkitMaskPosition: "center",
                 }}
-                className="block size-5 shrink-0 bg-cafe"
+                className="mt-0.5 block size-5 shrink-0 bg-cafe"
               />
-              <p className="font-alternates text-[16px] leading-snug font-medium text-cafe italic">
-                {award.subtitle}
-              </p>
+              <div className="flex flex-col">
+                <p className="mb-4 font-alternates text-[16px] leading-snug font-medium text-cafe italic">
+                  {award.subtitle}
+                </p>
+                <p className="mb-3 font-sans text-[12px] leading-[1.4] font-semibold text-cafe">
+                  {award.firstParagraph}
+                </p>
+                <p className="font-sans text-[12px] leading-[1.4] font-semibold text-cafe">
+                  {award.secondParagraph}
+                </p>
+              </div>
             </div>
-
-            <p className="mb-3 font-sans text-[12px] leading-[1.4] font-semibold text-cafe">
-              {award.firstParagraph}
-            </p>
-
-            <p className="mb-6 font-sans text-[12px] leading-[1.4] font-semibold text-cafe">
-              {award.secondParagraph}
-            </p>
 
             <footer className="flex justify-center">
               <MainButton
@@ -153,7 +153,6 @@ export function Award() {
                 href={award.button.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="!h-9 !min-w-[155px] !px-6 [&_span]:!text-[14.77px] [&_span]:!font-semibold [&_span]:!text-cenoura"
               >
                 {award.button.text}
               </MainButton>
@@ -163,14 +162,14 @@ export function Award() {
 
         <Reveal delay={0.15}>
           <div className="mx-auto max-w-[348px] px-4 pt-6 pb-14 sm:max-w-[400px]">
-            <p className="font-alternates text-[16px] leading-snug font-medium text-cenoura italic">
+            <p className="font-alternates text-[16px] leading-snug font-medium text-areia italic">
               {award.closingPhrase}
             </p>
           </div>
         </Reveal>
       </div>
 
-      <div className="hidden md:block">
+      <div className="hidden lg:block">
         <div className="relative z-10 mx-auto max-w-[1920px] px-6 pb-32 md:pr-10 md:pb-44 md:pl-20 lg:pr-16 lg:pl-32">
           <div className="relative -mt-16 md:-mt-24 lg:-mt-32">
             <div className="relative z-30 mb-[-55px] pl-24 sm:pl-32 md:mb-[-80px] md:pl-44 lg:pl-56">
