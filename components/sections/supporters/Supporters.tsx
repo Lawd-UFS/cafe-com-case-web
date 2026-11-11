@@ -24,18 +24,18 @@ export function Supporters() {
         <div className="md:w-[min(992px,58vw)]">
           <h2
             id="supporters-title"
-            className="font-alternates text-[32px] leading-[1.194] font-black [filter:url(#supporters-title-texture)] md:text-[clamp(36px,2.5vw,48px)]"
+            className="max-w-[160px] font-alternates text-2xl leading-[1.194] font-black [filter:url(#supporters-title-texture)] md:max-w-none md:text-[clamp(36px,2.5vw,48px)]"
           >
             {supporters.title}
           </h2>
-          <p className="mt-4 font-alternates text-xl leading-[1.194] font-medium italic md:text-[clamp(24px,1.667vw,32px)]">
+          <p className="mt-6 max-w-[207px] font-alternates text-base leading-[1.194] font-medium italic md:mt-4 md:max-w-none md:text-[clamp(24px,1.667vw,32px)]">
             {supporters.subtitle}
           </p>
-          <div className="mt-8 grid gap-4 md:mt-[63px] lg:grid-cols-2 lg:gap-x-[39px]">
+          <div className="mt-5 grid max-w-[248px] gap-4 md:mt-[63px] md:max-w-none lg:grid-cols-2 lg:gap-x-[39px]">
             {supporters.paragraphs.map((paragraph) => (
               <p
                 key={paragraph}
-                className="text-sm leading-[1.35] font-semibold md:text-[clamp(16px,1.042vw,20px)] lg:max-w-[430px]"
+                className="text-xs leading-[1.35] font-semibold md:text-[clamp(16px,1.042vw,20px)] lg:max-w-[430px]"
               >
                 {paragraph}
               </p>
