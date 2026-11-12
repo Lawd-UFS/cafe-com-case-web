@@ -440,7 +440,7 @@ export function FaqCard({
                       maskPosition: "center",
                       WebkitMaskPosition: "center",
                     }}
-                    className={`block size-full shrink-0 scale-[1.5] ${config.watermarkClass}`}
+                    className={`block size-full shrink-0 -scale-x-150 scale-y-150 ${config.watermarkClass}`}
                   />
                 </div>
 
