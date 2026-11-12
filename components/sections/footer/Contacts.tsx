@@ -28,7 +28,7 @@ export function Contacts({ className = "" }: ContactsProps) {
   return (
     <section
       aria-labelledby="contacts-title"
-      className={`flex flex-col gap-4 lg:flex-row lg:items-start lg:gap-[calc(36em/32)] ${className}`}
+      className={`flex flex-col gap-5 lg:flex-row lg:items-start lg:gap-[calc(36em/32)] ${className}`}
     >
       <h2
         id="contacts-title"
@@ -44,11 +44,11 @@ export function Contacts({ className = "" }: ContactsProps) {
                 href={href}
                 target={external ? "_blank" : undefined}
                 rel={external ? "noreferrer" : undefined}
-                className="inline-flex items-center gap-[calc(9em/32)] text-cenoura transition-opacity duration-200 hover:opacity-50 focus-visible:opacity-50"
+                className="inline-flex items-center gap-2 text-cenoura transition-opacity duration-200 hover:opacity-50 focus-visible:opacity-50 lg:gap-[calc(9em/32)]"
               >
                 <Icon className="size-[calc(48em/32)] shrink-0" />
                 <span
-                  className={`font-alternates text-[calc(20em/32)] leading-none font-semibold ${underline ? "underline" : ""}`}
+                  className={`font-alternates text-xs leading-none font-semibold lg:text-[calc(20em/32)] ${underline ? "underline" : ""}`}
                 >
                   <span className="sr-only">{name}: </span>
                   {label}
