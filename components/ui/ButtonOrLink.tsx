@@ -8,6 +8,10 @@ export type ButtonOrLinkProps = LinkProps | ButtonProps;
 
 export function ButtonOrLink(props: ButtonOrLinkProps) {
   if (props.href !== undefined) {
+    if (props.href.startsWith("#")) {
+      return <a {...(props as ComponentProps<"a">)} />;
+    }
+
     return <Link {...props} />;
   }
 
