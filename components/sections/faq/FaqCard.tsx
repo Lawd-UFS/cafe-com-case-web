@@ -286,7 +286,7 @@ export function FaqCard({
             <div
               ref={frontRef}
               inert={showMore}
-              className={`relative self-center px-7 pt-8 pb-9 transition-opacity duration-300 [grid-area:1/1] backface-hidden lg:px-10 lg:pt-10 lg:pb-12 ${config.textOpen} ${showMore ? "opacity-0" : ""}`}
+              className={`relative flex max-h-[94dvh] flex-col self-center px-7 pt-8 pb-9 transition-opacity duration-300 [grid-area:1/1] backface-hidden lg:px-10 lg:pt-10 lg:pb-12 ${config.textOpen} ${showMore ? "opacity-0" : ""}`}
             >
               <svg
                 aria-hidden
@@ -327,7 +327,7 @@ export function FaqCard({
                 />
               </div>
 
-              <div className="relative z-10 flex flex-col gap-5 lg:gap-8">
+              <div className="relative z-10 flex min-h-0 flex-col gap-5 lg:gap-8">
                 <header className="flex items-start justify-between gap-4">
                   <h3
                     id={headingId}
@@ -356,16 +356,18 @@ export function FaqCard({
                   </button>
                 </header>
 
-                <div className="mx-auto flex w-full max-w-[300px] flex-col gap-3.5 lg:max-w-[370px] lg:gap-5">
-                  {item.paragraphs.map((paragraph) => (
-                    <p
-                      key={paragraph}
-                      className="font-sans text-[14px] leading-[1.4] font-semibold opacity-95 lg:text-[18px]"
-                    >
-                      {paragraph}
-                    </p>
-                  ))}
-                </div>
+                <FadeScroll className="mx-auto w-full max-w-[300px] lg:max-w-[370px]">
+                  <div className="flex flex-col gap-3.5 lg:gap-5">
+                    {item.paragraphs.map((paragraph) => (
+                      <p
+                        key={paragraph}
+                        className="font-sans text-[14px] leading-[1.4] font-semibold opacity-95 lg:text-[18px]"
+                      >
+                        {paragraph}
+                      </p>
+                    ))}
+                  </div>
+                </FadeScroll>
 
                 <footer className="mt-2 flex justify-center lg:justify-end">
                   {"url" in item.action ? (
