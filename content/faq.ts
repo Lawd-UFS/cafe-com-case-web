@@ -151,6 +151,10 @@ export const faq = {
               "O Prêmio Expresso recebe trabalhos acadêmicos nas categorias de Arte Digital, Audiovisual, Colagem, Fotografia, Gravura, Mini Campanha e Texto Curto. Além da disputa tradicional, os trabalhos inscritos também têm a chance de concorrer à modalidade especial Prêmio de Impacto Social.",
               "Todas as produções devem estar relacionadas ao tema desta edição, Direito Humano à Alimentação Adequada, e seguir as orientações estabelecidas no edital.",
             ],
+            action: {
+              label: "Veja o regulamento",
+              url: "https://drive.google.com/file/d/1HoN4hgtWivKaH1TEyY1onRCKI3dwQaGN/view",
+            },
           },
           {
             id: "signup",
@@ -167,6 +171,10 @@ export const faq = {
               "A votação popular é a segunda fase do processo de avaliação do prêmio. Nessa etapa, o público poderá participar da escolha de um dos cinco finalistas de cada categoria, através da sua interação pelo Instagram oficial do Prêmio Expresso.",
               "A obra com maior número de curtidas em cada categoria se classifica para a fase final da premiação.",
             ],
+            action: {
+              label: "Perfil do Prêmio",
+              url: "https://www.instagram.com/premioexpressoo",
+            },
           },
           {
             id: "results",
