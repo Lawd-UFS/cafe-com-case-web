@@ -292,7 +292,7 @@ export function FaqCard({
                 aria-hidden
                 viewBox="0 0 520 680"
                 preserveAspectRatio="none"
-                className="pointer-events-none absolute inset-0 size-full overflow-visible drop-shadow-2xl"
+                className="pointer-events-none absolute inset-0 size-full overflow-visible drop-shadow-2xl will-change-transform"
               >
                 <defs>
                   <TextureFilter id={filterIdOpen} radius={4} size={8.5} />
@@ -409,7 +409,7 @@ export function FaqCard({
                   aria-hidden
                   viewBox="0 0 520 680"
                   preserveAspectRatio="none"
-                  className="pointer-events-none absolute inset-0 size-full overflow-visible drop-shadow-2xl"
+                  className="pointer-events-none absolute inset-0 size-full overflow-visible drop-shadow-2xl will-change-transform"
                 >
                   <defs>
                     <TextureFilter id={filterIdMore} radius={4} size={8.5} />
