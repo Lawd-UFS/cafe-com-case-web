@@ -7,7 +7,7 @@ import { Supporters } from "@/components/sections/supporters/Supporters";
 export default function Home() {
   return (
     <>
-      <main>
+      <main className="overflow-x-clip bg-laranja">
         <Hero />
         <Edition />
         <Award />

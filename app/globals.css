@@ -6,6 +6,7 @@
   --color-cafe-escuro: #422911;
   --color-cenoura: #f2b15a;
   --color-areia: #ffbb5c;
+  --color-damasco: #ffb353;
   --color-amarelo: #ffb700;
   --color-laranja: #ff6417;
   --color-tomate: #af0101;
@@ -16,4 +17,22 @@
   --font-sans: var(--font-montserrat);
   --font-alternates: var(--font-montserrat-alternates);
   --font-gluten: var(--font-gluten);
+  --font-nunito: var(--font-nunito);
+}
+
+@layer base {
+  /* Textura global translúcida (fava beans) sobre todos os componentes. */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 50;
+    background: url("/images/textures/fava-beans.png") center / 23% auto repeat;
+    opacity: 0.06;
+    pointer-events: none;
+  }
+}
+
+@utility overflow-b-clip {
+  clip-path: inset(-100% -100% -20% -100%);
 }
