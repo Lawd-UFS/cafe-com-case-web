@@ -95,7 +95,7 @@ export function FaqCard({
             onClick={openDialog}
             aria-expanded={isOpen}
             aria-controls={`faq-dialog-${item.id}`}
-            className={`relative flex h-full w-full flex-col justify-between overflow-visible p-6 text-left transition-colors duration-200 md:p-8 ${config.textDefault} ${config.textHover}`}
+            className={`relative flex h-full w-full flex-col justify-between overflow-visible p-6 text-left transition-colors duration-200 sm:p-7 lg:p-8 ${config.textDefault} ${config.textHover}`}
           >
             <svg
               aria-hidden
@@ -116,7 +116,7 @@ export function FaqCard({
               />
             </svg>
 
-            <span className="relative z-10 font-alternates text-2xl leading-tight font-bold italic md:text-[32px]">
+            <span className="relative z-10 font-alternates text-[20px] leading-tight font-bold italic lg:text-[32px]">
               {item.question}
             </span>
 
@@ -134,7 +134,7 @@ export function FaqCard({
                     maskPosition: "center",
                     WebkitMaskPosition: "center",
                   }}
-                  className="block size-8 bg-current transition-colors duration-200 md:size-9"
+                  className="block size-8 bg-current transition-colors duration-200 lg:size-9"
                 />
               </span>
             )}
@@ -152,7 +152,7 @@ export function FaqCard({
             closeDialog();
           }
         }}
-        className="fixed inset-0 z-50 m-auto max-h-[94dvh] w-full max-w-[min(520px,calc(100vw-2rem))] overflow-visible bg-transparent p-0 outline-none backdrop:bg-[#1C1F1C]/85 backdrop:backdrop-blur-xs"
+        className="fixed inset-0 z-50 m-auto max-h-[94dvh] w-full max-w-[min(374px,calc(100vw-2.5rem))] overflow-visible bg-transparent p-0 outline-none backdrop:bg-[#1C1F1C]/85 backdrop:backdrop-blur-xs lg:max-w-[520px]"
       >
         {isOpen && (
           <motion.div
@@ -167,7 +167,7 @@ export function FaqCard({
             className="relative w-full"
           >
             <div
-              className={`relative px-8 pt-8 pb-10 md:px-10 md:pt-10 md:pb-12 ${config.textOpen}`}
+              className={`relative px-7 pt-8 pb-9 lg:px-10 lg:pt-10 lg:pb-12 ${config.textOpen}`}
             >
               <svg
                 aria-hidden
@@ -208,11 +208,11 @@ export function FaqCard({
                 />
               </div>
 
-              <div className="relative z-10 flex flex-col gap-6 md:gap-8">
+              <div className="relative z-10 flex flex-col gap-5 lg:gap-8">
                 <header className="flex items-start justify-between gap-4">
                   <h3
                     id={headingId}
-                    className="font-alternates text-2xl leading-tight font-bold italic md:text-[32px]"
+                    className="font-alternates text-[24px] leading-tight font-bold italic lg:text-[32px]"
                   >
                     {item.question}
                   </h3>
@@ -221,7 +221,7 @@ export function FaqCard({
                     type="button"
                     onClick={closeDialog}
                     aria-label={`Fechar pergunta ${item.number}`}
-                    className="group flex size-9 shrink-0 items-center justify-center transition-transform hover:scale-110 active:scale-95"
+                    className="group flex size-8 shrink-0 items-center justify-center transition-transform hover:scale-110 active:scale-95 lg:size-9"
                   >
                     <svg
                       aria-hidden
@@ -237,18 +237,18 @@ export function FaqCard({
                   </button>
                 </header>
 
-                <div className="mx-auto flex w-full max-w-[370px] flex-col gap-4 md:gap-5">
+                <div className="mx-auto flex w-full max-w-[300px] flex-col gap-3.5 lg:max-w-[370px] lg:gap-5">
                   {item.paragraphs.map((paragraph) => (
                     <p
                       key={paragraph}
-                      className="font-sans text-base leading-[1.4] font-semibold opacity-95 md:text-[18px]"
+                      className="font-sans text-[14px] leading-[1.4] font-semibold opacity-95 lg:text-[18px]"
                     >
                       {paragraph}
                     </p>
                   ))}
                 </div>
 
-                <footer className="mt-2 flex justify-end">
+                <footer className="mt-2 flex justify-center lg:justify-end">
                   <MainButton
                     href={item.action.url}
                     target={
@@ -259,7 +259,7 @@ export function FaqCard({
                         ? "noopener noreferrer"
                         : undefined
                     }
-                    className={`whitespace-nowrap ${config.buttonClass}`}
+                    className={`whitespace-nowrap [&_span]:text-[17px] [&_span]:font-semibold lg:[&_span]:text-2xl ${config.buttonClass}`}
                   >
                     {item.action.label}
                   </MainButton>
