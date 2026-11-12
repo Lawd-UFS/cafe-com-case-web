@@ -14,7 +14,40 @@ export type FaqItem = {
 };
 
 export const faq = {
-  title: "Perguntas Frequentes",
+  title: "FAQ",
+  backLink: {
+    label: "Voltar",
+    href: "/",
+  },
+  contacts: {
+    title: {
+      first: "Canais de",
+      second: "contato",
+    },
+    subtitle: "Não encontrou a resposta que procurava?",
+    description:
+      "Entre em contato com a equipe do Café com Case pelos canais oficiais e tira todas as suas dúvidas!",
+    items: [
+      {
+        id: "instagram",
+        label: "Instagram",
+        handle: "@cafecomcase",
+        url: "https://instagram.com/cafecomcase",
+      },
+      {
+        id: "whatsapp",
+        label: "WhatsApp",
+        handle: "+55 79 92000-4383",
+        url: "https://wa.me/5579920004383",
+      },
+      {
+        id: "email",
+        label: "E-mail",
+        handle: "cafecomcaseamesa@gmail.com",
+        url: "mailto:cafecomcaseamesa@gmail.com",
+      },
+    ],
+  },
   items: [
     {
       id: "faq-01",

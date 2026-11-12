@@ -9,6 +9,7 @@ import { useEffect, useId, useRef, useState } from "react";
 type FaqCardProps = {
   item: FaqItem;
   defaultOpen?: boolean;
+  className?: string;
 };
 
 const colorConfig = {
@@ -54,7 +55,11 @@ const colorConfig = {
   },
 };
 
-export function FaqCard({ item, defaultOpen = false }: FaqCardProps) {
+export function FaqCard({
+  item,
+  defaultOpen = false,
+  className = "",
+}: FaqCardProps) {
   const [isOpen, setIsOpen] = useState(defaultOpen);
   const dialogRef = useRef<HTMLDialogElement>(null);
 
@@ -83,18 +88,18 @@ export function FaqCard({ item, defaultOpen = false }: FaqCardProps) {
 
   return (
     <>
-      <article className="group relative w-full max-w-[420px]">
-        <h3 className="w-full">
+      <article className={`group relative flex w-full flex-col ${className}`}>
+        <h3 className="h-full w-full">
           <button
             type="button"
             onClick={openDialog}
             aria-expanded={isOpen}
             aria-controls={`faq-dialog-${item.id}`}
-            className={`relative flex min-h-[190px] w-full flex-col justify-between overflow-visible p-6 text-left transition-colors duration-200 md:min-h-[220px] md:p-8 ${config.textDefault} ${config.textHover}`}
+            className={`relative flex h-full w-full flex-col justify-between overflow-visible p-6 text-left transition-colors duration-200 md:p-8 ${config.textDefault} ${config.textHover}`}
           >
             <svg
               aria-hidden
-              viewBox="0 0 420 170"
+              viewBox="0 0 500 300"
               preserveAspectRatio="none"
               className="pointer-events-none absolute inset-0 size-full overflow-visible"
             >
@@ -102,12 +107,12 @@ export function FaqCard({ item, defaultOpen = false }: FaqCardProps) {
                 <TextureFilter id={filterIdClosed} radius={3.5} size={9} />
               </defs>
               <rect
-                x="4"
-                y="4"
-                width="412"
-                height="162"
+                x="2"
+                y="2"
+                width="496"
+                height="296"
                 filter={`url(#${filterIdClosed})`}
-                className={`stroke-areia stroke-[2.5] transition-colors duration-200 ${config.svgFillHover}`}
+                className={`stroke-areia stroke-[1.2] transition-colors duration-200 ${config.svgFillHover}`}
               />
             </svg>
 
