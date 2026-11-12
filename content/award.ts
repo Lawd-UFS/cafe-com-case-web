@@ -3,6 +3,7 @@ export const award = {
     first: "Prêmio",
     second: "Expresso",
   },
+  subtitle: "Confira o regulamento completo e inscreva-se!",
   firstParagraph:
     "O Prêmio Expresso é a premiação do Café com Case criada para incentivar, reconhecer e dar visibilidade às criações autorais de estudantes do ensino superior de Sergipe.",
   secondParagraph:
