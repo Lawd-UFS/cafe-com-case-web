@@ -83,9 +83,9 @@ export function Faq() {
         </div>
       </header>
 
-      <div className="relative z-10 mx-auto mt-8 flex w-full max-w-[1840px] flex-1 flex-col items-center justify-between gap-10 lg:mt-0 lg:flex-row lg:items-center lg:gap-8 lg:pr-0 lg:pl-12 xl:pl-14 2xl:pl-16">
-        <Reveal className="flex w-full px-11 sm:px-14 lg:flex-1 lg:items-center lg:justify-start lg:self-center lg:px-0">
-          <div className="mx-auto grid w-full max-w-[320px] grid-cols-1 gap-0 sm:max-w-[400px] lg:mx-0 lg:ml-5 lg:h-[620px] lg:max-w-[1068px] lg:grid-cols-2 lg:grid-rows-[46fr_22fr_32fr]">
+      <div className="relative z-10 mx-auto mt-8 flex w-full max-w-[1840px] flex-1 flex-col items-center justify-between gap-12 lg:mt-0 lg:px-10 xl:flex-row xl:items-center xl:gap-8 xl:pr-0 xl:pl-14 2xl:pl-16">
+        <Reveal className="flex w-full px-11 sm:px-14 lg:px-0 xl:flex-1 xl:items-center xl:justify-start xl:self-center">
+          <div className="mx-auto grid w-full max-w-[320px] grid-cols-1 gap-0 sm:max-w-[400px] lg:h-[620px] lg:max-w-[1068px] lg:grid-cols-2 lg:grid-rows-[46fr_22fr_32fr] xl:mx-0 xl:ml-5">
             <FaqCard
               item={faq.items[0]}
               className="min-h-[175px] lg:col-start-1 lg:row-span-1 lg:row-start-1 lg:h-full"
@@ -107,11 +107,11 @@ export function Faq() {
 
         <Reveal
           delay={0.15}
-          className="w-full shrink-0 pl-4 sm:px-8 lg:w-auto lg:px-0"
+          className="w-full shrink-0 pl-4 sm:px-8 lg:px-0 xl:w-auto"
         >
           <aside
             aria-labelledby="faq-contacts-title"
-            className="relative z-20 ml-auto flex min-h-[480px] w-full max-w-[500px] origin-bottom-right rotate-[1.8deg] flex-col justify-between overflow-visible px-8 pt-10 pb-20 text-pepino sm:mx-auto sm:min-h-[540px] sm:px-12 lg:mx-0 lg:-mr-10 lg:min-h-[760px] lg:w-[460px] lg:max-w-none lg:px-12 lg:pt-14 lg:pb-16 xl:min-h-[820px] xl:w-[634px] xl:px-14 2xl:-mr-6"
+            className="relative z-20 ml-auto flex min-h-[480px] w-full max-w-[500px] origin-bottom-right rotate-[1.8deg] flex-col justify-between overflow-visible px-8 pt-10 pb-20 text-pepino sm:mx-auto sm:min-h-[540px] sm:px-12 md:px-14 lg:min-h-[680px] lg:max-w-[634px] lg:pt-12 lg:pb-16 xl:mx-0 xl:-mr-10 xl:min-h-[820px] xl:w-[634px] xl:max-w-none xl:px-14 xl:pt-14 2xl:-mr-6"
           >
             <svg
               aria-hidden
