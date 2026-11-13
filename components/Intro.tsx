@@ -34,7 +34,7 @@ export function Intro({ children }: { children: React.ReactNode }) {
         playsInline
         onEnded={() => setDone(true)}
         onError={() => setDone(true)}
-        className="size-full object-contain"
+        className="size-full object-contain mix-blend-screen"
       />
       {muted && (
         <button
