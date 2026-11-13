@@ -63,104 +63,113 @@ export function Award() {
             </svg>
 
             <div className="relative z-10 flex items-start justify-between px-5 pt-5">
-              <h2
-                id="award-title-mobile"
-                className="max-w-[210px] font-alternates text-[40px] leading-[0.95] font-black tracking-tight text-areia [filter:url(#award-title-texture)]"
-              >
-                <span className="block">{award.title.first} </span>
-                <span className="block">{award.title.second}</span>
-              </h2>
+              <Reveal>
+                <h2
+                  id="award-title-mobile"
+                  className="max-w-[210px] font-alternates text-[40px] leading-[0.95] font-black tracking-tight text-areia [filter:url(#award-title-texture)]"
+                >
+                  <span className="block">{award.title.first} </span>
+                  <span className="block">{award.title.second}</span>
+                </h2>
+              </Reveal>
 
-              <div
-                aria-hidden
-                className="flex flex-col items-center gap-2 pt-1 pr-1"
-              >
-                <span
-                  style={{
-                    maskImage: "url(/images/illustrations/cup.png)",
-                    WebkitMaskImage: "url(/images/illustrations/cup.png)",
-                    maskSize: "contain",
-                    WebkitMaskSize: "contain",
-                    maskRepeat: "no-repeat",
-                    WebkitMaskRepeat: "no-repeat",
-                    maskPosition: "center",
-                    WebkitMaskPosition: "center",
-                  }}
-                  className="block h-9 w-12 -scale-x-100 -rotate-6 bg-areia"
-                />
-                <span
-                  style={{
-                    maskImage: "url(/images/illustrations/cup.png)",
-                    WebkitMaskImage: "url(/images/illustrations/cup.png)",
-                    maskSize: "contain",
-                    WebkitMaskSize: "contain",
-                    maskRepeat: "no-repeat",
-                    WebkitMaskRepeat: "no-repeat",
-                    maskPosition: "center",
-                    WebkitMaskPosition: "center",
-                  }}
-                  className="block h-9 w-12 -scale-x-100 rotate-12 bg-areia"
-                />
-                <span
-                  style={{
-                    maskImage: "url(/images/illustrations/cup.png)",
-                    WebkitMaskImage: "url(/images/illustrations/cup.png)",
-                    maskSize: "contain",
-                    WebkitMaskSize: "contain",
-                    maskRepeat: "no-repeat",
-                    WebkitMaskRepeat: "no-repeat",
-                    maskPosition: "center",
-                    WebkitMaskPosition: "center",
-                  }}
-                  className="block h-9 w-12 -rotate-6 bg-cafe"
-                />
-              </div>
+              <Reveal delay={0.1}>
+                <div
+                  aria-hidden
+                  className="flex flex-col items-center gap-2 pt-1 pr-1"
+                >
+                  <span
+                    style={{
+                      maskImage: "url(/images/illustrations/cup.png)",
+                      WebkitMaskImage: "url(/images/illustrations/cup.png)",
+                      maskSize: "contain",
+                      WebkitMaskSize: "contain",
+                      maskRepeat: "no-repeat",
+                      WebkitMaskRepeat: "no-repeat",
+                      maskPosition: "center",
+                      WebkitMaskPosition: "center",
+                    }}
+                    className="block h-9 w-12 -scale-x-100 -rotate-6 bg-areia"
+                  />
+                  <span
+                    style={{
+                      maskImage: "url(/images/illustrations/cup.png)",
+                      WebkitMaskImage: "url(/images/illustrations/cup.png)",
+                      maskSize: "contain",
+                      WebkitMaskSize: "contain",
+                      maskRepeat: "no-repeat",
+                      WebkitMaskRepeat: "no-repeat",
+                      maskPosition: "center",
+                      WebkitMaskPosition: "center",
+                    }}
+                    className="block h-9 w-12 -scale-x-100 rotate-12 bg-areia"
+                  />
+                  <span
+                    style={{
+                      maskImage: "url(/images/illustrations/cup.png)",
+                      WebkitMaskImage: "url(/images/illustrations/cup.png)",
+                      maskSize: "contain",
+                      WebkitMaskSize: "contain",
+                      maskRepeat: "no-repeat",
+                      WebkitMaskRepeat: "no-repeat",
+                      maskPosition: "center",
+                      WebkitMaskPosition: "center",
+                    }}
+                    className="block h-9 w-12 -rotate-6 bg-cafe"
+                  />
+                </div>
+              </Reveal>
             </div>
           </header>
 
           <div className="relative z-10 px-7 pt-10 pb-8 text-cafe">
-            <div className="mb-6 flex items-start gap-2.5">
-              <span
-                aria-hidden
-                style={{
-                  maskImage: "url(/images/illustrations/brown-shape.png)",
-                  WebkitMaskImage: "url(/images/illustrations/brown-shape.png)",
-                  maskSize: "contain",
-                  WebkitMaskSize: "contain",
-                  maskRepeat: "no-repeat",
-                  WebkitMaskRepeat: "no-repeat",
-                  maskPosition: "center",
-                  WebkitMaskPosition: "center",
-                }}
-                className="mt-0.5 block size-5 shrink-0 bg-cafe"
-              />
-              <div className="flex flex-col">
-                <p className="mb-4 font-alternates text-[16px] leading-snug font-medium text-cafe italic">
-                  {award.subtitle}
-                </p>
-                <p className="mb-3 font-sans text-[12px] leading-[1.4] font-semibold text-cafe">
-                  {award.firstParagraph}
-                </p>
-                <p className="font-sans text-[12px] leading-[1.4] font-semibold text-cafe">
-                  {award.secondParagraph}
-                </p>
+            <Reveal delay={0.15}>
+              <div className="mb-6 flex items-start gap-2.5">
+                <span
+                  aria-hidden
+                  style={{
+                    maskImage: "url(/images/illustrations/brown-shape.png)",
+                    WebkitMaskImage:
+                      "url(/images/illustrations/brown-shape.png)",
+                    maskSize: "contain",
+                    WebkitMaskSize: "contain",
+                    maskRepeat: "no-repeat",
+                    WebkitMaskRepeat: "no-repeat",
+                    maskPosition: "center",
+                    WebkitMaskPosition: "center",
+                  }}
+                  className="mt-0.5 block size-5 shrink-0 bg-cafe"
+                />
+                <div className="flex flex-col">
+                  <p className="mb-4 font-alternates text-[16px] leading-snug font-medium text-cafe italic">
+                    {award.subtitle}
+                  </p>
+                  <p className="mb-3 font-sans text-[12px] leading-[1.4] font-semibold text-cafe">
+                    {award.firstParagraph}
+                  </p>
+                  <p className="font-sans text-[12px] leading-[1.4] font-semibold text-cafe">
+                    {award.secondParagraph}
+                  </p>
+                </div>
               </div>
-            </div>
+            </Reveal>
 
-            <footer className="flex justify-center">
-              <MainButton
-                color="cafe"
-                href={award.button.url}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {award.button.text}
-              </MainButton>
-            </footer>
+            <Reveal delay={0.2}>
+              <footer className="flex justify-center">
+                <MainButton
+                  color="cafe"
+                  href={award.button.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {award.button.text}
+                </MainButton>
+              </footer>
+            </Reveal>
           </div>
         </div>
 
-        <Reveal delay={0.15}>
+        <Reveal delay={0.25}>
           <div className="mx-auto max-w-[348px] px-4 pt-6 pb-14 sm:max-w-[400px]">
             <p className="font-alternates text-[16px] leading-snug font-medium text-areia italic">
               {award.closingPhrase}
@@ -246,15 +255,28 @@ export function Award() {
                     />
 
                     <div className="relative z-10 flex flex-col items-start justify-between gap-6 md:gap-7 lg:flex-row lg:items-start lg:gap-8 xl:gap-8">
-                      <p className="w-full flex-1 font-sans text-base leading-[1.35] font-semibold text-cafe md:text-[20px] lg:max-w-[410px]">
-                        {award.firstParagraph}
-                      </p>
+                      <Reveal
+                        delay={0.2}
+                        className="w-full flex-1 lg:max-w-[410px]"
+                      >
+                        <p className="font-sans text-base leading-[1.35] font-semibold text-cafe md:text-[20px]">
+                          {award.firstParagraph}
+                        </p>
+                      </Reveal>
 
-                      <p className="w-full flex-[1.35] font-sans text-base leading-[1.35] font-semibold text-cafe md:text-[20px] lg:max-w-[570px]">
-                        {award.secondParagraph}
-                      </p>
+                      <Reveal
+                        delay={0.25}
+                        className="w-full flex-[1.35] lg:max-w-[570px]"
+                      >
+                        <p className="font-sans text-base leading-[1.35] font-semibold text-cafe md:text-[20px]">
+                          {award.secondParagraph}
+                        </p>
+                      </Reveal>
 
-                      <div className="flex shrink-0 items-start justify-center lg:justify-end">
+                      <Reveal
+                        delay={0.3}
+                        className="flex shrink-0 items-start justify-center lg:justify-end"
+                      >
                         <MainButton
                           color="cafe"
                           href={award.button.url}
@@ -263,7 +285,7 @@ export function Award() {
                         >
                           {award.button.text}
                         </MainButton>
-                      </div>
+                      </Reveal>
                     </div>
                   </div>
                 </Reveal>
@@ -271,7 +293,7 @@ export function Award() {
             </div>
           </div>
 
-          <Reveal delay={0.25}>
+          <Reveal delay={0.35}>
             <div className="mt-16 max-w-4xl md:mt-24">
               <p className="font-alternates text-xl leading-snug font-medium text-cenoura italic md:text-[32px]">
                 {award.closingPhrase}
