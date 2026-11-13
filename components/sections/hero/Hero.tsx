@@ -8,11 +8,11 @@ import { TopPanels } from "./TopPanels";
 
 export function Hero() {
   return (
-    <section className="relative flex min-h-[max(120vh,64rem)] w-full items-center overflow-hidden lg:min-h-[61.25vw]">
+    <section className="relative flex min-h-svh w-full items-center justify-center overflow-x-clip pt-28 pb-10 md:min-h-[max(120vh,64rem)] md:justify-start md:overflow-hidden md:py-0 lg:min-h-[61.25vw]">
       <SunflowerTexture />
       <TopPanels />
       <BottomPanels />
-      <div className="absolute top-10 right-0 z-70">
+      <div className="absolute top-6 right-4 z-30 md:top-10 md:right-0 md:z-70">
         <BigButton href="/faq" aria-label="FAQ">
           <span className="block size-full text-pepino group-hover:text-areia group-focus-visible:text-areia">
             <FaqLettering />
