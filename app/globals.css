@@ -36,3 +36,55 @@
 @utility overflow-b-clip {
   clip-path: inset(-100% -100% -20% -100%);
 }
+
+@keyframes hero-pop-in {
+  from {
+    opacity: 0;
+    scale: 0;
+  }
+  to {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+@keyframes hero-fade-up {
+  from {
+    opacity: 0;
+    translate: 0 1rem;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+@keyframes hero-type {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@utility animate-hero-logo {
+  animation: hero-pop-in 0.65s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@utility animate-hero-item {
+  animation: hero-fade-up 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* 16 passos = uma letra por passo, como numa máquina de escrever. */
+@utility animate-hero-type {
+  animation: hero-type 0.55s steps(16, end) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-hero-logo,
+  .animate-hero-item,
+  .animate-hero-type {
+    animation: none;
+  }
+}
