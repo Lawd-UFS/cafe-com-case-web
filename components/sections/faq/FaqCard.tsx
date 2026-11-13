@@ -16,9 +16,10 @@ type FaqCardProps = {
 const colorConfig = {
   tomate: {
     svgFillOpen: "fill-tomate",
-    svgFillHover: "fill-transparent group-hover:fill-tomate",
+    svgFillHover:
+      "fill-tomate [fill-opacity:0] group-hover:[fill-opacity:1] group-focus-visible:[fill-opacity:1]",
     textDefault: "text-areia",
-    textHover: "group-hover:text-amarelo",
+    textHover: "group-hover:text-amarelo group-focus-visible:text-amarelo",
     textOpen: "text-amarelo",
     buttonClass: "!text-amarelo hover:!text-amarelo [&_span]:!text-tomate",
     rotateDeg: -1.5,
@@ -26,9 +27,10 @@ const colorConfig = {
   },
   cenoura: {
     svgFillOpen: "fill-cenoura",
-    svgFillHover: "fill-transparent group-hover:fill-cenoura",
+    svgFillHover:
+      "fill-cenoura [fill-opacity:0] group-hover:[fill-opacity:1] group-focus-visible:[fill-opacity:1]",
     textDefault: "text-areia",
-    textHover: "group-hover:text-azul",
+    textHover: "group-hover:text-azul group-focus-visible:text-azul",
     textOpen: "text-azul",
     buttonClass: "!text-azul hover:!text-azul [&_span]:!text-cenoura",
     rotateDeg: -1.7,
@@ -36,9 +38,10 @@ const colorConfig = {
   },
   cafe: {
     svgFillOpen: "fill-cafe",
-    svgFillHover: "fill-transparent group-hover:fill-cafe",
+    svgFillHover:
+      "fill-cafe [fill-opacity:0] group-hover:[fill-opacity:1] group-focus-visible:[fill-opacity:1]",
     textDefault: "text-areia",
-    textHover: "group-hover:text-cenoura",
+    textHover: "group-hover:text-cenoura group-focus-visible:text-cenoura",
     textOpen: "text-cenoura",
     buttonClass: "!text-cenoura hover:!text-cenoura [&_span]:!text-cafe",
     rotateDeg: 1.8,
@@ -46,9 +49,10 @@ const colorConfig = {
   },
   azul: {
     svgFillOpen: "fill-azul",
-    svgFillHover: "fill-transparent group-hover:fill-azul",
+    svgFillHover:
+      "fill-azul [fill-opacity:0] group-hover:[fill-opacity:1] group-focus-visible:[fill-opacity:1]",
     textDefault: "text-areia",
-    textHover: "group-hover:text-cenoura",
+    textHover: "group-hover:text-cenoura group-focus-visible:text-cenoura",
     textOpen: "text-cenoura",
     buttonClass: "!text-cenoura hover:!text-cenoura [&_span]:!text-azul",
     rotateDeg: 1.4,
@@ -81,7 +85,6 @@ function FadeScroll({
     observer.observe(scroller);
     for (const child of scroller.children) observer.observe(child);
     scroller.addEventListener("scroll", update);
-
     return () => {
       observer.disconnect();
       scroller.removeEventListener("scroll", update);
@@ -108,7 +111,6 @@ function FadeScroll({
       >
         {children}
       </div>
-
       {(canGoUp || canGoDown) && (
         <button
           type="button"
@@ -158,19 +160,27 @@ export function FaqCard({
     }
   }, [defaultOpen]);
 
+  const resetPaper = () => {
+    setShowMore(false);
+    setOpenQuestion(null);
+  };
+
   const openDialog = () => {
-    dialogRef.current?.showModal();
+    if (dialogRef.current && !dialogRef.current.open) {
+      dialogRef.current.showModal();
+    }
     setIsOpen(true);
   };
 
   const closeDialog = () => {
-    dialogRef.current?.close();
     setIsOpen(false);
   };
 
-  const resetPaper = () => {
-    setShowMore(false);
-    setOpenQuestion(null);
+  const handleExitComplete = () => {
+    if (dialogRef.current?.open) {
+      dialogRef.current.close();
+    }
+    resetPaper();
   };
 
   const flipToMore = () => {
@@ -198,7 +208,7 @@ export function FaqCard({
             onClick={openDialog}
             aria-expanded={isOpen}
             aria-controls={`faq-dialog-${item.id}`}
-            className={`relative flex h-full w-full flex-col justify-between overflow-visible p-6 text-left transition-colors duration-200 sm:p-7 lg:p-8 ${config.textDefault} ${config.textHover}`}
+            className={`relative flex h-full w-full flex-col justify-between overflow-visible p-6 text-left transition-colors duration-300 ease-out outline-none sm:p-7 lg:p-8 ${config.textDefault} ${config.textHover}`}
           >
             <svg
               aria-hidden
@@ -215,7 +225,7 @@ export function FaqCard({
                 width="496"
                 height="296"
                 filter={`url(#${filterIdClosed})`}
-                className={`stroke-areia stroke-[1.2] transition-colors duration-200 ${config.svgFillHover}`}
+                className={`stroke-areia stroke-[1.2] transition-[fill-opacity] duration-300 ease-out ${config.svgFillHover}`}
               />
             </svg>
 
@@ -237,7 +247,7 @@ export function FaqCard({
                     maskPosition: "center",
                     WebkitMaskPosition: "center",
                   }}
-                  className="block size-8 bg-current transition-colors duration-200 lg:size-9"
+                  className="block size-8 bg-current transition-colors duration-300 ease-out lg:size-9"
                 />
               </span>
             )}
@@ -249,6 +259,10 @@ export function FaqCard({
         id={`faq-dialog-${item.id}`}
         ref={dialogRef}
         aria-labelledby={showMore ? moreTitleId : headingId}
+        onCancel={(e) => {
+          e.preventDefault();
+          closeDialog();
+        }}
         onClose={() => {
           setIsOpen(false);
           resetPaper();
@@ -258,152 +272,47 @@ export function FaqCard({
             closeDialog();
           }
         }}
-        className="fixed inset-0 z-50 m-auto max-h-[94dvh] w-full max-w-[min(374px,calc(100vw-2.5rem))] overflow-visible bg-transparent p-0 outline-none perspective-distant backdrop:bg-[#1C1F1C]/85 backdrop:backdrop-blur-xs lg:max-w-[520px]"
+        className={`fixed inset-0 z-50 m-auto max-h-[94dvh] w-full max-w-[min(374px,calc(100vw-2.5rem))] overflow-visible bg-transparent p-0 outline-none perspective-distant backdrop:bg-[#1C1F1C]/85 backdrop:backdrop-blur-xs backdrop:transition-opacity backdrop:duration-200 lg:max-w-[520px] ${isOpen ? "backdrop:opacity-100" : "pointer-events-none backdrop:opacity-0"}`}
       >
-        {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, scale: 0.86, y: 32, rotate: 0 }}
-            animate={{
-              opacity: 1,
-              scale: 1,
-              y: 0,
-              rotate: config.rotateDeg,
-              rotateY: showMore ? 180 : 0,
-            }}
-            transition={{
-              type: "spring",
-              damping: 24,
-              stiffness: 300,
-              mass: 0.8,
-              rotateY: {
-                type: "tween",
-                duration: 0.6,
-                ease: [0.65, 0, 0.35, 1],
-              },
-            }}
-            className="relative grid w-full transform-3d"
-          >
-            <div
-              ref={frontRef}
-              inert={showMore}
-              className={`relative flex max-h-[94dvh] flex-col self-center px-7 pt-8 pb-9 transition-opacity duration-300 [grid-area:1/1] backface-hidden lg:px-10 lg:pt-10 lg:pb-12 ${config.textOpen} ${showMore ? "opacity-0" : ""}`}
+        <AnimatePresence onExitComplete={handleExitComplete}>
+          {isOpen && (
+            <motion.div
+              initial={{ opacity: 0, scale: 0.86, y: 32, rotate: 0 }}
+              animate={{
+                opacity: 1,
+                scale: 1,
+                y: 0,
+                rotate: config.rotateDeg,
+                rotateY: showMore ? 180 : 0,
+              }}
+              exit={{
+                opacity: 0,
+                scale: 0.86,
+                y: 32,
+                rotate: 0,
+                rotateY: 0,
+                transition: {
+                  duration: 0.24,
+                  ease: [0.4, 0, 0.2, 1],
+                },
+              }}
+              transition={{
+                type: "spring",
+                damping: 24,
+                stiffness: 300,
+                mass: 0.8,
+                rotateY: {
+                  type: "tween",
+                  duration: 0.6,
+                  ease: [0.65, 0, 0.35, 1],
+                },
+              }}
+              className="relative grid w-full transform-3d"
             >
-              <svg
-                aria-hidden
-                viewBox="0 0 520 680"
-                preserveAspectRatio="none"
-                className="pointer-events-none absolute inset-0 size-full overflow-visible drop-shadow-2xl will-change-transform"
-              >
-                <defs>
-                  <TextureFilter id={filterIdOpen} radius={4} size={8.5} />
-                </defs>
-                <rect
-                  x="4"
-                  y="4"
-                  width="512"
-                  height="672"
-                  filter={`url(#${filterIdOpen})`}
-                  className={`stroke-areia stroke-[2.5] ${config.svgFillOpen}`}
-                />
-              </svg>
-
               <div
-                aria-hidden
-                className="pointer-events-none absolute inset-0 z-0 flex items-center justify-center overflow-hidden"
-              >
-                <span
-                  style={{
-                    maskImage: "url(/images/illustrations/brown-shape.png)",
-                    WebkitMaskImage:
-                      "url(/images/illustrations/brown-shape.png)",
-                    maskSize: "contain",
-                    WebkitMaskSize: "contain",
-                    maskRepeat: "no-repeat",
-                    WebkitMaskRepeat: "no-repeat",
-                    maskPosition: "center",
-                    WebkitMaskPosition: "center",
-                  }}
-                  className={`block size-full shrink-0 scale-[1.5] ${config.watermarkClass}`}
-                />
-              </div>
-
-              <div className="relative z-10 flex min-h-0 flex-col gap-5 lg:gap-8">
-                <header className="flex items-start justify-between gap-4">
-                  <h3
-                    id={headingId}
-                    className="font-alternates text-[24px] leading-tight font-bold italic lg:text-[32px]"
-                  >
-                    {item.question}
-                  </h3>
-
-                  <button
-                    type="button"
-                    onClick={closeDialog}
-                    aria-label={`Fechar pergunta ${item.number}`}
-                    className="group flex size-8 shrink-0 items-center justify-center transition-transform hover:scale-110 active:scale-95 lg:size-9"
-                  >
-                    <svg
-                      aria-hidden
-                      viewBox="0 0 24 24"
-                      className="size-6 stroke-current stroke-[2.5]"
-                      fill="none"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      <line x1="18" y1="6" x2="6" y2="18" />
-                      <line x1="6" y1="6" x2="18" y2="18" />
-                    </svg>
-                  </button>
-                </header>
-
-                <FadeScroll className="mx-auto w-full max-w-[300px] lg:max-w-[370px]">
-                  <div className="flex flex-col gap-3.5 lg:gap-5">
-                    {item.paragraphs.map((paragraph) => (
-                      <p
-                        key={paragraph}
-                        className="font-sans text-[14px] leading-[1.4] font-semibold opacity-95 lg:text-[18px]"
-                      >
-                        {paragraph}
-                      </p>
-                    ))}
-                  </div>
-                </FadeScroll>
-
-                <footer className="mt-2 flex justify-center lg:justify-end">
-                  {"url" in item.action ? (
-                    <MainButton
-                      href={item.action.url}
-                      target={
-                        item.action.url.startsWith("http")
-                          ? "_blank"
-                          : undefined
-                      }
-                      rel={
-                        item.action.url.startsWith("http")
-                          ? "noopener noreferrer"
-                          : undefined
-                      }
-                      className={`whitespace-nowrap [&_span]:text-[17px] [&_span]:font-semibold lg:[&_span]:text-2xl ${config.buttonClass}`}
-                    >
-                      {item.action.label}
-                    </MainButton>
-                  ) : (
-                    <MainButton
-                      data-faq-more
-                      onClick={flipToMore}
-                      className={`whitespace-nowrap [&_span]:text-[17px] [&_span]:font-semibold lg:[&_span]:text-2xl ${config.buttonClass}`}
-                    >
-                      {item.action.label}
-                    </MainButton>
-                  )}
-                </footer>
-              </div>
-            </div>
-
-            {more && (
-              <div
-                inert={!showMore}
-                className={`relative flex max-h-[94dvh] rotate-y-180 flex-col self-center px-7 pt-8 pb-9 transition-opacity duration-300 [grid-area:1/1] backface-hidden lg:px-10 lg:pt-10 lg:pb-12 ${config.textOpen} ${showMore ? "" : "opacity-0"}`}
+                ref={frontRef}
+                inert={showMore}
+                className={`relative flex max-h-[94dvh] flex-col self-center px-7 pt-8 pb-9 transition-opacity duration-300 [grid-area:1/1] backface-hidden lg:px-10 lg:pt-10 lg:pb-12 ${config.textOpen} ${showMore ? "opacity-0" : ""}`}
               >
                 <svg
                   aria-hidden
@@ -412,14 +321,14 @@ export function FaqCard({
                   className="pointer-events-none absolute inset-0 size-full overflow-visible drop-shadow-2xl will-change-transform"
                 >
                   <defs>
-                    <TextureFilter id={filterIdMore} radius={4} size={8.5} />
+                    <TextureFilter id={filterIdOpen} radius={4} size={8.5} />
                   </defs>
                   <rect
                     x="4"
                     y="4"
                     width="512"
                     height="672"
-                    filter={`url(#${filterIdMore})`}
+                    filter={`url(#${filterIdOpen})`}
                     className={`stroke-areia stroke-[2.5] ${config.svgFillOpen}`}
                   />
                 </svg>
@@ -440,130 +349,250 @@ export function FaqCard({
                       maskPosition: "center",
                       WebkitMaskPosition: "center",
                     }}
-                    className={`block size-full shrink-0 -scale-x-150 scale-y-150 ${config.watermarkClass}`}
+                    className={`block size-full shrink-0 scale-[1.5] ${config.watermarkClass}`}
                   />
                 </div>
 
-                <header className="relative z-10 flex items-center justify-between gap-4">
-                  <TextButton onClick={flipToFront} className="!text-current">
-                    Voltar
-                  </TextButton>
-
-                  <button
-                    type="button"
-                    onClick={closeDialog}
-                    aria-label={`Fechar pergunta ${item.number}`}
-                    className="group flex size-8 shrink-0 items-center justify-center transition-transform hover:scale-110 active:scale-95 lg:size-9"
-                  >
-                    <svg
-                      aria-hidden
-                      viewBox="0 0 24 24"
-                      className="size-6 stroke-current stroke-[2.5]"
-                      fill="none"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
+                <div className="relative z-10 flex min-h-0 flex-col gap-5 lg:gap-8">
+                  <header className="flex items-start justify-between gap-4">
+                    <h3
+                      id={headingId}
+                      className="font-alternates text-[24px] leading-tight font-bold italic lg:text-[32px]"
                     >
-                      <line x1="18" y1="6" x2="6" y2="18" />
-                      <line x1="6" y1="6" x2="18" y2="18" />
-                    </svg>
-                  </button>
-                </header>
+                      {item.question}
+                    </h3>
 
-                <FadeScroll className="z-10 mt-4 lg:mt-6">
-                  <h3
-                    id={moreTitleId}
-                    ref={moreTitleRef}
-                    tabIndex={-1}
-                    className="font-alternates text-[24px] leading-tight font-bold italic outline-none lg:text-[32px]"
-                  >
-                    {more.title}
-                  </h3>
+                    <button
+                      type="button"
+                      onClick={closeDialog}
+                      aria-label={`Fechar pergunta ${item.number}`}
+                      className="group flex size-8 shrink-0 items-center justify-center transition-transform hover:scale-110 active:scale-95 lg:size-9"
+                    >
+                      <svg
+                        aria-hidden
+                        viewBox="0 0 24 24"
+                        className="size-6 stroke-current stroke-[2.5]"
+                        fill="none"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
+                        <line x1="18" y1="6" x2="6" y2="18" />
+                        <line x1="6" y1="6" x2="18" y2="18" />
+                      </svg>
+                    </button>
+                  </header>
 
-                  <ul className="mt-4 lg:mt-6">
-                    {more.questions.map((question) => {
-                      const isActive = openQuestion === question.id;
-                      const answerId = `${moreTitleId}-${question.id}`;
-
-                      return (
-                        <li
-                          key={question.id}
-                          className="scroll-mt-6 scroll-mb-12 border-t-[1.5px] border-current/40 last:border-b-[1.5px]"
+                  <FadeScroll className="mx-auto w-full max-w-[300px] lg:max-w-[370px]">
+                    <div className="flex flex-col gap-3.5 lg:gap-5">
+                      {item.paragraphs.map((paragraph) => (
+                        <p
+                          key={paragraph}
+                          className="font-sans text-[14px] leading-[1.4] font-semibold opacity-95 lg:text-[18px]"
                         >
-                          <h4>
-                            <button
-                              type="button"
-                              aria-expanded={isActive}
-                              aria-controls={answerId}
-                              onClick={() =>
-                                setOpenQuestion(isActive ? null : question.id)
-                              }
-                              className="flex min-h-12 w-full items-center justify-between gap-4 py-3 text-left font-alternates text-[16px] leading-snug font-bold italic transition-opacity duration-200 hover:opacity-75 lg:text-[20px]"
-                            >
-                              <span>{question.question}</span>
-                              <span
-                                aria-hidden
-                                className="shrink-0 text-[26px] leading-none not-italic"
-                              >
-                                {isActive ? "−" : "+"}
-                              </span>
-                            </button>
-                          </h4>
+                          {paragraph}
+                        </p>
+                      ))}
+                    </div>
+                  </FadeScroll>
 
-                          <AnimatePresence initial={false}>
-                            {isActive && (
-                              <motion.div
-                                id={answerId}
-                                variants={{
-                                  open: { height: "auto", opacity: 1 },
-                                  closed: { height: 0, opacity: 0 },
-                                }}
-                                initial="closed"
-                                animate="open"
-                                exit="closed"
-                                transition={{ duration: 0.3, ease: "easeOut" }}
-                                onAnimationComplete={(variant) =>
-                                  variant === "open" &&
-                                  document
-                                    .getElementById(answerId)
-                                    ?.parentElement?.scrollIntoView({
-                                      block: "nearest",
-                                    })
-                                }
-                                className="overflow-hidden"
-                              >
-                                <div className="flex flex-col gap-3 pb-5 lg:gap-4">
-                                  {question.paragraphs.map((paragraph) => (
-                                    <p
-                                      key={paragraph}
-                                      className="font-sans text-[14px] leading-[1.4] font-semibold opacity-95 lg:text-[18px]"
-                                    >
-                                      {paragraph}
-                                    </p>
-                                  ))}
-
-                                  {question.action && (
-                                    <MainButton
-                                      href={question.action.url}
-                                      target="_blank"
-                                      rel="noopener noreferrer"
-                                      className={`mt-1 self-center whitespace-nowrap md:!h-11 md:!min-w-0 md:!px-6 lg:self-end [&_span]:text-[17px] [&_span]:font-semibold md:[&_span]:text-lg ${config.buttonClass}`}
-                                    >
-                                      {question.action.label}
-                                    </MainButton>
-                                  )}
-                                </div>
-                              </motion.div>
-                            )}
-                          </AnimatePresence>
-                        </li>
-                      );
-                    })}
-                  </ul>
-                </FadeScroll>
+                  <footer className="mt-2 flex justify-center lg:justify-end">
+                    {"url" in item.action ? (
+                      <MainButton
+                        href={item.action.url}
+                        target={
+                          item.action.url.startsWith("http")
+                            ? "_blank"
+                            : undefined
+                        }
+                        rel={
+                          item.action.url.startsWith("http")
+                            ? "noopener noreferrer"
+                            : undefined
+                        }
+                        className={`whitespace-nowrap [&_span]:text-[17px] [&_span]:font-semibold lg:[&_span]:text-2xl ${config.buttonClass}`}
+                      >
+                        {item.action.label}
+                      </MainButton>
+                    ) : (
+                      <MainButton
+                        data-faq-more
+                        onClick={flipToMore}
+                        className={`whitespace-nowrap [&_span]:text-[17px] [&_span]:font-semibold lg:[&_span]:text-2xl ${config.buttonClass}`}
+                      >
+                        {item.action.label}
+                      </MainButton>
+                    )}
+                  </footer>
+                </div>
               </div>
-            )}
-          </motion.div>
-        )}
+
+              {more && (
+                <div
+                  inert={!showMore}
+                  className={`relative flex max-h-[94dvh] rotate-y-180 flex-col self-center px-7 pt-8 pb-9 transition-opacity duration-300 [grid-area:1/1] backface-hidden lg:px-10 lg:pt-10 lg:pb-12 ${config.textOpen} ${showMore ? "" : "opacity-0"}`}
+                >
+                  <svg
+                    aria-hidden
+                    viewBox="0 0 520 680"
+                    preserveAspectRatio="none"
+                    className="pointer-events-none absolute inset-0 size-full overflow-visible drop-shadow-2xl will-change-transform"
+                  >
+                    <defs>
+                      <TextureFilter id={filterIdMore} radius={4} size={8.5} />
+                    </defs>
+                    <rect
+                      x="4"
+                      y="4"
+                      width="512"
+                      height="672"
+                      filter={`url(#${filterIdMore})`}
+                      className={`stroke-areia stroke-[2.5] ${config.svgFillOpen}`}
+                    />
+                  </svg>
+
+                  <div
+                    aria-hidden
+                    className="pointer-events-none absolute inset-0 z-0 flex items-center justify-center overflow-hidden"
+                  >
+                    <span
+                      style={{
+                        maskImage: "url(/images/illustrations/brown-shape.png)",
+                        WebkitMaskImage:
+                          "url(/images/illustrations/brown-shape.png)",
+                        maskSize: "contain",
+                        WebkitMaskSize: "contain",
+                        maskRepeat: "no-repeat",
+                        WebkitMaskRepeat: "no-repeat",
+                        maskPosition: "center",
+                        WebkitMaskPosition: "center",
+                      }}
+                      className={`block size-full shrink-0 -scale-x-150 scale-y-150 ${config.watermarkClass}`}
+                    />
+                  </div>
+
+                  <header className="relative z-10 flex items-center justify-between gap-4">
+                    <TextButton onClick={flipToFront} className="!text-current">
+                      Voltar
+                    </TextButton>
+
+                    <button
+                      type="button"
+                      onClick={closeDialog}
+                      aria-label={`Fechar pergunta ${item.number}`}
+                      className="group flex size-8 shrink-0 items-center justify-center transition-transform hover:scale-110 active:scale-95 lg:size-9"
+                    >
+                      <svg
+                        aria-hidden
+                        viewBox="0 0 24 24"
+                        className="size-6 stroke-current stroke-[2.5]"
+                        fill="none"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
+                        <line x1="18" y1="6" x2="6" y2="18" />
+                        <line x1="6" y1="6" x2="18" y2="18" />
+                      </svg>
+                    </button>
+                  </header>
+
+                  <FadeScroll className="z-10 mt-4 lg:mt-6">
+                    <h3
+                      id={moreTitleId}
+                      ref={moreTitleRef}
+                      tabIndex={-1}
+                      className="font-alternates text-[24px] leading-tight font-bold italic outline-none lg:text-[32px]"
+                    >
+                      {more.title}
+                    </h3>
+
+                    <ul className="mt-4 lg:mt-6">
+                      {more.questions.map((question) => {
+                        const isActive = openQuestion === question.id;
+                        const answerId = `${moreTitleId}-${question.id}`;
+
+                        return (
+                          <li
+                            key={question.id}
+                            className="scroll-mt-6 scroll-mb-12 border-t-[1.5px] border-current/40 last:border-b-[1.5px]"
+                          >
+                            <h4>
+                              <button
+                                type="button"
+                                aria-expanded={isActive}
+                                aria-controls={answerId}
+                                onClick={() =>
+                                  setOpenQuestion(isActive ? null : question.id)
+                                }
+                                className="flex min-h-12 w-full items-center justify-between gap-4 py-3 text-left font-alternates text-[16px] leading-snug font-bold italic transition-opacity duration-200 hover:opacity-75 lg:text-[20px]"
+                              >
+                                <span>{question.question}</span>
+                                <span
+                                  aria-hidden
+                                  className="shrink-0 text-[26px] leading-none not-italic"
+                                >
+                                  {isActive ? "−" : "+"}
+                                </span>
+                              </button>
+                            </h4>
+
+                            <AnimatePresence initial={false}>
+                              {isActive && (
+                                <motion.div
+                                  id={answerId}
+                                  variants={{
+                                    open: { height: "auto", opacity: 1 },
+                                    closed: { height: 0, opacity: 0 },
+                                  }}
+                                  initial="closed"
+                                  animate="open"
+                                  exit="closed"
+                                  transition={{
+                                    duration: 0.3,
+                                    ease: "easeOut",
+                                  }}
+                                  onAnimationComplete={(variant) =>
+                                    variant === "open" &&
+                                    document
+                                      .getElementById(answerId)
+                                      ?.parentElement?.scrollIntoView({
+                                        block: "nearest",
+                                      })
+                                  }
+                                  className="overflow-hidden"
+                                >
+                                  <div className="flex flex-col gap-3 pb-5 lg:gap-4">
+                                    {question.paragraphs.map((paragraph) => (
+                                      <p
+                                        key={paragraph}
+                                        className="font-sans text-[14px] leading-[1.4] font-semibold opacity-95 lg:text-[18px]"
+                                      >
+                                        {paragraph}
+                                      </p>
+                                    ))}
+                                    {question.action && (
+                                      <MainButton
+                                        href={question.action.url}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className={`mt-1 self-center whitespace-nowrap md:!h-11 md:!min-w-0 md:!px-6 lg:self-end [&_span]:text-[17px] [&_span]:font-semibold md:[&_span]:text-lg ${config.buttonClass}`}
+                                      >
+                                        {question.action.label}
+                                      </MainButton>
+                                    )}
+                                  </div>
+                                </motion.div>
+                              )}
+                            </AnimatePresence>
+                          </li>
+                        );
+                      })}
+                    </ul>
+                  </FadeScroll>
+                </div>
+              )}
+            </motion.div>
+          )}
+        </AnimatePresence>
       </dialog>
     </>
   );
