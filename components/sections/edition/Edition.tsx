@@ -19,7 +19,7 @@ export function Edition() {
           <CtaArticle />
           <div
             aria-hidden
-            className="pointer-events-none absolute -bottom-1 -left-[4.1vw] z-10 h-[14.4vw] w-[48%] bg-cafe filter-[url(#edition-texture)] [clip-path:polygon(0_0,78%_68%,94%_100%,0_100%)] lg:hidden"
+            className="pointer-events-none absolute -bottom-1 left-[-4.1vw] z-10 h-[14.4vw] w-[48%] bg-cafe filter-[url(#edition-texture)] [clip-path:polygon(0_0,78%_68%,94%_100%,0_100%)] lg:hidden"
           />
         </div>
       </div>

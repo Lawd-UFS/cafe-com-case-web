@@ -5,7 +5,7 @@ import { CashewCluster } from "./CashewCluster";
 export function TopPanels() {
   return (
     <div className="absolute top-0 left-0 flex h-full w-full">
-      <div className="relative h-[32%] w-[34%] md:h-full md:w-1/6">
+      <div className="relative z-10 h-[32%] w-[34%] md:h-full md:w-1/6">
         <div
           aria-hidden
           className="absolute inset-0 bg-pepino filter-[url(#hero-panels-texture)]"
@@ -15,7 +15,7 @@ export function TopPanels() {
       <div className="relative left-[-34%] h-[42%] w-[61%] md:left-0 md:h-full md:w-1/3">
         <div
           aria-hidden
-          className="absolute inset-0 -z-10 bg-cafe filter-[url(#hero-panels-texture)] md:z-0"
+          className="absolute inset-0 bg-cafe filter-[url(#hero-panels-texture)]"
         />
         <Image
           src="/images/illustrations/cup.png"

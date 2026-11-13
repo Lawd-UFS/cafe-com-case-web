@@ -5,7 +5,7 @@ import { hero } from "@/content/hero";
 
 export function ContentBand() {
   return (
-    <div className="relative right-0 z-60 mx-auto flex min-h-[calc(100svh-9.5rem)] w-[calc(100%-5.75rem)] max-w-[300px] flex-col items-center justify-between px-6 pt-8 pb-9 text-center sm:max-w-[330px] md:absolute md:mx-0 md:min-h-144 md:w-6/7 md:max-w-none md:-translate-y-[calc(2.5rem+5%)] md:flex-row md:items-stretch md:justify-normal md:p-0 md:text-left lg:top-[13.7vw] lg:min-h-[27.6vw] lg:translate-y-0 lg:gap-0 lg:px-0 lg:py-0">
+    <div className="relative right-0 z-60 mx-auto flex min-h-[calc(100svh-9.5rem)] w-[calc(100%-5.75rem)] max-w-75 flex-col items-center justify-between gap-4 px-5 pt-7 pb-10 text-center sm:max-w-82.5 md:absolute md:mx-0 md:min-h-144 md:w-6/7 md:max-w-none md:-translate-y-[calc(2.5rem+5%)] md:flex-row md:items-stretch md:justify-normal md:gap-0 md:p-0 md:text-left lg:top-[13.7vw] lg:min-h-[27.6vw] lg:translate-y-0">
       <div
         aria-hidden
         className="absolute inset-0 -z-10 bg-areia filter-[url(#hero-panels-texture)]"
@@ -17,35 +17,40 @@ export function ContentBand() {
           alt="Café com Case à Mesa"
           width={800}
           height={800}
-          className="h-auto w-[80%] object-contain md:h-full md:w-auto md:scale-110 lg:h-[25vw]"
+          className="h-auto w-[92%] object-contain md:h-full md:w-auto md:scale-110 lg:h-[25vw]"
         />
       </div>
-      <article className="mt-4 flex w-full min-w-0 flex-col-reverse gap-6 text-pepino md:mt-0 md:w-[28%] md:flex-col md:justify-between md:gap-8 md:px-6 md:py-12 lg:gap-0 lg:px-[2vw] lg:py-[3.8vw]">
-        <h1 className="text-xs leading-snug font-medium md:text-2xl lg:text-[clamp(15px,1.37vw,26px)] lg:font-semibold">
+      <article className="contents text-pepino md:flex md:w-[28%] md:min-w-0 md:flex-col md:justify-between md:gap-8 md:px-6 md:py-12 lg:gap-0 lg:px-[2vw] lg:py-[3.8vw]">
+        <h1 className="order-2 mt-1 text-sm leading-snug font-medium md:order-0 md:mt-0 md:text-2xl lg:text-[clamp(15px,1.37vw,26px)] lg:font-semibold">
           {hero.lead.before}
-          <strong className="font-alternates font-black">
+          <br className="md:hidden" />
+          <strong className="font-bold md:font-alternates md:font-black">
             {hero.lead.strong}
           </strong>
-          <strong className="md:font-medium">
+          <br className="md:hidden" />
+          <strong className="font-bold md:font-medium">
             {hero.lead.middle}
             {hero.lead.mobileStrong}
-          </strong>
-          {hero.lead.after}
+          </strong>{" "}
+          e<br className="md:hidden" /> Propaganda de Sergipe.
         </h1>
-        <p className="font-alternates text-base leading-snug font-semibold italic md:text-xl lg:text-[clamp(17px,1.62vw,31px)]">
+        <p className="order-1 font-alternates text-lg leading-snug font-semibold italic md:order-0 md:text-xl lg:text-[clamp(17px,1.62vw,31px)]">
           <span className="block md:text-left">{hero.tagline[0]}</span>
           <span className="block md:text-right">{hero.tagline[1]}</span>
         </p>
       </article>
-      <article className="mt-4 flex w-full min-w-0 flex-col items-center justify-between gap-7 text-xs leading-snug text-pepino md:mt-0 md:w-[24%] md:items-stretch md:gap-8 md:px-6 md:py-12 md:text-sm lg:gap-[1.7vw] lg:px-[2vw] lg:py-[3.8vw] lg:text-[clamp(12px,0.94vw,18px)] lg:leading-[1.35]">
-        <div className="space-y-4">
-          <p className="font-semibold md:font-bold">{hero.description[0]}</p>
-          <p className="font-semibold md:font-bold">
+      <article className="contents text-sm leading-snug text-pepino md:flex md:w-[24%] md:min-w-0 md:flex-col md:items-stretch md:justify-between md:gap-8 md:px-6 md:py-12 lg:gap-[1.7vw] lg:px-[2vw] lg:py-[3.8vw] lg:text-[clamp(12px,0.94vw,18px)] lg:leading-[1.35]">
+        <div className="contents md:block md:space-y-4">
+          <p className="order-3 max-w-58.75 font-semibold md:order-0 md:max-w-none md:font-bold">
+            {hero.description[0]}
+          </p>
+          <p className="order-4 max-w-58.75 font-semibold md:order-0 md:max-w-none md:font-bold">
             {hero.description[1].before}
             <em className="font-bold">{hero.description[1].em}</em>
             {hero.description[1].middle}
             <strong className="italic md:not-italic">
-              {hero.description[1].strong}
+              {hero.description[1].strongLine1} <br className="md:hidden" />
+              {hero.description[1].strongLine2}
             </strong>
           </p>
         </div>
@@ -53,7 +58,7 @@ export function ContentBand() {
           href={hero.instagramUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="md:w-full lg:h-[clamp(40px,3vw,58px)] lg:min-w-[clamp(160px,15vw,288px)] lg:px-[1.6vw] lg:[&>span]:text-[clamp(16px,1.25vw,24px)]"
+          className="order-5 mt-2 md:order-none md:mt-0 md:w-full lg:h-[clamp(40px,3vw,58px)] lg:min-w-[clamp(160px,15vw,288px)] lg:px-[1.6vw] lg:[&>span]:text-[clamp(16px,1.25vw,24px)]"
         >
           {hero.cta}
         </MainButton>
