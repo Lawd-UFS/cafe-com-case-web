@@ -3,13 +3,13 @@ import { edition } from "@/content/edition";
 
 export function CtaArticle() {
   return (
-    <article className="relative z-10 flex w-full flex-col gap-8 text-pepino lg:mt-[2vw] lg:ml-auto lg:w-[max(24%,300px)] lg:items-start lg:gap-[1.7vw] lg:self-end">
-      <p className="font-alternates text-3xl leading-tight font-medium italic lg:text-[clamp(22px,2.08vw,40px)]">
+    <article className="relative z-10 mt-6 flex w-full flex-col items-center gap-5 px-7 text-center text-pepino lg:mt-[2vw] lg:ml-auto lg:w-[max(24%,300px)] lg:items-start lg:gap-[1.7vw] lg:self-end lg:px-0 lg:text-left">
+      <p className="font-alternates text-base leading-snug font-medium italic lg:text-[clamp(22px,2.08vw,40px)] lg:leading-tight">
         Aqui, quando falamos de
         <span className="font-extrabold"> {edition.ctaHighlight} </span>
         também entram na conversa.
       </p>
-      <p className="max-w-5/6 text-xl font-medium lg:text-[clamp(14px,1.04vw,20px)]">
+      <p className="text-xs leading-snug font-semibold lg:max-w-5/6 lg:text-[clamp(14px,1.04vw,20px)] lg:font-medium">
         {edition.ctaText}
       </p>
       <MainButton

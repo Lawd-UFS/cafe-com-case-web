@@ -31,10 +31,6 @@ export function BottomPanels() {
           />
         </div>
       </div>
-      <div
-        aria-hidden
-        className="absolute right-0 bottom-0 h-[9%] w-[66%] bg-pepino [filter:url(#hero-panels-texture)] md:hidden"
-      />
     </div>
   );
 }
