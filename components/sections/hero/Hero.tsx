@@ -8,7 +8,7 @@ import { TopPanels } from "./TopPanels";
 
 export function Hero() {
   return (
-    <section className="relative flex w-full items-center justify-center overflow-x-clip pt-28 pb-10 md:min-h-[max(120vh,64rem)] md:justify-start md:overflow-hidden md:py-0 lg:min-h-[61.25vw]">
+    <section className="relative flex min-h-svh w-full items-center justify-center overflow-x-clip pt-28 pb-10 md:min-h-[max(120vh,64rem)] md:justify-start md:overflow-hidden md:py-0 lg:min-h-[61.25vw]">
       <SunflowerTexture />
       <TopPanels />
       <BottomPanels />
