@@ -8,14 +8,14 @@ export function TopPanels() {
       <div className="relative h-[32%] w-[34%] md:h-full md:w-1/6">
         <div
           aria-hidden
-          className="absolute inset-0 bg-pepino [filter:url(#hero-panels-texture)]"
+          className="absolute inset-0 bg-pepino filter-[url(#hero-panels-texture)]"
         />
         <CashewCluster />
       </div>
-      <div className="relative -left-[34%] h-[42%] w-[61%] md:left-0 md:h-full md:w-1/3">
+      <div className="relative left-[-34%] h-[42%] w-[61%] md:left-0 md:h-full md:w-1/3">
         <div
           aria-hidden
-          className="absolute inset-0 -z-10 bg-cafe [filter:url(#hero-panels-texture)] md:z-0"
+          className="absolute inset-0 -z-10 bg-cafe filter-[url(#hero-panels-texture)] md:z-0"
         />
         <Image
           src="/images/illustrations/cup.png"

@@ -4,7 +4,7 @@ import { edition } from "@/content/edition";
 
 export function TablePanel() {
   return (
-    <div className="absolute -top-23 -right-4 z-20 w-[70%] lg:-top-[15.6vw] lg:-right-[3.75vw] lg:bottom-11/21 lg:w-5/7">
+    <div className="absolute -top-23 -right-4 z-20 w-[70%] lg:top-[-15.6vw] lg:right-[-3.75vw] lg:bottom-11/21 lg:w-5/7">
       <aside className="relative flex h-full w-full items-center overflow-hidden pt-26 pr-5 pb-32 pl-7 [clip-path:polygon(0_0,100%_0,100%_100%,1rem_100%)] lg:py-0 lg:pr-0 lg:pl-[5.2vw] lg:[clip-path:polygon(0_0,100%_0,100%_100%,5vw_100%)]">
         <div
           aria-hidden
@@ -26,7 +26,7 @@ export function TablePanel() {
         alt=""
         width={796}
         height={1178}
-        className="pointer-events-none absolute -right-2 -bottom-2 h-[9.5rem] w-auto max-w-none translate-x-[10%] lg:right-0 lg:bottom-0 lg:h-[50vw] lg:translate-x-[8%] lg:translate-y-[5%]"
+        className="pointer-events-none absolute -right-2 -bottom-2 h-38 w-auto max-w-none translate-x-[10%] lg:right-0 lg:bottom-0 lg:h-[50vw] lg:translate-x-[8%] lg:translate-y-[5%]"
       />
     </div>
   );
