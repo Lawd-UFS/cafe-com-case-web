@@ -5,7 +5,7 @@ import { hero } from "@/content/hero";
 
 export function ContentBand() {
   return (
-    <div className="relative right-0 z-60 mx-auto flex w-[calc(100%-5.75rem)] max-w-[300px] flex-col items-center px-6 pt-8 pb-9 text-center sm:max-w-[330px] md:absolute md:mx-0 md:min-h-144 md:w-6/7 md:max-w-none md:-translate-y-[calc(2.5rem+5%)] md:flex-row md:items-stretch md:p-0 md:text-left lg:top-[13.7vw] lg:min-h-[27.6vw] lg:translate-y-0 lg:gap-0 lg:px-0 lg:py-0">
+    <div className="relative right-0 z-60 mx-auto flex min-h-[calc(100svh-9.5rem)] w-[calc(100%-5.75rem)] max-w-[300px] flex-col items-center justify-between px-6 pt-8 pb-9 text-center sm:max-w-[330px] md:absolute md:mx-0 md:min-h-144 md:w-6/7 md:max-w-none md:-translate-y-[calc(2.5rem+5%)] md:flex-row md:items-stretch md:justify-normal md:p-0 md:text-left lg:top-[13.7vw] lg:min-h-[27.6vw] lg:translate-y-0 lg:gap-0 lg:px-0 lg:py-0">
       <div
         aria-hidden
         className="absolute inset-0 -z-10 bg-areia filter-[url(#hero-panels-texture)]"
