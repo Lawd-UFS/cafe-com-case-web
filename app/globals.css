@@ -68,6 +68,28 @@
   }
 }
 
+@keyframes scroll-slide-right {
+  from {
+    opacity: 0;
+    transform: translate3d(2.5rem, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes scroll-tilt-up {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 2rem, 0) rotate(-2.5deg);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
 @utility animate-hero-logo {
   animation: hero-pop-in 0.65s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
@@ -81,10 +103,46 @@
   animation: hero-type 0.55s steps(16, end) both;
 }
 
+/*
+ * Entradas disparadas quando o elemento aparece na tela (via RevealScene).
+ * `data-reveal="pending"` esconde antes da primeira pintura; `"in"` solta a
+ * animação uma única vez, independente de o usuário continuar rolando.
+ */
+[data-reveal="pending"] {
+  opacity: 0;
+}
+
+[data-reveal="in"].anim-up {
+  animation: hero-fade-up 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+[data-reveal="in"].anim-pop {
+  animation: hero-pop-in 0.65s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+[data-reveal="in"].anim-right {
+  animation: scroll-slide-right 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+[data-reveal="in"].anim-tilt {
+  animation: scroll-tilt-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .animate-hero-logo,
   .animate-hero-item,
   .animate-hero-type {
+    animation: none;
+  }
+
+  [data-reveal="pending"] {
+    opacity: 1;
+  }
+
+  [data-reveal="in"].anim-up,
+  [data-reveal="in"].anim-pop,
+  [data-reveal="in"].anim-right,
+  [data-reveal="in"].anim-tilt {
     animation: none;
   }
 }

@@ -62,12 +62,12 @@ export function ContentBand() {
           href={hero.instagramUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="order-5 mt-2 animate-hero-item [animation-delay:520ms] md:order-none md:mt-0 md:w-full lg:h-[clamp(40px,3vw,58px)] lg:min-w-[clamp(160px,15vw,288px)] lg:px-[1.6vw] lg:[&>span]:text-[clamp(16px,1.25vw,24px)]"
+          className="order-5 mt-2 animate-hero-item [animation-delay:520ms] md:order-0 md:mt-0 md:w-full lg:h-[clamp(40px,3vw,58px)] lg:min-w-[clamp(160px,15vw,288px)] lg:px-[1.6vw] lg:[&>span]:text-[clamp(16px,1.25vw,24px)]"
         >
           {hero.cta}
         </MainButton>
       </article>
-      <div className="pointer-events-none absolute top-[9%] -right-[19%] w-[52%] animate-hero-item [animation-delay:260ms] md:relative md:top-0 md:right-0 md:flex md:w-[18%] md:items-start md:justify-center md:overflow-hidden md:px-4 md:py-16 lg:px-4 lg:py-[2.4vw]">
+      <div className="pointer-events-none absolute top-[9%] right-[-19%] w-[52%] animate-hero-item [animation-delay:260ms] md:relative md:top-0 md:right-0 md:flex md:w-[18%] md:items-start md:justify-center md:overflow-hidden md:px-4 md:py-16 lg:px-4 lg:py-[2.4vw]">
         <Image
           src="/images/illustrations/kettle.png"
           alt=""
