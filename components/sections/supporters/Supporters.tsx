@@ -1,6 +1,7 @@
 import Image from "next/image";
 
 import { Reveal } from "@/components/ui/Reveal";
+import { TextureFilter } from "@/components/ui/TextureFilter";
 import { TitleTexture } from "@/components/ui/TitleTexture";
 import { supporters } from "@/content/supporters";
 
@@ -13,6 +14,10 @@ export function Supporters() {
       aria-labelledby="supporters-title"
       className="relative overflow-x-clip bg-pepino text-areia"
     >
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-x-0 -top-3 h-6 bg-pepino filter-[url(#supporters-edge-texture)]"
+      />
       <Reveal className="pointer-events-none absolute top-[-80px] right-[-163px] z-10 w-[327px] rotate-15 md:top-[max(-326px,-16.98vw)] md:right-[max(-279px,-14.53vw)] md:w-[min(960px,50vw)] md:rotate-0">
         <Image
           src="/images/illustrations/leaf-plate.png"
@@ -63,6 +68,7 @@ export function Supporters() {
       />
 
       <svg aria-hidden className="absolute size-0">
+        <TextureFilter id="supporters-edge-texture" radius={6.7} size={8.2} />
         <TitleTexture
           id="supporters-title-texture-mobile"
           size={16.7}
