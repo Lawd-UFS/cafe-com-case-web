@@ -8,11 +8,13 @@ export function TablePanel() {
       data-reveal
       className="anim-right absolute top-[-23.6vw] right-[-4.1vw] z-20 w-[70%] lg:top-[-15.6vw] lg:right-[-3.75vw] lg:bottom-11/21 lg:w-5/7"
     >
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 filter-[url(#edition-texture)]"
+      >
+        <div className="size-full bg-pepino [clip-path:polygon(0_0,100%_0,100%_100%,4.1vw_100%)] lg:[clip-path:polygon(0_0,100%_0,100%_100%,5vw_100%)]" />
+      </div>
       <aside className="relative flex h-full w-full items-center overflow-hidden pt-[26.7vw] pr-[5.1vw] pb-[32.8vw] pl-[7.2vw] [clip-path:polygon(0_0,100%_0,100%_100%,4.1vw_100%)] lg:py-0 lg:pr-0 lg:pl-[5.2vw] lg:[clip-path:polygon(0_0,100%_0,100%_100%,5vw_100%)]">
-        <div
-          aria-hidden
-          className="absolute inset-0 bg-pepino filter-[url(#edition-texture)] [clip-path:polygon(0_0,100%_0,100%_100%,4.1vw_100%)] lg:[clip-path:polygon(0_0,100%_0,100%_100%,5vw_100%)]"
-        />
         <article
           data-reveal
           className="anim-up relative flex flex-col gap-[5.1vw] text-damasco [animation-delay:150ms] lg:w-1/2 lg:gap-6 lg:pr-4"

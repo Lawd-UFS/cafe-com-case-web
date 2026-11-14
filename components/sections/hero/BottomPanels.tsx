@@ -6,8 +6,10 @@ export function BottomPanels() {
       <div className="absolute bottom-[10%] left-0 h-[48%] w-1/4 md:relative md:bottom-0 md:h-[110%]">
         <div
           aria-hidden
-          className="absolute inset-0 bg-azul [filter:url(#hero-panels-texture)] [clip-path:polygon(0_1.5rem,100%_0,100%_100%,0_100%)]"
-        />
+          className="pointer-events-none absolute inset-0 [filter:url(#hero-panels-texture)]"
+        >
+          <div className="size-full bg-azul [clip-path:polygon(0_1.5rem,100%_0,100%_100%,0_100%)]" />
+        </div>
         <Image
           src="/images/illustrations/fish.png"
           alt=""
@@ -19,8 +21,10 @@ export function BottomPanels() {
       <div className="absolute right-0 bottom-[9%] h-[37%] w-1/3 md:right-auto md:bottom-0 md:left-3/13 md:h-[82.5%]">
         <div
           aria-hidden
-          className="absolute inset-0 bg-tomate [filter:url(#hero-panels-texture)] [clip-path:polygon(0_0,100%_1.5rem,100%_100%,0_100%)] md:[clip-path:polygon(0_0,100%_3.5rem,100%_100%,0_100%)]"
-        />
+          className="pointer-events-none absolute inset-0 [filter:url(#hero-panels-texture)]"
+        >
+          <div className="size-full bg-tomate [clip-path:polygon(0_0,100%_1.5rem,100%_100%,0_100%)] md:[clip-path:polygon(0_0,100%_3.5rem,100%_100%,0_100%)]" />
+        </div>
         <div className="absolute inset-0 hidden overflow-hidden [clip-path:polygon(0_0,100%_3.5rem,100%_100%,0_100%)] md:block">
           <Image
             src="/images/illustrations/pot.png"
