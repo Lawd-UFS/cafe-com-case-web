@@ -146,3 +146,11 @@
     animation: none;
   }
 }
+
+@supports (-webkit-touch-callout: none) {
+  [class*="filter-[url"],
+  [class*="[filter:url"],
+  svg:has([filter]) {
+    will-change: transform;
+  }
+}
