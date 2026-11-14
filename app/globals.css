@@ -100,7 +100,7 @@
 
 /* 16 passos = uma letra por passo, como numa máquina de escrever. */
 @utility animate-hero-type {
-  animation: hero-type 0.55s steps(16, end) both;
+  animation: hero-type 0.55s steps(16, end) backwards;
 }
 
 /*
