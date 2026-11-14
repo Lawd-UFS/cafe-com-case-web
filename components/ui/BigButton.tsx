@@ -52,7 +52,12 @@ export function BigButton({
               baseFrequency="0.4167"
               numOctaves={3}
               seed={562}
+              stitchTiles="stitch"
+              width="19.2"
+              height="19.2"
+              result="noise"
             />
+            <feTile in="noise" />
             <feDisplacementMap
               in="shape"
               scale="5.2"

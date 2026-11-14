@@ -94,7 +94,12 @@ function TitleTexture({ id, size, scale, speckles }: TitleTextureProps) {
         baseFrequency={1 / size}
         numOctaves={3}
         seed={562}
+        stitchTiles="stitch"
+        width={8 * size}
+        height={8 * size}
+        result="noise"
       />
+      <feTile in="noise" />
       <feDisplacementMap
         in="SourceGraphic"
         scale={scale}
