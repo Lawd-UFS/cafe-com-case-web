@@ -19,7 +19,7 @@ export function TablePanel() {
           data-reveal
           className="anim-up relative flex flex-col gap-[5.1vw] text-damasco [animation-delay:150ms] lg:w-1/2 lg:gap-6 lg:pr-4"
         >
-          <h3 className="font-alternates text-[7.2vw] leading-[1.08] font-black lg:text-[clamp(24px,2.5vw,48px)]">
+          <h3 className="font-alternates text-[7.2vw] leading-[1.08] font-black [filter:url(#edition-title-texture)] lg:text-[clamp(24px,2.5vw,48px)]">
             {edition.tableTitle}
           </h3>
           <div className="flex flex-col gap-[4.1vw] text-[3.1vw] leading-[1.35] font-medium lg:flex-row lg:gap-[3.1vw] lg:text-[clamp(14px,1.04vw,20px)] lg:font-semibold">

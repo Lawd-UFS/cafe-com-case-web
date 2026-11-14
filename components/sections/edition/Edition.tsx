@@ -1,4 +1,5 @@
 import { TextureFilter } from "@/components/ui/TextureFilter";
+import { TitleTexture } from "@/components/ui/TitleTexture";
 import { RevealScene } from "@/components/ui/RevealScene";
 import { BeanPanel } from "./BeanPanel";
 import { CtaArticle } from "./CtaArticle";
@@ -42,6 +43,27 @@ export function Edition() {
       <svg aria-hidden className="absolute size-0">
         <defs>
           <TextureFilter id="edition-texture" radius={6} size={14} />
+          <TitleTexture
+            id="edition-heading-texture-mobile"
+            size={5.6}
+            scale={1.26}
+            speckles="1.57 2.36"
+            color="var(--color-damasco)"
+          />
+          <TitleTexture
+            id="edition-heading-texture"
+            size={24.79}
+            scale={5.57}
+            speckles="0.36 0.53"
+            color="var(--color-damasco)"
+          />
+          <TitleTexture
+            id="edition-title-texture"
+            size={29.4}
+            scale={6.6}
+            speckles="0.3 0.45"
+            color="#8e4300"
+          />
         </defs>
       </svg>
     </RevealScene>

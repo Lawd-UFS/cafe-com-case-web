@@ -4,7 +4,7 @@ export function EditionHeading() {
   return (
     <div
       data-reveal
-      className="anim-pop relative z-10 flex w-[34%] flex-col items-center pt-[1vw] pb-[4.1vw] pl-[2vw] text-pepino lg:w-auto lg:p-[4.2vw]"
+      className="anim-pop relative z-10 flex w-[34%] flex-col items-center pt-[1vw] pb-[4.1vw] pl-[2vw] text-pepino [filter:url(#edition-heading-texture-mobile)] lg:w-auto lg:p-[4.2vw] lg:[filter:url(#edition-heading-texture)]"
     >
       <span
         aria-hidden

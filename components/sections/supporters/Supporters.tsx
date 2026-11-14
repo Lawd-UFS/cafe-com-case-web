@@ -1,6 +1,7 @@
 import Image from "next/image";
 
 import { Reveal } from "@/components/ui/Reveal";
+import { TitleTexture } from "@/components/ui/TitleTexture";
 import { supporters } from "@/content/supporters";
 
 import { InviteSign } from "./InviteSign";
@@ -67,63 +68,16 @@ export function Supporters() {
           size={16.7}
           scale={3.75}
           speckles="0.53 0.79"
+          color="var(--color-pepino)"
         />
         <TitleTexture
           id="supporters-title-texture"
           size={29.4}
           scale={6.6}
           speckles="0.3 0.45"
+          color="var(--color-pepino)"
         />
       </svg>
     </section>
-  );
-}
-
-type TitleTextureProps = {
-  id: string;
-  size: number;
-  scale: number;
-  speckles: string;
-};
-
-function TitleTexture({ id, size, scale, speckles }: TitleTextureProps) {
-  return (
-    <filter id={id} colorInterpolationFilters="sRGB">
-      <feTurbulence
-        type="fractalNoise"
-        baseFrequency={1 / size}
-        numOctaves={3}
-        seed={562}
-        stitchTiles="stitch"
-        width={8 * size}
-        height={8 * size}
-        result="noise"
-      />
-      <feTile in="noise" />
-      <feDisplacementMap
-        in="SourceGraphic"
-        scale={scale}
-        xChannelSelector="R"
-        yChannelSelector="G"
-        result="shape"
-      />
-      <feTurbulence
-        type="fractalNoise"
-        baseFrequency={speckles}
-        numOctaves={2}
-        seed={7}
-      />
-      <feColorMatrix
-        values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 30 0 0 0 -21.9"
-        result="spots"
-      />
-      <feFlood className="[flood-color:var(--color-pepino)]" />
-      <feComposite in2="spots" operator="in" />
-      <feComposite in2="shape" operator="in" result="speckles" />
-      <feMerge>
-        <feMergeNode in="shape" />
-        <feMergeNode in="speckles" />
-      </feMerge>
-    </filter>
   );
 }
