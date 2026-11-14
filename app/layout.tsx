@@ -15,6 +15,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="pt-BR"
+      data-scroll-behavior="smooth"
       className={`${montserrat.variable} ${montserratAlternates.variable} ${gluten.variable} ${nunito.variable} antialiased`}
     >
       <body>
