@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 
+import { BrowserBars } from "@/components/BrowserBars";
 import { MotionProvider } from "@/components/MotionProvider";
 
 import { gluten, montserrat, montserratAlternates, nunito } from "./fonts";
@@ -18,6 +19,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <body>
         <MotionProvider>{children}</MotionProvider>
+        <BrowserBars />
       </body>
     </html>
   );

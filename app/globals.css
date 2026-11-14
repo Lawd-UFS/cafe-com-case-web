@@ -21,6 +21,14 @@
 }
 
 @layer base {
+  html {
+    background-color: var(--color-laranja);
+  }
+
+  html:has(#faq) {
+    background-color: var(--color-pepino);
+  }
+
   /* Textura global translúcida (fava beans) sobre todos os componentes. */
   body::before {
     content: "";
