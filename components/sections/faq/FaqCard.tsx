@@ -6,6 +6,7 @@ import { TextureFilter } from "@/components/ui/TextureFilter";
 import type { FaqItem } from "@/content/faq";
 import { AnimatePresence, motion } from "motion/react";
 import { useEffect, useId, useRef, useState } from "react";
+import { preload } from "react-dom";
 
 type FaqCardProps = {
   item: FaqItem;
@@ -15,7 +16,6 @@ type FaqCardProps = {
 
 const colorConfig = {
   tomate: {
-    svgFillOpen: "fill-tomate",
     svgFillHover:
       "fill-tomate [fill-opacity:0] group-hover:[fill-opacity:1] group-focus-visible:[fill-opacity:1]",
     textDefault: "text-areia",
@@ -26,7 +26,6 @@ const colorConfig = {
     watermarkClass: "bg-black/20",
   },
   cenoura: {
-    svgFillOpen: "fill-cenoura",
     svgFillHover:
       "fill-cenoura [fill-opacity:0] group-hover:[fill-opacity:1] group-focus-visible:[fill-opacity:1]",
     textDefault: "text-areia",
@@ -37,7 +36,6 @@ const colorConfig = {
     watermarkClass: "bg-black/20",
   },
   cafe: {
-    svgFillOpen: "fill-cafe",
     svgFillHover:
       "fill-cafe [fill-opacity:0] group-hover:[fill-opacity:1] group-focus-visible:[fill-opacity:1]",
     textDefault: "text-areia",
@@ -48,7 +46,6 @@ const colorConfig = {
     watermarkClass: "bg-black/25",
   },
   azul: {
-    svgFillOpen: "fill-azul",
     svgFillHover:
       "fill-azul [fill-opacity:0] group-hover:[fill-opacity:1] group-focus-visible:[fill-opacity:1]",
     textDefault: "text-areia",
@@ -147,10 +144,10 @@ export function FaqCard({
   const uniqueId = useId().replace(/:/g, "");
   const headingId = `faq-title-${item.id}-${uniqueId}`;
   const moreTitleId = `faq-more-title-${item.id}-${uniqueId}`;
-  const filterIdOpen = `faq-open-${item.id}-${uniqueId}`;
-  const filterIdMore = `faq-more-${item.id}-${uniqueId}`;
   const filterIdClosed = `faq-closed-${item.id}-${uniqueId}`;
   const config = colorConfig[item.color];
+  const openCardImage = `/images/textures/faq-card-${item.color}.webp`;
+  preload(openCardImage, { as: "image", fetchPriority: "low" });
   const more = "questions" in item.action ? item.action : null;
 
   useEffect(() => {
@@ -314,24 +311,11 @@ export function FaqCard({
                 inert={showMore}
                 className={`relative flex max-h-[94dvh] flex-col self-center px-7 pt-8 pb-9 transition-opacity duration-300 [grid-area:1/1] backface-hidden lg:px-10 lg:pt-10 lg:pb-12 ${config.textOpen} ${showMore ? "opacity-0" : ""}`}
               >
-                <svg
+                <div
                   aria-hidden
-                  viewBox="0 0 520 680"
-                  preserveAspectRatio="none"
-                  className="pointer-events-none absolute inset-0 size-full overflow-visible drop-shadow-2xl will-change-transform"
-                >
-                  <defs>
-                    <TextureFilter id={filterIdOpen} radius={4} size={8.5} />
-                  </defs>
-                  <rect
-                    x="4"
-                    y="4"
-                    width="512"
-                    height="672"
-                    filter={`url(#${filterIdOpen})`}
-                    className={`stroke-areia stroke-[2.5] ${config.svgFillOpen}`}
-                  />
-                </svg>
+                  style={{ backgroundImage: `url(${openCardImage})` }}
+                  className="pointer-events-none absolute top-[-1.18%] left-[-1.54%] h-[102.35%] w-[103.08%] bg-size-[100%_100%] drop-shadow-2xl will-change-transform"
+                />
 
                 <div
                   aria-hidden
@@ -431,24 +415,11 @@ export function FaqCard({
                   inert={!showMore}
                   className={`relative flex max-h-[94dvh] rotate-y-180 flex-col self-center px-7 pt-8 pb-9 transition-opacity duration-300 [grid-area:1/1] backface-hidden lg:px-10 lg:pt-10 lg:pb-12 ${config.textOpen} ${showMore ? "" : "opacity-0"}`}
                 >
-                  <svg
+                  <div
                     aria-hidden
-                    viewBox="0 0 520 680"
-                    preserveAspectRatio="none"
-                    className="pointer-events-none absolute inset-0 size-full overflow-visible drop-shadow-2xl will-change-transform"
-                  >
-                    <defs>
-                      <TextureFilter id={filterIdMore} radius={4} size={8.5} />
-                    </defs>
-                    <rect
-                      x="4"
-                      y="4"
-                      width="512"
-                      height="672"
-                      filter={`url(#${filterIdMore})`}
-                      className={`stroke-areia stroke-[2.5] ${config.svgFillOpen}`}
-                    />
-                  </svg>
+                    style={{ backgroundImage: `url(${openCardImage})` }}
+                    className="pointer-events-none absolute top-[-1.18%] left-[-1.54%] h-[102.35%] w-[103.08%] bg-size-[100%_100%] drop-shadow-2xl will-change-transform"
+                  />
 
                   <div
                     aria-hidden

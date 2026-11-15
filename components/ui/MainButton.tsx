@@ -44,7 +44,12 @@ export function MainButton({
               baseFrequency="0.122"
               numOctaves={3}
               seed={562}
+              stitchTiles="stitch"
+              width="65.57"
+              height="65.57"
+              result="noise"
             />
+            <feTile in="noise" />
             <feDisplacementMap
               in="SourceGraphic"
               scale="13.4"

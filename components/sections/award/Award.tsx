@@ -310,7 +310,12 @@ export function Award() {
             baseFrequency={1 / 29.4}
             numOctaves={3}
             seed={562}
+            stitchTiles="stitch"
+            width={8 * 29.4}
+            height={8 * 29.4}
+            result="noise"
           />
+          <feTile in="noise" />
           <feDisplacementMap
             in="SourceGraphic"
             scale={6.6}
