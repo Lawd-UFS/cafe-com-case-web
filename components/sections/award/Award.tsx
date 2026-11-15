@@ -13,6 +13,10 @@ export function Award() {
     >
       <div
         aria-hidden
+        className="pointer-events-none absolute inset-x-0 -top-3 z-1 h-6 bg-cafe filter-[url(#award-edge-texture)]"
+      />
+      <div
+        aria-hidden
         className="pointer-events-none absolute inset-0 z-20 bg-[url(/images/textures/sunflower-seeds.png)] bg-size-[1198px_auto] bg-position-[0_-756px] opacity-[0.13] mix-blend-soft-light"
       />
 
@@ -304,6 +308,7 @@ export function Award() {
       </div>
 
       <svg aria-hidden className="absolute size-0">
+        <TextureFilter id="award-edge-texture" radius={6.7} size={8.2} />
         <filter id="award-title-texture" colorInterpolationFilters="sRGB">
           <feTurbulence
             type="fractalNoise"
