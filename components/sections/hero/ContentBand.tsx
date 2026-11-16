@@ -10,7 +10,7 @@ export function ContentBand() {
         aria-hidden
         className="absolute inset-0 -z-10 bg-areia filter-[url(#hero-panels-texture)]"
       />
-      <div className="pointer-events-none absolute inset-0 -z-10 bg-[url('/images/textures/fava-beans.png')] bg-size-[100%_auto] bg-center bg-repeat opacity-[0.06] lg:bg-size-[28.75%_auto]"></div>
+      <div className="pointer-events-none absolute inset-0 -z-10 bg-[url('/images/textures/fava-beans.webp')] bg-size-[100%_auto] bg-center bg-repeat opacity-[0.06] lg:bg-size-[28.75%_auto]"></div>
       <div className="flex w-full animate-hero-logo items-center justify-center lg:w-[30%]">
         <Image
           src="/images/logo.png"

@@ -64,7 +64,7 @@ export function Supporters() {
 
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 z-10 bg-[url(/images/textures/sunflower-seeds.png)] bg-size-[1198px_auto] bg-position-[0_-756px] opacity-[0.13] mix-blend-soft-light"
+        className="pointer-events-none absolute inset-0 z-10 bg-[url(/images/textures/sunflower-seeds.webp)] bg-size-[1198px_auto] bg-position-[0_-756px] opacity-[0.13] mix-blend-soft-light"
       />
 
       <svg aria-hidden className="absolute size-0">

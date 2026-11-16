@@ -20,7 +20,7 @@ export function Award() {
       </div>
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-x-0 top-(--award-brown) bottom-0 z-20 bg-[url(/images/textures/sunflower-seeds.png)] bg-size-[1198px_auto] bg-position-[0_calc(-756px_-_var(--award-brown))] opacity-[0.13] mix-blend-soft-light"
+        className="pointer-events-none absolute inset-x-0 top-(--award-brown) bottom-0 z-20 bg-[url(/images/textures/sunflower-seeds.webp)] bg-size-[1198px_auto] bg-position-[0_calc(-756px_-_var(--award-brown))] opacity-[0.13] mix-blend-soft-light"
       />
 
       <div className="block md:[zoom:1.6] lg:hidden">
