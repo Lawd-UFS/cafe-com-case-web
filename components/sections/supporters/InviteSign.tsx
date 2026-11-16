@@ -8,7 +8,7 @@ type InviteSignProps = {
 export function InviteSign({ className = "" }: InviteSignProps) {
   return (
     <div
-      className={`relative h-[10.072em] w-[19.228em] text-base md:text-[clamp(22px,1.667vw,32px)] ${className}`}
+      className={`relative h-[10.072em] w-[19.228em] text-base md:text-[26px] lg:text-[clamp(22px,1.667vw,32px)] ${className}`}
     >
       <svg
         aria-hidden
