@@ -4,13 +4,11 @@ import { edition } from "@/content/edition";
 
 export function BeanPanel() {
   return (
-    <div
-      data-reveal
-      className="anim-tilt relative z-20 mx-[-4.1vw] mt-[73.8vw] pt-[16.4vw] pb-[16.4vw] lg:absolute lg:top-[30%] lg:left-0 lg:mx-0 lg:mt-0 lg:h-[70%] lg:w-[60%] lg:overflow-visible lg:py-0"
-    >
+    <div className="relative z-20 mx-[-4.1vw] mt-[73.8vw] pt-[16.4vw] pb-[16.4vw] lg:absolute lg:top-[30%] lg:left-0 lg:mx-0 lg:mt-0 lg:h-[70%] lg:w-[60%] lg:overflow-visible lg:py-0">
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-x-0 top-[-18%] bottom-[-6%] bg-cafe filter-[url(#edition-texture)] [clip-path:polygon(0_0,62%_12%,88%_34%,100%_64%,100%_92%,74%_100%,35%_95%,0_66%)] lg:hidden"
+        data-reveal
+        className="anim-tilt pointer-events-none absolute inset-x-0 top-[-18%] bottom-[-6%] bg-cafe filter-[url(#edition-texture)] [clip-path:polygon(0_0,62%_12%,88%_34%,100%_64%,100%_92%,74%_100%,35%_95%,0_66%)] lg:hidden"
       />
       <article
         data-reveal
@@ -24,11 +22,12 @@ export function BeanPanel() {
         </p>
       </article>
       <Image
+        data-reveal
         src="/images/illustrations/brown-shape.png"
         alt=""
         width={1189}
         height={1174}
-        className="hidden h-full w-full max-w-none -translate-x-1/10 translate-y-[5%] scale-120 -rotate-8 zoom-[1.1] object-cover object-center lg:block"
+        className="anim-tilt hidden h-full w-full max-w-none -translate-x-1/10 translate-y-[5%] scale-120 -rotate-8 zoom-[1.1] object-cover object-center lg:block"
       />
     </div>
   );

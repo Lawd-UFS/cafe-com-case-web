@@ -20,7 +20,7 @@ export function Award() {
         className="pointer-events-none absolute inset-0 z-20 bg-[url(/images/textures/sunflower-seeds.png)] bg-size-[1198px_auto] bg-position-[0_-756px] opacity-[0.13] mix-blend-soft-light"
       />
 
-      <div className="block lg:hidden">
+      <div className="block md:[zoom:1.6] lg:hidden">
         <div className="relative mx-auto w-[calc(100%-2rem)] max-w-[360px] pt-0 pb-8 sm:max-w-[400px]">
           <svg
             aria-hidden
@@ -80,7 +80,7 @@ export function Award() {
               <Reveal delay={0.1}>
                 <div
                   aria-hidden
-                  className="flex flex-col items-center gap-2 pt-1 pr-1"
+                  className="flex flex-col items-center gap-2 pt-3 pr-1 md:pt-5"
                 >
                   <span
                     style={{
@@ -159,7 +159,7 @@ export function Award() {
             </Reveal>
 
             <Reveal delay={0.2}>
-              <footer className="flex justify-center">
+              <footer className="flex justify-center md:[zoom:0.625]">
                 <MainButton
                   color="cafe"
                   href={award.button.url}
@@ -182,7 +182,7 @@ export function Award() {
         </Reveal>
       </div>
 
-      <div className="hidden lg:block">
+      <div className="hidden lg:block lg:[zoom:0.7] xl:[zoom:1]">
         <div className="relative z-10 mx-auto max-w-[1920px] px-6 pb-32 md:pr-10 md:pb-44 md:pl-20 lg:pr-16 lg:pl-32">
           <div className="relative -mt-16 md:-mt-24 lg:-mt-32">
             <div className="relative z-30 mb-[-55px] pl-24 sm:pl-32 md:mb-[-80px] md:pl-44 lg:pl-56">
