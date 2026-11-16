@@ -20,15 +20,16 @@ export function Edition() {
         <div className="relative mx-auto flex w-[calc(100%-8.2vw)] flex-col pt-[7.2vw] pb-[14.4vw] lg:left-1/2 lg:mx-0 lg:min-h-[90vw] lg:w-screen lg:max-w-none lg:-translate-x-1/2 lg:flex-row lg:pt-10 lg:pr-[3.75vw] lg:pb-[calc(8rem+6vw)] lg:pl-10 lg:overflow-b-clip">
           <div
             aria-hidden
-            className="pointer-events-none absolute inset-2 bg-areia"
-          />
-          {paperEdges.map((edge) => (
-            <div
-              key={edge}
-              aria-hidden
-              className={`pointer-events-none absolute bg-areia filter-[url(#edition-texture)] ${edge}`}
-            />
-          ))}
+            className="pointer-events-none absolute inset-0 lg:bottom-[max(49px,3.646vw)]"
+          >
+            <div className="absolute inset-2 bg-areia" />
+            {paperEdges.map((edge) => (
+              <div
+                key={edge}
+                className={`absolute bg-areia filter-[url(#edition-texture)] ${edge}`}
+              />
+            ))}
+          </div>
           <EditionHeading />
           <TablePanel />
           <BeanPanel />

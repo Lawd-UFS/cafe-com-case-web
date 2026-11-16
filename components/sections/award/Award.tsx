@@ -9,19 +9,22 @@ export function Award() {
     <section
       id="award"
       aria-labelledby="award-title"
-      className="relative overflow-x-clip bg-cafe text-areia"
+      className="relative isolate overflow-x-clip text-areia [--award-brown:192px] md:[--award-brown:307px] lg:[--award-brown:max(111px,8.229vw)]"
     >
       <div
+        id="award-background"
         aria-hidden
-        className="pointer-events-none absolute inset-x-0 -top-3 z-1 h-6 bg-cafe filter-[url(#award-edge-texture)]"
-      />
+        className="pointer-events-none absolute inset-x-0 top-(--award-brown) bottom-0 -z-10 bg-cafe"
+      >
+        <div className="absolute inset-x-0 -top-3 h-6 bg-cafe filter-[url(#award-edge-texture)]" />
+      </div>
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 z-20 bg-[url(/images/textures/sunflower-seeds.png)] bg-size-[1198px_auto] bg-position-[0_-756px] opacity-[0.13] mix-blend-soft-light"
+        className="pointer-events-none absolute inset-x-0 top-(--award-brown) bottom-0 z-20 bg-[url(/images/textures/sunflower-seeds.png)] bg-size-[1198px_auto] bg-position-[0_calc(-756px_-_var(--award-brown))] opacity-[0.13] mix-blend-soft-light"
       />
 
       <div className="block md:[zoom:1.6] lg:hidden">
-        <div className="relative mx-auto w-[calc(100%-2rem)] max-w-[360px] pt-0 pb-8 sm:max-w-[400px]">
+        <div className="relative mx-auto w-[91.8%] pt-0 pb-8">
           <svg
             aria-hidden
             viewBox="0 0 340 720"
@@ -46,25 +49,19 @@ export function Award() {
           </svg>
 
           <header className="relative z-10">
-            <svg
+            <div
               aria-hidden
-              viewBox="0 0 340 185"
-              preserveAspectRatio="none"
-              className="pointer-events-none absolute inset-x-0 top-0 h-[185px] w-full overflow-visible drop-shadow-md"
+              className="pointer-events-none absolute -top-[57px] -left-[6.89%] h-[231px] w-[113.78%] overflow-hidden bg-cafe [clip-path:polygon(0_5px,36.7%_21px,39.36%_23px,55.32%_49px,57.98%_51px,65.96%_52px,100%_53px,100%_144px,65.96%_211px,12.77%_229px,10.11%_230px,2.13%_205px,0_198px)]"
             >
-              <defs>
-                <TextureFilter
-                  id="award-mobile-brown-header"
-                  radius={3.5}
-                  size={8}
-                />
-              </defs>
-              <polygon
-                points="0,0 340,0 340,112 250,118 160,150 0,165"
-                filter="url(#award-mobile-brown-header)"
-                className="fill-cafe"
+              <Image
+                src="/images/illustrations/brown-shape.png"
+                alt=""
+                width={1189}
+                height={1174}
+                sizes="700px"
+                className="absolute -top-[180px] -left-[60px] w-[700px] max-w-none"
               />
-            </svg>
+            </div>
 
             <div className="relative z-10 flex items-start justify-between px-5 pt-5">
               <Reveal>
@@ -80,7 +77,7 @@ export function Award() {
               <Reveal delay={0.1}>
                 <div
                   aria-hidden
-                  className="flex flex-col items-center gap-2 pt-3 pr-1 md:pt-5"
+                  className="-mt-6 flex flex-col items-center gap-2 pr-1"
                 >
                   <span
                     style={{
@@ -93,7 +90,7 @@ export function Award() {
                       maskPosition: "center",
                       WebkitMaskPosition: "center",
                     }}
-                    className="block h-9 w-12 -scale-x-100 -rotate-6 bg-areia"
+                    className="block size-13 -scale-x-100 -rotate-6 bg-areia"
                   />
                   <span
                     style={{
@@ -106,7 +103,7 @@ export function Award() {
                       maskPosition: "center",
                       WebkitMaskPosition: "center",
                     }}
-                    className="block h-9 w-12 -scale-x-100 rotate-12 bg-areia"
+                    className="block size-13 -scale-x-100 rotate-12 bg-areia"
                   />
                   <span
                     style={{
@@ -119,7 +116,7 @@ export function Award() {
                       maskPosition: "center",
                       WebkitMaskPosition: "center",
                     }}
-                    className="block h-9 w-12 -rotate-6 bg-cafe"
+                    className="mt-2 block size-13 -rotate-6 bg-cafe"
                   />
                 </div>
               </Reveal>
@@ -174,7 +171,7 @@ export function Award() {
         </div>
 
         <Reveal delay={0.25}>
-          <div className="mx-auto max-w-[348px] px-4 pt-6 pb-14 sm:max-w-[400px]">
+          <div className="mx-auto w-[91.8%] px-3 pt-6 pb-14">
             <p className="font-alternates text-[16px] leading-snug font-medium text-areia italic">
               {award.closingPhrase}
             </p>
@@ -182,8 +179,22 @@ export function Award() {
         </Reveal>
       </div>
 
-      <div className="hidden lg:block lg:[zoom:0.7] xl:[zoom:1]">
-        <div className="relative z-10 mx-auto max-w-[1920px] px-6 pb-32 md:pr-10 md:pb-44 md:pl-20 lg:pr-16 lg:pl-32">
+      <div className="relative hidden lg:block lg:award-zoom">
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0 z-25 [clip-path:inset(58px_-2000px_-2000px_-2000px)]"
+        >
+          <div className="absolute top-[128px] left-[3.75%] -mt-[63%] aspect-[555/630] w-[55.5%]">
+            <Image
+              src="/images/illustrations/brown-shape.png"
+              alt=""
+              width={1189}
+              height={1174}
+              className="h-full w-full max-w-none -translate-x-1/10 translate-y-[5%] scale-120 -rotate-8 zoom-[1.1] object-cover object-center"
+            />
+          </div>
+        </div>
+        <div className="relative mx-auto max-w-[1920px] px-6 pb-32 md:pr-10 md:pb-44 md:pl-20 lg:pr-16 lg:pl-32">
           <div className="relative -mt-16 md:-mt-24 lg:-mt-32">
             <div className="relative z-30 mb-[-55px] pl-24 sm:pl-32 md:mb-[-80px] md:pl-44 lg:pl-56">
               <Reveal>
@@ -198,38 +209,38 @@ export function Award() {
             </div>
 
             <div className="flex items-start gap-4 md:gap-8 lg:gap-10">
-              <Reveal delay={0.1}>
+              <Reveal delay={0.1} className="lg:-ml-10">
                 <div
                   aria-hidden
-                  className="mt-16 flex shrink-0 flex-col items-center gap-2 md:mt-24 md:gap-2.5 lg:mt-28 lg:gap-3"
+                  className="mt-16 flex shrink-0 flex-col items-center gap-2 md:mt-24 md:gap-2.5 lg:mt-[150px] lg:gap-0.5"
                 >
                   <Image
                     src="/images/illustrations/cup.png"
                     alt=""
                     width={100}
                     height={75}
-                    className="w-[52px] object-contain md:w-[74px] lg:w-[90px]"
+                    className="w-[52px] object-contain md:w-[74px] lg:w-[104px]"
                   />
                   <Image
                     src="/images/illustrations/cup.png"
                     alt=""
                     width={100}
                     height={75}
-                    className="w-[52px] -scale-x-100 object-contain md:w-[74px] lg:w-[90px]"
+                    className="w-[52px] -scale-x-100 object-contain md:w-[74px] lg:w-[104px]"
                   />
                   <Image
                     src="/images/illustrations/cup.png"
                     alt=""
                     width={100}
                     height={75}
-                    className="w-[52px] object-contain md:w-[74px] lg:w-[90px]"
+                    className="w-[52px] object-contain md:w-[74px] lg:w-[104px]"
                   />
                 </div>
               </Reveal>
 
               <div className="relative flex-1">
                 <Reveal delay={0.15}>
-                  <div className="relative px-8 pt-40 pb-14 text-cafe md:px-14 md:pt-48 md:pb-16 lg:px-16 lg:pt-56 lg:pb-20">
+                  <div className="relative px-8 pt-40 pb-14 text-cafe md:px-14 md:pt-48 md:pb-16 lg:px-16 lg:pt-61 lg:pb-15">
                     <svg
                       aria-hidden
                       viewBox="0 0 1200 480"
@@ -244,7 +255,7 @@ export function Award() {
                         />
                       </defs>
                       <path
-                        d="M 0,90 L 320,185 L 580,0 L 1200,0 L 1200,480 L 0,480 Z"
+                        d="M 0,0 L 1200,0 L 1200,480 L 0,480 Z"
                         filter="url(#award-card-texture)"
                         className="fill-amarelo"
                       />

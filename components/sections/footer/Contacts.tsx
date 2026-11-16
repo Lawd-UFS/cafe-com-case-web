@@ -48,7 +48,7 @@ export function Contacts({ className = "" }: ContactsProps) {
               >
                 <Icon className="size-[calc(48em/32)] shrink-0" />
                 <span
-                  className={`font-alternates text-xs leading-none font-semibold lg:text-[calc(20em/32)] ${underline ? "underline" : ""}`}
+                  className={`font-alternates text-xs leading-none font-semibold lg:text-[calc(20em/32)] ${underline ? "lg:underline" : ""}`}
                 >
                   <span className="sr-only">{name}: </span>
                   {label}

@@ -3,7 +3,7 @@
 import { usePathname } from "next/navigation";
 import { useEffect } from "react";
 
-const tintedSections = ["award", "supporters", "footer"];
+const tintedSections = ["award-background", "supporters", "footer"];
 
 export function BrowserBars() {
   const pathname = usePathname();
