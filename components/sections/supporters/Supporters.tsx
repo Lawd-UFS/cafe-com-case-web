@@ -34,11 +34,11 @@ export function Supporters() {
           <Reveal>
             <h2
               id="supporters-title"
-              className="max-w-[160px] font-alternates text-2xl leading-[1.194] font-black [filter:url(#supporters-title-texture-mobile)] md:max-w-none md:text-[clamp(36px,2.5vw,48px)] md:[filter:url(#supporters-title-texture)]"
+              className="max-w-[160px] font-alternates text-2xl leading-[1.194] font-black [filter:url(#supporters-title-texture-mobile)] md:max-w-none md:text-[40px] md:[filter:url(#supporters-title-texture)] lg:text-[clamp(36px,2.5vw,48px)]"
             >
               {supporters.title}
             </h2>
-            <p className="mt-6 max-w-[207px] font-alternates text-base leading-[1.194] font-medium italic md:mt-4 md:max-w-none md:text-[clamp(24px,1.667vw,32px)]">
+            <p className="mt-6 max-w-[207px] font-alternates text-base leading-[1.194] font-medium italic md:mt-4 md:max-w-none md:text-[26px] lg:text-[clamp(24px,1.667vw,32px)]">
               {supporters.subtitle}
             </p>
           </Reveal>
@@ -49,7 +49,7 @@ export function Supporters() {
             {supporters.paragraphs.map((paragraph) => (
               <p
                 key={paragraph}
-                className="text-xs leading-[1.35] font-semibold md:text-[clamp(16px,1.042vw,20px)] lg:max-w-[430px]"
+                className="text-xs leading-[1.35] font-semibold md:text-xl lg:max-w-[430px] lg:text-[clamp(16px,1.042vw,20px)]"
               >
                 {paragraph}
               </p>

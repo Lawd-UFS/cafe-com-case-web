@@ -85,22 +85,22 @@ export function Faq() {
 
       <div className="relative z-10 mx-auto mt-8 flex w-full max-w-[1840px] flex-1 flex-col items-center justify-between gap-12 lg:mt-0 lg:px-10 xl:flex-row xl:items-center xl:gap-8 xl:pr-0 xl:pl-14 2xl:pl-16">
         <Reveal className="flex w-full px-11 sm:px-14 lg:px-0 xl:flex-1 xl:items-center xl:justify-start xl:self-center">
-          <div className="mx-auto grid w-full max-w-[320px] grid-cols-1 gap-0 sm:max-w-[400px] lg:h-[620px] lg:max-w-[1068px] lg:grid-cols-2 lg:grid-rows-[46fr_22fr_32fr] xl:mx-0 xl:ml-5">
+          <div className="mx-auto grid w-full max-w-[320px] grid-cols-1 gap-0 sm:max-w-[400px] md:max-w-[512px] lg:h-[620px] lg:max-w-[1068px] lg:grid-cols-2 lg:grid-rows-[46fr_22fr_32fr] xl:mx-0 xl:ml-5">
             <FaqCard
               item={faq.items[0]}
-              className="min-h-[175px] lg:col-start-1 lg:row-span-1 lg:row-start-1 lg:h-full"
+              className="min-h-[175px] md:max-lg:min-h-[280px] lg:col-start-1 lg:row-span-1 lg:row-start-1 lg:h-full"
             />
             <FaqCard
               item={faq.items[1]}
-              className="min-h-[175px] lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:h-full"
+              className="min-h-[175px] md:max-lg:min-h-[280px] lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:h-full"
             />
             <FaqCard
               item={faq.items[2]}
-              className="min-h-[190px] lg:col-start-1 lg:row-span-2 lg:row-start-2 lg:h-full"
+              className="min-h-[190px] md:max-lg:min-h-[304px] lg:col-start-1 lg:row-span-2 lg:row-start-2 lg:h-full"
             />
             <FaqCard
               item={faq.items[3]}
-              className="min-h-[165px] lg:col-start-2 lg:row-span-1 lg:row-start-3 lg:h-full"
+              className="min-h-[165px] md:max-lg:min-h-[264px] lg:col-start-2 lg:row-span-1 lg:row-start-3 lg:h-full"
             />
           </div>
         </Reveal>
@@ -111,7 +111,7 @@ export function Faq() {
         >
           <aside
             aria-labelledby="faq-contacts-title"
-            className="relative z-20 ml-auto flex min-h-[480px] w-full max-w-[500px] origin-bottom-right rotate-[1.8deg] flex-col justify-between overflow-visible px-8 pt-10 pb-20 text-pepino sm:mx-auto sm:min-h-[540px] sm:px-12 md:px-14 lg:min-h-[680px] lg:max-w-[634px] lg:pt-12 lg:pb-16 xl:mx-0 xl:-mr-10 xl:min-h-[820px] xl:w-[634px] xl:max-w-none xl:px-14 xl:pt-14 2xl:-mr-6"
+            className="relative z-20 ml-auto flex min-h-[480px] w-full max-w-[500px] origin-bottom-right rotate-[1.8deg] flex-col justify-between overflow-visible px-8 pt-10 pb-20 text-pepino sm:mx-auto sm:min-h-[540px] sm:px-12 md:min-h-[680px] md:max-w-[634px] md:px-14 md:pt-12 md:pb-16 xl:mx-0 xl:-mr-10 xl:min-h-[820px] xl:w-[634px] xl:max-w-none xl:px-14 xl:pt-14 2xl:-mr-6"
           >
             <svg
               aria-hidden
@@ -134,31 +134,31 @@ export function Faq() {
               />
             </svg>
 
-            <div className="relative z-10 flex w-full max-w-[280px] flex-col sm:max-w-[340px] lg:max-w-[396px]">
+            <div className="relative z-10 flex w-full max-w-[280px] flex-col sm:max-w-[340px] md:max-w-[396px]">
               <header className="flex flex-col">
                 <h2 id="faq-contacts-title" className="text-pepino">
-                  <ContactsLettering className="h-[88px] w-[210px] sm:h-[110px] sm:w-[264px] lg:h-[132px] lg:w-[316px]" />
+                  <ContactsLettering className="h-[88px] w-[210px] sm:h-[110px] sm:w-[264px] md:h-[132px] md:w-[316px]" />
                 </h2>
               </header>
 
-              <p className="mt-5 font-alternates text-[16px] leading-snug font-medium text-pepino italic lg:mt-6 lg:text-[24px]">
+              <p className="mt-5 font-alternates text-[16px] leading-snug font-medium text-pepino italic md:mt-6 md:text-[24px]">
                 {faq.contacts.subtitle}
               </p>
 
-              <p className="mt-3 font-sans text-[14px] leading-relaxed font-semibold text-pepino lg:text-[18px]">
+              <p className="mt-3 font-sans text-[14px] leading-relaxed font-semibold text-pepino md:text-[18px]">
                 {faq.contacts.description}
               </p>
 
-              <ul className="mt-6 flex flex-col gap-3.5 lg:mt-10 lg:gap-5">
+              <ul className="mt-6 flex flex-col gap-3.5 md:mt-10 md:gap-5">
                 {faq.contacts.items.map((contact) => (
                   <li key={contact.id}>
                     <a
                       href={contact.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group inline-flex items-center gap-3 transition-opacity duration-200 hover:opacity-80 lg:gap-3.5"
+                      className="group inline-flex items-center gap-3 transition-opacity duration-200 hover:opacity-80 md:gap-3.5"
                     >
-                      <span className="flex size-[35px] shrink-0 items-center justify-center text-pepino lg:size-10">
+                      <span className="flex size-[35px] shrink-0 items-center justify-center text-pepino md:size-10">
                         {contact.id === "instagram" && (
                           <InstagramIcon className="size-full" />
                         )}
@@ -170,7 +170,7 @@ export function Faq() {
                         )}
                       </span>
                       <span
-                        className={`font-alternates text-[14px] font-semibold text-pepino not-italic lg:text-[20px] ${contact.id === "email" ? "underline" : ""}`}
+                        className={`font-alternates text-[14px] font-semibold text-pepino not-italic md:text-[20px] ${contact.id === "email" ? "underline" : ""}`}
                       >
                         {contact.handle}
                       </span>

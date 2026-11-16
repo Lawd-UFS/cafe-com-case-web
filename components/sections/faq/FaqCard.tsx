@@ -115,7 +115,7 @@ function FadeScroll({
           aria-hidden
           onMouseDown={(event) => event.preventDefault()}
           onClick={scrollMore}
-          className={`absolute -right-6 bottom-0 size-5 opacity-50 transition-opacity hover:opacity-100 lg:-right-8 lg:size-6 ${canGoDown ? "" : "rotate-180"}`}
+          className={`absolute -right-6 bottom-0 size-5 opacity-50 transition-opacity hover:opacity-100 md:-right-8 md:size-6 ${canGoDown ? "" : "rotate-180"}`}
         >
           <svg
             viewBox="0 0 24 24"
@@ -205,7 +205,7 @@ export function FaqCard({
             onClick={openDialog}
             aria-expanded={isOpen}
             aria-controls={`faq-dialog-${item.id}`}
-            className={`relative flex h-full w-full flex-col justify-between overflow-visible p-6 text-left transition-colors duration-300 ease-out outline-none sm:p-7 lg:p-8 ${config.textDefault} ${config.textHover}`}
+            className={`relative flex h-full w-full flex-col justify-between overflow-visible p-6 text-left transition-colors duration-300 ease-out outline-none sm:p-7 md:p-8 ${config.textDefault} ${config.textHover}`}
           >
             <svg
               aria-hidden
@@ -226,7 +226,7 @@ export function FaqCard({
               />
             </svg>
 
-            <span className="relative z-10 font-alternates text-[20px] leading-tight font-bold italic lg:text-[32px]">
+            <span className="relative z-10 font-alternates text-[20px] leading-tight font-bold italic md:text-[32px]">
               {item.question}
             </span>
 
@@ -244,7 +244,7 @@ export function FaqCard({
                     maskPosition: "center",
                     WebkitMaskPosition: "center",
                   }}
-                  className="block size-8 bg-current transition-colors duration-300 ease-out lg:size-9"
+                  className="block size-8 bg-current transition-colors duration-300 ease-out md:size-9"
                 />
               </span>
             )}
@@ -269,7 +269,7 @@ export function FaqCard({
             closeDialog();
           }
         }}
-        className={`fixed inset-0 z-50 m-auto max-h-[94dvh] w-full max-w-[min(374px,calc(100vw-2.5rem))] overflow-visible bg-transparent p-0 outline-none perspective-distant backdrop:bg-[#1C1F1C]/85 backdrop:backdrop-blur-xs backdrop:transition-opacity backdrop:duration-200 lg:max-w-[520px] ${isOpen ? "backdrop:opacity-100" : "pointer-events-none backdrop:opacity-0"}`}
+        className={`fixed inset-0 z-50 m-auto max-h-[94dvh] w-full max-w-[min(374px,calc(100vw-2.5rem))] overflow-visible bg-transparent p-0 outline-none perspective-distant backdrop:bg-[#1C1F1C]/85 backdrop:backdrop-blur-xs backdrop:transition-opacity backdrop:duration-200 md:max-w-[520px] ${isOpen ? "backdrop:opacity-100" : "pointer-events-none backdrop:opacity-0"}`}
       >
         <AnimatePresence onExitComplete={handleExitComplete}>
           {isOpen && (
@@ -309,7 +309,7 @@ export function FaqCard({
               <div
                 ref={frontRef}
                 inert={showMore}
-                className={`relative flex max-h-[94dvh] flex-col self-center px-7 pt-8 pb-9 transition-opacity duration-300 [grid-area:1/1] backface-hidden lg:px-10 lg:pt-10 lg:pb-12 ${config.textOpen} ${showMore ? "opacity-0" : ""}`}
+                className={`relative flex max-h-[94dvh] flex-col self-center px-7 pt-8 pb-9 transition-opacity duration-300 [grid-area:1/1] backface-hidden md:px-10 md:pt-10 md:pb-12 ${config.textOpen} ${showMore ? "opacity-0" : ""}`}
               >
                 <div
                   aria-hidden
@@ -337,11 +337,11 @@ export function FaqCard({
                   />
                 </div>
 
-                <div className="relative z-10 flex min-h-0 flex-col gap-5 lg:gap-8">
+                <div className="relative z-10 flex min-h-0 flex-col gap-5 md:gap-8">
                   <header className="flex items-start justify-between gap-4">
                     <h3
                       id={headingId}
-                      className="font-alternates text-[24px] leading-tight font-bold italic lg:text-[32px]"
+                      className="font-alternates text-[24px] leading-tight font-bold italic md:text-[32px]"
                     >
                       {item.question}
                     </h3>
@@ -350,7 +350,7 @@ export function FaqCard({
                       type="button"
                       onClick={closeDialog}
                       aria-label={`Fechar pergunta ${item.number}`}
-                      className="group flex size-8 shrink-0 items-center justify-center transition-transform hover:scale-110 active:scale-95 lg:size-9"
+                      className="group flex size-8 shrink-0 items-center justify-center transition-transform hover:scale-110 active:scale-95 md:size-9"
                     >
                       <svg
                         aria-hidden
@@ -366,12 +366,12 @@ export function FaqCard({
                     </button>
                   </header>
 
-                  <FadeScroll className="mx-auto w-full max-w-[300px] lg:max-w-[370px]">
-                    <div className="flex flex-col gap-3.5 lg:gap-5">
+                  <FadeScroll className="mx-auto w-full max-w-[300px] md:max-w-[370px]">
+                    <div className="flex flex-col gap-3.5 md:gap-5">
                       {item.paragraphs.map((paragraph) => (
                         <p
                           key={paragraph}
-                          className="font-sans text-[14px] leading-[1.4] font-semibold opacity-95 lg:text-[18px]"
+                          className="font-sans text-[14px] leading-[1.4] font-semibold opacity-95 md:text-[18px]"
                         >
                           {paragraph}
                         </p>
@@ -379,7 +379,7 @@ export function FaqCard({
                     </div>
                   </FadeScroll>
 
-                  <footer className="mt-2 flex justify-center lg:justify-end">
+                  <footer className="mt-2 flex justify-center md:justify-end">
                     {"url" in item.action ? (
                       <MainButton
                         href={item.action.url}
@@ -393,7 +393,7 @@ export function FaqCard({
                             ? "noopener noreferrer"
                             : undefined
                         }
-                        className={`whitespace-nowrap [&_span]:text-[17px] [&_span]:font-semibold lg:[&_span]:text-2xl ${config.buttonClass}`}
+                        className={`whitespace-nowrap [&_span]:text-[17px] [&_span]:font-semibold md:[&_span]:text-2xl ${config.buttonClass}`}
                       >
                         {item.action.label}
                       </MainButton>
@@ -401,7 +401,7 @@ export function FaqCard({
                       <MainButton
                         data-faq-more
                         onClick={flipToMore}
-                        className={`whitespace-nowrap [&_span]:text-[17px] [&_span]:font-semibold lg:[&_span]:text-2xl ${config.buttonClass}`}
+                        className={`whitespace-nowrap [&_span]:text-[17px] [&_span]:font-semibold md:[&_span]:text-2xl ${config.buttonClass}`}
                       >
                         {item.action.label}
                       </MainButton>
@@ -413,7 +413,7 @@ export function FaqCard({
               {more && (
                 <div
                   inert={!showMore}
-                  className={`relative flex max-h-[94dvh] rotate-y-180 flex-col self-center px-7 pt-8 pb-9 transition-opacity duration-300 [grid-area:1/1] backface-hidden lg:px-10 lg:pt-10 lg:pb-12 ${config.textOpen} ${showMore ? "" : "opacity-0"}`}
+                  className={`relative flex max-h-[94dvh] rotate-y-180 flex-col self-center px-7 pt-8 pb-9 transition-opacity duration-300 [grid-area:1/1] backface-hidden md:px-10 md:pt-10 md:pb-12 ${config.textOpen} ${showMore ? "" : "opacity-0"}`}
                 >
                   <div
                     aria-hidden
@@ -450,7 +450,7 @@ export function FaqCard({
                       type="button"
                       onClick={closeDialog}
                       aria-label={`Fechar pergunta ${item.number}`}
-                      className="group flex size-8 shrink-0 items-center justify-center transition-transform hover:scale-110 active:scale-95 lg:size-9"
+                      className="group flex size-8 shrink-0 items-center justify-center transition-transform hover:scale-110 active:scale-95 md:size-9"
                     >
                       <svg
                         aria-hidden
@@ -466,17 +466,17 @@ export function FaqCard({
                     </button>
                   </header>
 
-                  <FadeScroll className="z-10 mt-4 lg:mt-6">
+                  <FadeScroll className="z-10 mt-4 md:mt-6">
                     <h3
                       id={moreTitleId}
                       ref={moreTitleRef}
                       tabIndex={-1}
-                      className="font-alternates text-[24px] leading-tight font-bold italic outline-none lg:text-[32px]"
+                      className="font-alternates text-[24px] leading-tight font-bold italic outline-none md:text-[32px]"
                     >
                       {more.title}
                     </h3>
 
-                    <ul className="mt-4 lg:mt-6">
+                    <ul className="mt-4 md:mt-6">
                       {more.questions.map((question) => {
                         const isActive = openQuestion === question.id;
                         const answerId = `${moreTitleId}-${question.id}`;
@@ -494,7 +494,7 @@ export function FaqCard({
                                 onClick={() =>
                                   setOpenQuestion(isActive ? null : question.id)
                                 }
-                                className="flex min-h-12 w-full items-center justify-between gap-4 py-3 text-left font-alternates text-[16px] leading-snug font-bold italic transition-opacity duration-200 hover:opacity-75 lg:text-[20px]"
+                                className="flex min-h-12 w-full items-center justify-between gap-4 py-3 text-left font-alternates text-[16px] leading-snug font-bold italic transition-opacity duration-200 hover:opacity-75 md:text-[20px]"
                               >
                                 <span>{question.question}</span>
                                 <span
@@ -531,11 +531,11 @@ export function FaqCard({
                                   }
                                   className="overflow-hidden"
                                 >
-                                  <div className="flex flex-col gap-3 pb-5 lg:gap-4">
+                                  <div className="flex flex-col gap-3 pb-5 md:gap-4">
                                     {question.paragraphs.map((paragraph) => (
                                       <p
                                         key={paragraph}
-                                        className="font-sans text-[14px] leading-[1.4] font-semibold opacity-95 lg:text-[18px]"
+                                        className="font-sans text-[14px] leading-[1.4] font-semibold opacity-95 md:text-[18px]"
                                       >
                                         {paragraph}
                                       </p>
@@ -545,7 +545,7 @@ export function FaqCard({
                                         href={question.action.url}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className={`mt-1 self-center whitespace-nowrap md:!h-11 md:!min-w-0 md:!px-6 lg:self-end [&_span]:text-[17px] [&_span]:font-semibold md:[&_span]:text-lg ${config.buttonClass}`}
+                                        className={`mt-1 self-center whitespace-nowrap md:!h-11 md:!min-w-0 md:self-end md:!px-6 [&_span]:text-[17px] [&_span]:font-semibold md:[&_span]:text-lg ${config.buttonClass}`}
                                       >
                                         {question.action.label}
                                       </MainButton>
