@@ -49,25 +49,19 @@ export function Award() {
           </svg>
 
           <header className="relative z-10">
-            <svg
+            <div
               aria-hidden
-              viewBox="0 0 340 185"
-              preserveAspectRatio="none"
-              className="pointer-events-none absolute top-0 -left-[4.47%] h-[185px] w-[108.94%] overflow-visible drop-shadow-md"
+              className="pointer-events-none absolute -top-[57px] -left-[6.89%] h-[231px] w-[113.78%] overflow-hidden bg-cafe [clip-path:polygon(0_5px,36.7%_21px,39.36%_23px,55.32%_49px,57.98%_51px,65.96%_52px,100%_53px,100%_144px,65.96%_211px,12.77%_229px,10.11%_230px,2.13%_205px,0_198px)]"
             >
-              <defs>
-                <TextureFilter
-                  id="award-mobile-brown-header"
-                  radius={3.5}
-                  size={8}
-                />
-              </defs>
-              <polygon
-                points="0,0 340,0 340,112 250,118 160,150 0,165"
-                filter="url(#award-mobile-brown-header)"
-                className="fill-cafe"
+              <Image
+                src="/images/illustrations/brown-shape.png"
+                alt=""
+                width={1189}
+                height={1174}
+                sizes="700px"
+                className="absolute -top-[180px] -left-[60px] w-[700px] max-w-none"
               />
-            </svg>
+            </div>
 
             <div className="relative z-10 flex items-start justify-between px-5 pt-5">
               <Reveal>
