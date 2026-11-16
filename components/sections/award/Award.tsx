@@ -9,15 +9,18 @@ export function Award() {
     <section
       id="award"
       aria-labelledby="award-title"
-      className="relative overflow-x-clip bg-cafe text-areia"
+      className="relative isolate overflow-x-clip text-areia [--award-brown:192px] md:[--award-brown:307px] lg:[--award-brown:max(111px,8.229vw)]"
     >
       <div
+        id="award-background"
         aria-hidden
-        className="pointer-events-none absolute inset-x-0 -top-3 z-1 h-6 bg-cafe filter-[url(#award-edge-texture)]"
-      />
+        className="pointer-events-none absolute inset-x-0 top-(--award-brown) bottom-0 -z-10 bg-cafe"
+      >
+        <div className="absolute inset-x-0 -top-3 h-6 bg-cafe filter-[url(#award-edge-texture)]" />
+      </div>
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 z-20 bg-[url(/images/textures/sunflower-seeds.png)] bg-size-[1198px_auto] bg-position-[0_-756px] opacity-[0.13] mix-blend-soft-light"
+        className="pointer-events-none absolute inset-x-0 top-(--award-brown) bottom-0 z-20 bg-[url(/images/textures/sunflower-seeds.png)] bg-size-[1198px_auto] bg-position-[0_calc(-756px_-_var(--award-brown))] opacity-[0.13] mix-blend-soft-light"
       />
 
       <div className="block md:[zoom:1.6] lg:hidden">
@@ -50,7 +53,7 @@ export function Award() {
               aria-hidden
               viewBox="0 0 340 185"
               preserveAspectRatio="none"
-              className="pointer-events-none absolute inset-x-0 top-0 h-[185px] w-full overflow-visible drop-shadow-md"
+              className="pointer-events-none absolute top-0 -left-[4.47%] h-[185px] w-[108.94%] overflow-visible drop-shadow-md"
             >
               <defs>
                 <TextureFilter
@@ -182,8 +185,22 @@ export function Award() {
         </Reveal>
       </div>
 
-      <div className="hidden lg:block lg:[zoom:0.7] xl:[zoom:1]">
-        <div className="relative z-10 mx-auto max-w-[1920px] px-6 pb-32 md:pr-10 md:pb-44 md:pl-20 lg:pr-16 lg:pl-32">
+      <div className="relative hidden lg:block lg:award-zoom">
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0 z-25 [clip-path:inset(58px_-2000px_-2000px_-2000px)]"
+        >
+          <div className="absolute top-[128px] left-[3.75%] -mt-[63%] aspect-[555/630] w-[55.5%]">
+            <Image
+              src="/images/illustrations/brown-shape.png"
+              alt=""
+              width={1189}
+              height={1174}
+              className="h-full w-full max-w-none -translate-x-1/10 translate-y-[5%] scale-120 -rotate-8 zoom-[1.1] object-cover object-center"
+            />
+          </div>
+        </div>
+        <div className="relative mx-auto max-w-[1920px] px-6 pb-32 md:pr-10 md:pb-44 md:pl-20 lg:pr-16 lg:pl-32">
           <div className="relative -mt-16 md:-mt-24 lg:-mt-32">
             <div className="relative z-30 mb-[-55px] pl-24 sm:pl-32 md:mb-[-80px] md:pl-44 lg:pl-56">
               <Reveal>
@@ -229,7 +246,7 @@ export function Award() {
 
               <div className="relative flex-1">
                 <Reveal delay={0.15}>
-                  <div className="relative px-8 pt-40 pb-14 text-cafe md:px-14 md:pt-48 md:pb-16 lg:px-16 lg:pt-56 lg:pb-20">
+                  <div className="relative px-8 pt-40 pb-14 text-cafe md:px-14 md:pt-48 md:pb-16 lg:px-16 lg:pt-61 lg:pb-15">
                     <svg
                       aria-hidden
                       viewBox="0 0 1200 480"
@@ -244,7 +261,7 @@ export function Award() {
                         />
                       </defs>
                       <path
-                        d="M 0,90 L 320,185 L 580,0 L 1200,0 L 1200,480 L 0,480 Z"
+                        d="M 0,0 L 1200,0 L 1200,480 L 0,480 Z"
                         filter="url(#award-card-texture)"
                         className="fill-amarelo"
                       />

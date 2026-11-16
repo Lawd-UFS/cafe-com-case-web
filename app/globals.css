@@ -51,6 +51,31 @@
   clip-path: inset(-100% -100% -20% -100%);
 }
 
+@utility award-zoom {
+  zoom: 0.7;
+  @media (width >= 84rem) {
+    zoom: 0.75;
+  }
+  @media (width >= 90rem) {
+    zoom: 0.8;
+  }
+  @media (width >= 96rem) {
+    zoom: 0.85;
+  }
+  @media (width >= 102rem) {
+    zoom: 0.9;
+  }
+  @media (width >= 108rem) {
+    zoom: 0.95;
+  }
+  @media (width >= 114rem) {
+    zoom: 1;
+  }
+  @supports (zoom: tan(atan2(1px, 1px))) {
+    zoom: max(0.7, tan(atan2(100vw, 1920px)));
+  }
+}
+
 @keyframes hero-pop-in {
   from {
     opacity: 0;
