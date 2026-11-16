@@ -21,7 +21,7 @@ export function Award() {
       />
 
       <div className="block md:[zoom:1.6] lg:hidden">
-        <div className="relative mx-auto w-[calc(100%-2rem)] max-w-[360px] pt-0 pb-8 sm:max-w-[400px]">
+        <div className="relative mx-auto w-[91.8%] pt-0 pb-8">
           <svg
             aria-hidden
             viewBox="0 0 340 720"
@@ -80,7 +80,7 @@ export function Award() {
               <Reveal delay={0.1}>
                 <div
                   aria-hidden
-                  className="flex flex-col items-center gap-2 pt-3 pr-1 md:pt-5"
+                  className="-mt-6 flex flex-col items-center gap-2 pr-1"
                 >
                   <span
                     style={{
@@ -93,7 +93,7 @@ export function Award() {
                       maskPosition: "center",
                       WebkitMaskPosition: "center",
                     }}
-                    className="block h-9 w-12 -scale-x-100 -rotate-6 bg-areia"
+                    className="block size-13 -scale-x-100 -rotate-6 bg-areia"
                   />
                   <span
                     style={{
@@ -106,7 +106,7 @@ export function Award() {
                       maskPosition: "center",
                       WebkitMaskPosition: "center",
                     }}
-                    className="block h-9 w-12 -scale-x-100 rotate-12 bg-areia"
+                    className="block size-13 -scale-x-100 rotate-12 bg-areia"
                   />
                   <span
                     style={{
@@ -119,7 +119,7 @@ export function Award() {
                       maskPosition: "center",
                       WebkitMaskPosition: "center",
                     }}
-                    className="block h-9 w-12 -rotate-6 bg-cafe"
+                    className="mt-2 block size-13 -rotate-6 bg-cafe"
                   />
                 </div>
               </Reveal>
@@ -174,7 +174,7 @@ export function Award() {
         </div>
 
         <Reveal delay={0.25}>
-          <div className="mx-auto max-w-[348px] px-4 pt-6 pb-14 sm:max-w-[400px]">
+          <div className="mx-auto w-[91.8%] px-3 pt-6 pb-14">
             <p className="font-alternates text-[16px] leading-snug font-medium text-areia italic">
               {award.closingPhrase}
             </p>
@@ -198,31 +198,31 @@ export function Award() {
             </div>
 
             <div className="flex items-start gap-4 md:gap-8 lg:gap-10">
-              <Reveal delay={0.1}>
+              <Reveal delay={0.1} className="lg:-ml-10">
                 <div
                   aria-hidden
-                  className="mt-16 flex shrink-0 flex-col items-center gap-2 md:mt-24 md:gap-2.5 lg:mt-28 lg:gap-3"
+                  className="mt-16 flex shrink-0 flex-col items-center gap-2 md:mt-24 md:gap-2.5 lg:mt-[150px] lg:gap-0.5"
                 >
                   <Image
                     src="/images/illustrations/cup.png"
                     alt=""
                     width={100}
                     height={75}
-                    className="w-[52px] object-contain md:w-[74px] lg:w-[90px]"
+                    className="w-[52px] object-contain md:w-[74px] lg:w-[104px]"
                   />
                   <Image
                     src="/images/illustrations/cup.png"
                     alt=""
                     width={100}
                     height={75}
-                    className="w-[52px] -scale-x-100 object-contain md:w-[74px] lg:w-[90px]"
+                    className="w-[52px] -scale-x-100 object-contain md:w-[74px] lg:w-[104px]"
                   />
                   <Image
                     src="/images/illustrations/cup.png"
                     alt=""
                     width={100}
                     height={75}
-                    className="w-[52px] object-contain md:w-[74px] lg:w-[90px]"
+                    className="w-[52px] object-contain md:w-[74px] lg:w-[104px]"
                   />
                 </div>
               </Reveal>
