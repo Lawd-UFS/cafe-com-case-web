@@ -153,14 +153,14 @@ export const faq = {
             ],
             action: {
               label: "Veja o regulamento",
-              url: "https://drive.google.com/file/d/1HoN4hgtWivKaH1TEyY1onRCKI3dwQaGN/view",
+              url: "https://drive.google.com/file/d/11SwhHkNf3a4-jvkR94n_EXMxUXwfBBxy/view",
             },
           },
           {
             id: "signup",
             question: "Como faço para me inscrever no Prêmio Expresso?",
             paragraphs: [
-              "As inscrições são realizadas exclusivamente por formulário eletrônico disponibilizado pela organização. O período de inscrição vai de 14 de outubro a 7 de novembro de 2026, até as 23h59 (horário de Brasília).",
+              "As inscrições são realizadas exclusivamente por formulário eletrônico disponibilizado pela organização. O período de inscrição vai de 14 de outubro a 20 de novembro de 2026, até as 23h59 (horário de Brasília).",
               "No formulário, será necessário preencher os dados solicitados, escolher a categoria e enviar a obra e os documentos exigidos no edital.",
             ],
           },
@@ -180,7 +180,7 @@ export const faq = {
             id: "results",
             question: "Quando será divulgado o resultado do Prêmio Expresso?",
             paragraphs: [
-              "Os vencedores serão definidos na etapa final de avaliação, realizada de 23 a 27 de novembro de 2026, e anunciados durante o encerramento do Café com Case, no dia 3 de dezembro de 2026.",
+              "Os vencedores serão definidos na etapa final de avaliação, realizada de 26 a 28 de novembro de 2026, e anunciados durante o encerramento do Café com Case, no dia 3 de dezembro de 2026.",
             ],
           },
         ],
