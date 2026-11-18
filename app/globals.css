@@ -21,11 +21,28 @@
 
 @layer base {
   html {
-    background-color: var(--color-laranja);
+    --page-color: var(--color-laranja);
+    background-color: var(--page-color);
   }
 
   html:has(#faq) {
-    background-color: var(--color-pepino);
+    --page-color: var(--color-pepino);
+  }
+
+  @media (hover: none) {
+    @supports not (-webkit-touch-callout: none) {
+      html {
+        background-color: transparent;
+      }
+
+      body::after {
+        content: "";
+        position: fixed;
+        inset: 0;
+        z-index: -1;
+        background-color: var(--page-color);
+      }
+    }
   }
 
   @media (prefers-reduced-motion: no-preference) {
