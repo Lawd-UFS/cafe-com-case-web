@@ -1,6 +1,7 @@
 "use client";
 
 import { MainButton } from "@/components/ui/MainButton";
+import { MaskIcon } from "@/components/ui/MaskIcon";
 import { TextButton } from "@/components/ui/TextButton";
 import { TextureFilter } from "@/components/ui/TextureFilter";
 import type { FaqItem } from "@/content/faq";
@@ -24,6 +25,7 @@ const colorConfig = {
     buttonClass: "!text-amarelo hover:!text-amarelo [&_span]:!text-tomate",
     rotateDeg: -1.5,
     watermarkClass: "bg-black/20",
+    iconClass: "lg:size-[66px]",
   },
   cenoura: {
     svgFillHover:
@@ -34,6 +36,7 @@ const colorConfig = {
     buttonClass: "!text-azul hover:!text-azul [&_span]:!text-cenoura",
     rotateDeg: -1.7,
     watermarkClass: "bg-black/20",
+    iconClass: "lg:h-[106px] lg:w-[72px]",
   },
   cafe: {
     svgFillHover:
@@ -44,6 +47,8 @@ const colorConfig = {
     buttonClass: "!text-cenoura hover:!text-cenoura [&_span]:!text-cafe",
     rotateDeg: 1.8,
     watermarkClass: "bg-black/25",
+    iconClass:
+      "lg:h-[74px] lg:w-[112px] xl:max-2xl:h-[56px] xl:max-2xl:w-[85px]",
   },
   azul: {
     svgFillHover:
@@ -54,6 +59,7 @@ const colorConfig = {
     buttonClass: "!text-cenoura hover:!text-cenoura [&_span]:!text-azul",
     rotateDeg: 1.4,
     watermarkClass: "bg-black/25",
+    iconClass: "lg:size-11",
   },
 };
 
@@ -232,19 +238,9 @@ export function FaqCard({
 
             {item.icon && (
               <span className="relative z-10 flex justify-end">
-                <span
-                  aria-hidden
-                  style={{
-                    maskImage: `url(${item.icon})`,
-                    WebkitMaskImage: `url(${item.icon})`,
-                    maskSize: "contain",
-                    WebkitMaskSize: "contain",
-                    maskRepeat: "no-repeat",
-                    WebkitMaskRepeat: "no-repeat",
-                    maskPosition: "center",
-                    WebkitMaskPosition: "center",
-                  }}
-                  className="block size-8 bg-current transition-colors duration-300 ease-out md:size-9"
+                <MaskIcon
+                  src={item.icon}
+                  className={`size-8 bg-current transition-colors duration-300 ease-out md:size-9 ${config.iconClass}`}
                 />
               </span>
             )}
@@ -321,19 +317,9 @@ export function FaqCard({
                   aria-hidden
                   className="pointer-events-none absolute inset-0 z-0 flex items-center justify-center overflow-hidden"
                 >
-                  <span
-                    style={{
-                      maskImage: "url(/images/illustrations/brown-shape.png)",
-                      WebkitMaskImage:
-                        "url(/images/illustrations/brown-shape.png)",
-                      maskSize: "contain",
-                      WebkitMaskSize: "contain",
-                      maskRepeat: "no-repeat",
-                      WebkitMaskRepeat: "no-repeat",
-                      maskPosition: "center",
-                      WebkitMaskPosition: "center",
-                    }}
-                    className={`block size-full shrink-0 scale-[1.5] ${config.watermarkClass}`}
+                  <MaskIcon
+                    src="/images/icons/brown-shape.svg"
+                    className={`size-full shrink-0 scale-[1.5] ${config.watermarkClass}`}
                   />
                 </div>
 
@@ -425,19 +411,9 @@ export function FaqCard({
                     aria-hidden
                     className="pointer-events-none absolute inset-0 z-0 flex items-center justify-center overflow-hidden"
                   >
-                    <span
-                      style={{
-                        maskImage: "url(/images/illustrations/brown-shape.png)",
-                        WebkitMaskImage:
-                          "url(/images/illustrations/brown-shape.png)",
-                        maskSize: "contain",
-                        WebkitMaskSize: "contain",
-                        maskRepeat: "no-repeat",
-                        WebkitMaskRepeat: "no-repeat",
-                        maskPosition: "center",
-                        WebkitMaskPosition: "center",
-                      }}
-                      className={`block size-full shrink-0 -scale-x-150 scale-y-150 ${config.watermarkClass}`}
+                    <MaskIcon
+                      src="/images/icons/brown-shape.svg"
+                      className={`size-full shrink-0 -scale-x-150 scale-y-150 ${config.watermarkClass}`}
                     />
                   </div>
 

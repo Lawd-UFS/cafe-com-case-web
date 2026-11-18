@@ -14,6 +14,7 @@ type IllustrationProps = {
   height: number;
   rotate?: number;
   flip?: boolean;
+  scale: number;
 };
 
 function Illustration({
@@ -24,17 +25,20 @@ function Illustration({
   height,
   rotate = 0,
   flip = false,
+  scale,
 }: IllustrationProps) {
-  const { src } = getImageProps({
-    src: `/images/illustrations/${name}.png`,
-    alt: "",
-    width,
-    height,
-  }).props;
+  const href = scale
+    ? getImageProps({
+        src: `/images/illustrations/${name}.png`,
+        alt: "",
+        width: width * scale,
+        height: height * scale,
+      }).props.src
+    : undefined;
 
   return (
     <image
-      href={src}
+      href={href}
       x={x}
       y={y}
       width={width}
@@ -81,6 +85,8 @@ type IllustrationStripProps = {
 export function IllustrationStrip({ className = "" }: IllustrationStripProps) {
   const ref = useRef<HTMLDivElement>(null);
   const shown = useInView(ref, { once: true, amount: 0.5 });
+  const near = useInView(ref, { once: true, margin: "600px 0px" });
+  const scale = near ? Math.min(window.innerWidth, 1920) / 1920 : 0;
 
   return (
     <div
@@ -99,6 +105,7 @@ export function IllustrationStrip({ className = "" }: IllustrationStripProps) {
 
       <Block x={67} width={166} step={0} shown={shown}>
         <Illustration
+          scale={scale}
           name="cashew"
           x={67.6}
           y={67.9}
@@ -114,6 +121,7 @@ export function IllustrationStrip({ className = "" }: IllustrationStripProps) {
           className="fill-cafe"
         />
         <Illustration
+          scale={scale}
           name="cup"
           x={736.4}
           y={35.2}
@@ -128,6 +136,7 @@ export function IllustrationStrip({ className = "" }: IllustrationStripProps) {
           className="fill-azul"
         />
         <Illustration
+          scale={scale}
           name="fish"
           x={330.7}
           y={38.6}
@@ -143,6 +152,7 @@ export function IllustrationStrip({ className = "" }: IllustrationStripProps) {
         />
         <g clipPath="url(#footer-kettle-crop)">
           <Illustration
+            scale={scale}
             name="kettle"
             x={1715.3}
             y={58.45}
@@ -158,6 +168,7 @@ export function IllustrationStrip({ className = "" }: IllustrationStripProps) {
           className="fill-cafe"
         />
         <Illustration
+          scale={scale}
           name="beans"
           x={1317.1}
           y={48.7}
@@ -173,6 +184,7 @@ export function IllustrationStrip({ className = "" }: IllustrationStripProps) {
           className="fill-tomate"
         />
         <Illustration
+          scale={scale}
           name="pot"
           x={1009.8}
           y={77}

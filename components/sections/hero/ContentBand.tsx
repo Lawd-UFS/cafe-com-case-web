@@ -17,6 +17,9 @@ export function ContentBand() {
           alt="Café com Case à Mesa"
           width={800}
           height={800}
+          loading="eager"
+          fetchPriority="high"
+          sizes="(min-width: 1024px) 28vw, 270px"
           className="h-auto w-[92%] object-contain md:w-[60%] lg:h-[25vw] lg:w-auto lg:scale-110"
         />
       </div>
@@ -73,6 +76,7 @@ export function ContentBand() {
           alt=""
           width={400}
           height={400}
+          sizes="(min-width: 1024px) 22vw, (min-width: 768px) 250px, 172px"
           className="h-auto w-full translate-x-[45%] lg:h-[22vw] lg:w-auto lg:max-w-none lg:translate-x-[30%]"
         />
       </div>

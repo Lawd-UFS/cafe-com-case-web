@@ -6,6 +6,7 @@ import {
 } from "@/components/sections/footer/ContactIcons";
 import { ContactsLettering } from "@/components/ui/ContactsLettering";
 import { FaqLettering } from "@/components/ui/FaqLettering";
+import { MaskIcon } from "@/components/ui/MaskIcon";
 import { Reveal } from "@/components/ui/Reveal";
 import { TextButton } from "@/components/ui/TextButton";
 import { TextureFilter } from "@/components/ui/TextureFilter";
@@ -204,18 +205,9 @@ export function Faq() {
         </svg>
 
         <div className="relative z-10 size-20 sm:size-28 lg:size-36">
-          <span
-            style={{
-              maskImage: "url(/images/illustrations/kettle.png)",
-              WebkitMaskImage: "url(/images/illustrations/kettle.png)",
-              maskSize: "contain",
-              WebkitMaskSize: "contain",
-              maskRepeat: "no-repeat",
-              WebkitMaskRepeat: "no-repeat",
-              maskPosition: "center",
-              WebkitMaskPosition: "center",
-            }}
-            className="block size-full bg-tomate"
+          <MaskIcon
+            src="/images/icons/kettle.svg"
+            className="size-full bg-tomate"
           />
         </div>
       </div>

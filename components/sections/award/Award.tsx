@@ -1,4 +1,5 @@
 import { MainButton } from "@/components/ui/MainButton";
+import { MaskIcon } from "@/components/ui/MaskIcon";
 import { Reveal } from "@/components/ui/Reveal";
 import { TextureFilter } from "@/components/ui/TextureFilter";
 import { award } from "@/content/award";
@@ -79,44 +80,17 @@ export function Award() {
                   aria-hidden
                   className="-mt-6 flex flex-col items-center gap-2 pr-1"
                 >
-                  <span
-                    style={{
-                      maskImage: "url(/images/illustrations/cup.png)",
-                      WebkitMaskImage: "url(/images/illustrations/cup.png)",
-                      maskSize: "contain",
-                      WebkitMaskSize: "contain",
-                      maskRepeat: "no-repeat",
-                      WebkitMaskRepeat: "no-repeat",
-                      maskPosition: "center",
-                      WebkitMaskPosition: "center",
-                    }}
-                    className="block size-13 -scale-x-100 -rotate-6 bg-areia"
+                  <MaskIcon
+                    src="/images/icons/cup.svg"
+                    className="size-13 -scale-x-100 -rotate-6 bg-areia"
                   />
-                  <span
-                    style={{
-                      maskImage: "url(/images/illustrations/cup.png)",
-                      WebkitMaskImage: "url(/images/illustrations/cup.png)",
-                      maskSize: "contain",
-                      WebkitMaskSize: "contain",
-                      maskRepeat: "no-repeat",
-                      WebkitMaskRepeat: "no-repeat",
-                      maskPosition: "center",
-                      WebkitMaskPosition: "center",
-                    }}
-                    className="block size-13 -scale-x-100 rotate-12 bg-areia"
+                  <MaskIcon
+                    src="/images/icons/cup.svg"
+                    className="size-13 -scale-x-100 rotate-12 bg-areia"
                   />
-                  <span
-                    style={{
-                      maskImage: "url(/images/illustrations/cup.png)",
-                      WebkitMaskImage: "url(/images/illustrations/cup.png)",
-                      maskSize: "contain",
-                      WebkitMaskSize: "contain",
-                      maskRepeat: "no-repeat",
-                      WebkitMaskRepeat: "no-repeat",
-                      maskPosition: "center",
-                      WebkitMaskPosition: "center",
-                    }}
-                    className="mt-2 block size-13 -rotate-6 bg-cafe"
+                  <MaskIcon
+                    src="/images/icons/cup.svg"
+                    className="mt-2 size-13 -rotate-6 bg-cafe"
                   />
                 </div>
               </Reveal>
@@ -126,20 +100,9 @@ export function Award() {
           <div className="relative z-10 px-7 pt-10 pb-8 text-cafe">
             <Reveal delay={0.15}>
               <div className="mb-6 flex items-start gap-2.5">
-                <span
-                  aria-hidden
-                  style={{
-                    maskImage: "url(/images/illustrations/brown-shape.png)",
-                    WebkitMaskImage:
-                      "url(/images/illustrations/brown-shape.png)",
-                    maskSize: "contain",
-                    WebkitMaskSize: "contain",
-                    maskRepeat: "no-repeat",
-                    WebkitMaskRepeat: "no-repeat",
-                    maskPosition: "center",
-                    WebkitMaskPosition: "center",
-                  }}
-                  className="mt-0.5 block size-5 shrink-0 bg-cafe"
+                <MaskIcon
+                  src="/images/icons/brown-shape.svg"
+                  className="mt-0.5 size-5 shrink-0 bg-cafe"
                 />
                 <div className="flex flex-col">
                   <p className="mb-4 font-alternates text-[16px] leading-snug font-medium text-cafe italic">
