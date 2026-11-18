@@ -11,13 +11,14 @@ const description =
 
 export const metadata: Metadata = {
   metadataBase: new URL(
-    `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL ?? "cafe-com-case-web.vercel.app"}`,
+    `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL ?? "www.cafecomcase.com.br"}`,
   ),
   title: "Café com Case",
   description,
   openGraph: {
     title: "Café com Case à Mesa",
     description,
+    url: "./",
     siteName: "Café com Case",
     locale: "pt_BR",
     type: "website",
