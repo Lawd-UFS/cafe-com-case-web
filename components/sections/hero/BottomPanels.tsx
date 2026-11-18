@@ -15,6 +15,7 @@ export function BottomPanels() {
           alt=""
           width={600}
           height={400}
+          sizes="18vw"
           className="absolute inset-0 m-auto hidden h-4/7 w-[72%] translate-y-10 -rotate-10 object-contain lg:block"
         />
       </div>
@@ -31,6 +32,7 @@ export function BottomPanels() {
             alt=""
             width={600}
             height={400}
+            sizes="22vw"
             className="absolute top-1/3 right-10 h-[69.2%] w-auto translate-x-[-15%] translate-y-[-15%] rotate-8 object-contain"
           />
         </div>

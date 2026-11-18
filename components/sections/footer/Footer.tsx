@@ -6,7 +6,7 @@ import { IllustrationStrip } from "./IllustrationStrip";
 
 export function Footer() {
   return (
-    <footer id="footer" className="relative overflow-x-clip bg-pepino">
+    <footer id="footer" className="relative -mt-px overflow-x-clip bg-pepino">
       <div className="relative mx-auto max-w-[1920px]">
         <Contacts className="mx-auto w-[244px] text-base md:[zoom:1.6] lg:absolute lg:bottom-full lg:left-[calc(100%*1019/1920)] lg:mb-[calc(106em/32)] lg:w-auto lg:[zoom:1] lg:text-[clamp(22px,1.667vw,32px)]" />
         <IllustrationStrip className="mt-12 lg:mt-0" />

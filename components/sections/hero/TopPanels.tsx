@@ -22,6 +22,7 @@ export function TopPanels() {
           alt=""
           width={400}
           height={400}
+          sizes="(min-width: 1024px) 13vw, 16vw"
           className="absolute top-4 right-5 h-[19%] w-[26%] -scale-x-100 object-contain lg:-top-4 lg:right-6 lg:h-[25.2%] lg:w-[37.8%]"
         />
       </div>
