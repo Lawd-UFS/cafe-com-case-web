@@ -14,7 +14,10 @@ export const metadata: Metadata = {
 
 export default function NotFound() {
   return (
-    <main className="relative flex min-h-dvh w-full flex-col overflow-clip bg-cenoura text-cafe">
+    <main
+      id="not-found"
+      className="relative flex min-h-dvh w-full flex-col overflow-clip bg-cenoura text-cafe"
+    >
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0 z-0 bg-[url(/images/textures/sunflower-seeds.webp)] bg-size-[1198px_auto] opacity-[0.13] mix-blend-soft-light"
@@ -50,9 +53,10 @@ export default function NotFound() {
               <Image
                 src="/images/logo.png"
                 alt={notFoundContent.logoAlt}
-                width={260}
-                height={120}
-                priority
+                width={800}
+                height={800}
+                loading="eager"
+                fetchPriority="high"
                 className="h-auto w-44 object-contain sm:w-52 lg:w-64"
               />
             </Link>
