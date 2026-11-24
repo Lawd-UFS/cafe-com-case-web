@@ -11,6 +11,9 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: "Café com Case",
   description: siteDescription,
+  alternates: {
+    canonical: "./",
+  },
   openGraph: {
     title: "Café com Case à Mesa",
     description: siteDescription,
