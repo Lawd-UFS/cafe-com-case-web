@@ -14,6 +14,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "./",
   },
+  verification: {
+    google: "CObqDNUxVOxtHdbM0w24bq0M79RaxtH2mAh29cfV3X8",
+  },
   openGraph: {
     title: "Café com Case à Mesa",
     description: siteDescription,
