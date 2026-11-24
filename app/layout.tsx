@@ -2,22 +2,18 @@ import type { Metadata } from "next";
 
 import { BrowserBars } from "@/components/BrowserBars";
 import { MotionProvider } from "@/components/MotionProvider";
+import { siteDescription, siteUrl } from "@/lib/site";
 
 import { gluten, montserrat, montserratAlternates } from "./fonts";
 import "./globals.css";
 
-const description =
-  "O maior evento gratuito de Publicidade e Propaganda de Sergipe. Nos dias 1º, 2 e 3 de dezembro de 2026, na UFS.";
-
 export const metadata: Metadata = {
-  metadataBase: new URL(
-    `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL ?? "www.cafecomcase.com.br"}`,
-  ),
+  metadataBase: new URL(siteUrl),
   title: "Café com Case",
-  description,
+  description: siteDescription,
   openGraph: {
     title: "Café com Case à Mesa",
-    description,
+    description: siteDescription,
     url: "./",
     siteName: "Café com Case",
     locale: "pt_BR",
